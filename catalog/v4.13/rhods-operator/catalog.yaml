@@ -1,5 +1,5 @@
 ---
-defaultChannel: fast
+defaultChannel: stable
 name: rhods-operator
 schema: olm.package
 ---
@@ -35,6 +35,27 @@ entries:
 - name: rhods-operator.2.11.0
   replaces: rhods-operator.2.10.0
   skipRange: '>=2.10.0 <2.11.0'
+---
+name: stable
+package: rhods-operator
+schema: olm.channel
+entries:
+- name: rhods-operator.2.6.0
+- name: rhods-operator.2.8.0
+  replaces: rhods-operator.2.7.0
+  skipRange: '>=2.6.0 <2.8.0'
+- name: rhods-operator.2.8.1
+  replaces: rhods-operator.2.8.0
+  skipRange: '>=2.8.0 <2.8.1'
+- name: rhods-operator.2.8.2
+  replaces: rhods-operator.2.8.1
+  skipRange: '>=2.8.0 <2.8.2'
+- name: rhods-operator.2.8.3
+  replaces: rhods-operator.2.8.2
+  skipRange: '>=2.8.0 <2.8.3'
+- name: rhods-operator.2.10.0
+  replaces: rhods-operator.2.8.0
+  skipRange: '>=2.8.0 <2.10.0'
 
 ---
 image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:63c246a03a1a8b813f965ffeea41db327a9089655c62e5923ad68b491f4bfaa6
