@@ -1,5 +1,5 @@
 ---
-defaultChannel: stable
+defaultChannel: fast
 name: rhods-operator
 schema: olm.package
 ---
