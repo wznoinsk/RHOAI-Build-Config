@@ -1,0 +1,17 @@
+---
+apiversion: scorecard.operatorframework.io/v1alpha3
+kind: Configuration
+metadata:
+  name: config
+stages:
+  - tests:
+      - image: quay.io/cvpops/demo-scorecard-image:dev
+        entrypoint:
+          - demo-scorecard-tests
+          - customtest0
+        labels:
+          cluster-product: ocp
+          cluster-size: small
+          cluster-version: 4.12
+          phase: msp-main
+          test: customtest0
