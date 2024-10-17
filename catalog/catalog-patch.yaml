@@ -1,0 +1,18 @@
+patch:
+  olm.package:
+    name: rhods-operator
+    defaultChannel: stable
+  olm.channels:
+    - name: stable
+      entries:
+      - name: rhods-operator.2.16.0
+        replaces: rhods-operator.2.13.0
+        skipRange: '>=2.13.0 <2.16.0'
+    - name: fast
+      entries:
+      - name: rhods-operator.2.16.0
+        replaces: rhods-operator.2.14.0
+        skipRange: '>=2.14.0 <2.16.0'
+  olm.bundle:
+    - quay.io/rhoai/odh-operator-bundle@sha256:f703ac2fa389ab7d73e693fb7d3c00735b247a15e949a0452d1c80cb1ff34ee0
+    # only for nudging purpose
