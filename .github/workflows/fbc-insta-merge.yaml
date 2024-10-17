@@ -27,7 +27,7 @@ permissions:
 
 jobs:
   insta-merge:
-    if: ${{ ( github.event.sender.login == 'dchourasia' || github.event.sender.login == 'konflux-internal-p02[bot]')  && contains(github.event.pull_request.title, 'update odh-operator-bundle-')}}
+    if: ${{ github.event.sender.login == 'konflux-internal-p02[bot]'  && contains(github.event.pull_request.title, 'update odh-operator-bundle-')}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
