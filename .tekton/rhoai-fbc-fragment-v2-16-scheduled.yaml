@@ -4,18 +4,16 @@ metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/red-hat-data-services/RHOAI-Build-Config?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
-    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "rhoai-2.16" && ( "catalog/v4.13/***".pathChanged() || ".tekton/rhoai-fbc-fragment-v2-16-pull-request.yaml".pathChanged()
-      )
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
+      == "rhoai-2.16" && "schedule/catalog-tekton-trigger.txt".pathChanged()
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: rhoai-v2-16
     appstudio.openshift.io/component: rhoai-fbc-fragment-v2-16
     pipelines.appstudio.openshift.io/type: build
-  name: rhoai-fbc-fragment-v2-16-on-pull-request
+  name: rhoai-fbc-fragment-v2-16-on-schedule
   namespace: rhoai-tenant
 spec:
   params:
@@ -24,9 +22,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-fbc-fragment-v2-16:on-pr-{{revision}}
-  - name: image-expires-after
-    value: 5d
+    value: quay.io/rhoai/rhoai-fbc-fragment:{{target_branch}}
   - name: dockerfile
     value: Dockerfile
   - name: path-context
@@ -194,6 +190,13 @@ spec:
         value: $(params.image-expires-after)
       - name: COMMIT_SHA
         value: $(tasks.clone-repository.results.commit)
+      - name: LABELS
+        value:
+        - version=v2.16.0
+        - url=$(params.git-url)
+        - git.url=$(params.git-url)
+        - git.commit=$(params.revision)
+        - release='$(tasks.clone-repository.results.commit-timestamp)'
       runAfter:
       - clone-repository
       taskRef:
@@ -268,6 +271,10 @@ spec:
       params:
       - name: IMAGE
         value: $(tasks.build-image-index.results.IMAGE_URL)
+      - name: ADDITIONAL_TAGS
+        value:
+          - '{{target_branch}}-{{revision}}'
+          - '{{target_branch}}-nightly'
       runAfter:
       - build-image-index
       taskRef:

@@ -7,7 +7,7 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "rhoai-2.16"
+      == "rhoai-2.16" && ( "catalog/**".pathChanged() || ".tekton/rhoai-fbc-fragment-v2-16-push.yaml".pathChanged() ) && !"catalog/catalog-patch.yaml".pathChanged() && !".github/workflows/**".pathChanged()
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: rhoai-v2-16
@@ -22,7 +22,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-fbc-fragment-v2-16:{{revision}}
+    value: quay.io/rhoai/rhoai-fbc-fragment:{{target_branch}}
   - name: dockerfile
     value: Dockerfile
   - name: path-context
@@ -94,7 +94,7 @@ spec:
       description: Force rebuild image
       name: rebuild
       type: string
-    - default: "false"
+    - default: "true"
       description: Skip checks against built image
       name: skip-checks
       type: string
@@ -190,6 +190,13 @@ spec:
         value: $(params.image-expires-after)
       - name: COMMIT_SHA
         value: $(tasks.clone-repository.results.commit)
+      - name: LABELS
+        value:
+        - version=v2.16.0
+        - url=$(params.git-url)
+        - git.url=$(params.git-url)
+        - git.commit=$(params.revision)
+        - release='$(tasks.clone-repository.results.commit-timestamp)'
       runAfter:
       - clone-repository
       taskRef:
@@ -264,6 +271,9 @@ spec:
       params:
       - name: IMAGE
         value: $(tasks.build-image-index.results.IMAGE_URL)
+      - name: ADDITIONAL_TAGS
+        value:
+          - '{{target_branch}}-{{revision}}'
       runAfter:
       - build-image-index
       taskRef:
