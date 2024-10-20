@@ -41,9 +41,12 @@ config:
         base-image: registry.redhat.io/openshift4/ose-operator-registry-rhel9:v4.15
       - name: v4.16
         base-image: registry.redhat.io/openshift4/ose-operator-registry-rhel9:v4.16
+      - name: v4.17
+        base-image: registry.redhat.io/openshift4/ose-operator-registry-rhel9:v4.17
     release:
       - v4.12
       - v4.13
       - v4.14
       - v4.15
       - v4.16
+      - v4.17

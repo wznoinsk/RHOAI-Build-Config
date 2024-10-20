@@ -102,10 +102,19 @@ jobs:
           yq e -i '.stable.bundles[0].image = "$LATEST_BUNDLE_IMAGE"' utils/utils/fbc-processor/fbc-semver-template.yaml
           LATEST_BUNDLE_IMAGE="$LATEST_BUNDLE_IMAGE" yq e -i '.stable.bundles[0].image = env(LATEST_BUNDLE_IMAGE)' utils/utils/fbc-processor/fbc-semver-template.yaml
           
+          CSV_META_MIN_OCP_VERSION=417
+          
           while IFS= read -r value;
           do
               OPENSHIFT_VERSION=$value
+              NUMERIC_OCP_VERSION=${OPENSHIFT_VERSION/v4./4}
+              CSV_META_OPM_FLAG=""
               echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
+              
+              if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
+              then
+                CSV_META_OPM_FLAG="--migrate-level=bundle-object-to-csv-metadata"
+              fi
               
               #Declare FBC processing variables
               CATALOG_YAML_PATH=main/catalog/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
@@ -115,7 +124,7 @@ jobs:
               OUTPUT_CATALOG_PATH=${BRANCH}/catalog/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
               
               #Generate the single bundle catalog
-              DOCKER_CONFIG=${HOME}/.docker/ opm alpha render-template semver -o yaml utils/utils/fbc-processor/fbc-semver-template.yaml > ${SINGLE_BUNDLE_PATH}
+              DOCKER_CONFIG=${HOME}/.docker/ opm alpha render-template semver ${CSV_META_OPM_FLAG} -o yaml utils/utils/fbc-processor/fbc-semver-template.yaml > ${SINGLE_BUNDLE_PATH}
               PUSH_PIPELINE_PATH=${BRANCH}/.tekton/odh-operator-bundle-${COMPONENT_SUFFIX}-push.yaml
           
               #Invoke FBC processor to patch the catalog
