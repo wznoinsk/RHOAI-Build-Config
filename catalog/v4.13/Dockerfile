@@ -3,9 +3,8 @@
 FROM registry.redhat.io/openshift4/ose-operator-registry:v4.13
 USER root
 # Configure the entrypoint and command
-# ENTRYPOINT ["/bin/opm"]
-# CMD ["serve", "/configs", "--cache-dir=/tmp/cache"]
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["/bin/opm"]
+CMD ["serve", "/configs", "--cache-dir=/tmp/cache"]
 # Copy declarative config root into image at /configs and pre-populate serve cache
 ADD rhods-operator /configs/rhods-operator
 RUN ["/bin/opm", "serve", "/configs", "--cache-dir=/tmp/cache", "--cache-only"]
