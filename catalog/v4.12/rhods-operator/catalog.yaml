@@ -698,6 +698,8 @@ entries:
   skipRange: '>=2.8.0 <2.8.4'
 ---
 name: stable-2.16
+package: rhods-operator
+schema: olm.channel
 entries:
 - name: rhods-operator.1.20.1-8
 - name: rhods-operator.1.21.0-22
@@ -783,6 +785,8 @@ entries:
   skipRange: '>=2.13.0 <2.16.0'
 ---
 name: eus-2.16
+package: rhods-operator
+schema: olm.channel
 entries:
 - name: rhods-operator.1.20.1-8
 - name: rhods-operator.1.21.0-22
