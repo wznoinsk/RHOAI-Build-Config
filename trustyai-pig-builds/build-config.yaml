@@ -19,6 +19,7 @@ defaultBuildParameters:
 
 
 builds:
+
   - name: trustyai-service-{{productVersion}}
     project: managed-open-data-hub
     scmUrl: https://github.com/red-hat-data-services/trustyai-explainability
@@ -28,17 +29,12 @@ builds:
     buildScript:  |
 
       VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-      ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
-      GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout)
-      
       echo "VERSION environment variable set to: ${VERSION}"
 
       mvn -B clean package --file pom.xml -P service-minimal -DskipTests -Dquarkus.profile=rhoai
-      echo "$(date '+%Y%m%d')-$(git rev-parse HEAD | cut -c -5)" > target/dockerhome/build-version
-      echo "$(git rev-parse HEAD)" > target/dockerhome/release
-      echo "$(git branch --show-current|sed 's/^release-//g')-$(git branch --show-current)_$(date '+%Y%m%d')-$(git rev-parse HEAD | cut -c -5)" > target/dockerhome/version
       zip -r trustyai-artifacts.zip explainability-service/target/
-      mvn deploy:deploy-file  -Durl=${AProxDeployUrl} -DrepositoryId=indy-mvn -Dfile=trustyai-artifacts.zip -Dpackaging=zip -DgroupId=${GROUP_ID} -DartifactId=explainability-service -Dversion=${VERSION}
+      mvn deploy:deploy-file  -Durl=${AProxDeployUrl} -DrepositoryId=indy-mvn -Dfile=trustyai-artifacts.zip -Dpackaging=zip -DgroupId=org.kie.trustyai -DartifactId=explainability-service -Dversion=${VERSION}
+
 
 
 outputPrefixes:
