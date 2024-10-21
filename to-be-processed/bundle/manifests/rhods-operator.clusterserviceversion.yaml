@@ -1148,20 +1148,20 @@ spec:
         serviceAccountName: redhat-ods-operator-controller-manager
       deployments:
       - label:
-          control-plane: controller-manager
-        name: redhat-ods-operator-controller-manager
+          name: rhods-operator
+        name: rhods-operator
         spec:
           replicas: 1
           selector:
             matchLabels:
-              control-plane: controller-manager
+              name: rhods-operator
           strategy: {}
           template:
             metadata:
               annotations:
                 kubectl.kubernetes.io/default-container: manager
               labels:
-                control-plane: controller-manager
+                name: rhods-operator
             spec:
               containers:
               - args:
@@ -1171,6 +1171,8 @@ spec:
                 command:
                 - /manager
                 env:
+                - name: OPERATOR_NAME
+                  value: rhods-operator
                 - name: OPERATOR_NAMESPACE
                   valueFrom:
                     fieldRef:
@@ -1187,7 +1189,7 @@ spec:
                     port: 8081
                   initialDelaySeconds: 15
                   periodSeconds: 20
-                name: manager
+                rhods-operator
                 ports:
                 - containerPort: 9443
                   name: webhook-server
