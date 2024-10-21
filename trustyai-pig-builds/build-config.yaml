@@ -36,7 +36,6 @@ builds:
       mvn deploy:deploy-file  -Durl=${AProxDeployUrl} -DrepositoryId=indy-mvn -Dfile=trustyai-artifacts.zip -Dpackaging=zip -DgroupId=org.kie.trustyai -DartifactId=explainability-service -Dversion=${VERSION}
 
 
-
 outputPrefixes:
   releaseFile: rhods
   releaseDir: rhods
