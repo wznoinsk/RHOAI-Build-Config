@@ -7,10 +7,11 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     build.appstudio.openshift.io/build-nudge-files: "catalog/catalog-patch.yaml"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "rhoai-2.16" && ( "bundle/**".pathChanged() || ".tekton/odh-operator-bundle-v2-16-push.yaml".pathChanged()
-      ) && !"bundle/bundle-patch.yaml".pathChanged() && !".github/workflows/**".pathChanged()
-  creationTimestamp: null
+    pipelinesascode.tekton.dev/on-cel-expression: '"non-existent-file.non-existent-ext".pathChanged()
+      && event == "push" && target_branch == "rhoai-2.16" && ( "bundle/**".pathChanged()
+      || ".tekton/odh-operator-bundle-v2-16-push.yaml".pathChanged() ) && !"bundle/bundle-patch.yaml".pathChanged()
+      && !".github/workflows/**".pathChanged()'
+  creationTimestamp:
   labels:
     appstudio.openshift.io/application: rhoai-v2-16
     appstudio.openshift.io/component: odh-operator-bundle-v2-16
@@ -184,17 +185,17 @@ spec:
 
             component_name=${pipelinerun_name/-on-*/}
             echo "component-name = $component_name"
-            
+
             KONFLUX_SERVER="https://konflux.apps.stone-prod-p02.hjvn.p1.openshiftapps.com"
             build_url="${KONFLUX_SERVER}/application-pipeline/workspaces/rhoai/applications/${application_name}/pipelineruns/${pipelinerun_name}/logs"
-            
+
             alertEmoji=":alert:"
             statusText="Failed"
             statusEmoji=":failed:"
             build_time="$(date +%Y-%m-%dT%H:%M:%S)"
             slack_message="${alertEmoji} <${build_url}|${pipelinerun_name}> - ${build_time}"
             slack_message=$(echo -e "${slack_message}\nStatus: ${statusText} ${statusEmoji}")
-            
+
             echo -n "${slack_message}" > "$(results.slack-message-failure-text.path)"
     - name: init
       params:
@@ -558,7 +559,7 @@ spec:
   - name: workspace
     volumeClaimTemplate:
       metadata:
-        creationTimestamp: null
+        creationTimestamp:
       spec:
         accessModes:
         - ReadWriteOnce
