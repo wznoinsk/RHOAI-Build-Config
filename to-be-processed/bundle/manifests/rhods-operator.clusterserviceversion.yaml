@@ -1189,7 +1189,7 @@ spec:
                     port: 8081
                   initialDelaySeconds: 15
                   periodSeconds: 20
-                rhods-operator
+                name: rhods-operator
                 ports:
                 - containerPort: 9443
                   name: webhook-server
