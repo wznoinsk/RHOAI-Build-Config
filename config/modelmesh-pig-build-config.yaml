@@ -41,6 +41,7 @@ builds:
       zip -r modelmesh_artifacts.zip target/
       mvn deploy:deploy-file  -Durl=${AProxDeployUrl} -DrepositoryId=indy-mvn -Dfile=modelmesh_artifacts.zip -Dpackaging=zip -DgroupId=${GROUP_ID} -DartifactId=${ARTIFACT_ID} -Dversion=${VERSION}
 
+
 outputPrefixes:
   releaseFile: rhods
   releaseDir: rhods
