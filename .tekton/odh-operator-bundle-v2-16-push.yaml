@@ -28,6 +28,8 @@ spec:
     value: quay.io/rhoai/odh-operator-bundle:{{target_branch}}
   - name: dockerfile
     value: bundle/Dockerfile
+  - name: build-args-file
+    value: bundle/build_args.map
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while reducing network traffic.
