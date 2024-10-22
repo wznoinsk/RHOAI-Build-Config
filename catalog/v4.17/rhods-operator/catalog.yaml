@@ -10132,7 +10132,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:d6950c2f4a49212de17ef61afca869f0e786661b1e77d1a1eae1c4c865980641
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:88a7c43b1050dec93cf43c28dcadac524cc207a20290c8341ad40cbf9c9f2a31
 name: rhods-operator.2.16.0
 package: rhods-operator
 properties:
@@ -10200,7 +10200,7 @@ properties:
       categories: AI/Machine Learning, Big Data
       certified: 'False'
       containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:d00ccb40746a7134fafb3a718a09a40b8a8b2486f73ae4deb7b9e15f561df9fc
-      createdAt: '2024-10-22T13:25:28Z'
+      createdAt: '2024-10-22T18:47:28Z'
       description: Operator for deployment and management of Red Hat OpenShift AI
       features.operators.openshift.io/disconnected: 'true'
       features.operators.openshift.io/fips-compliant: 'false'
@@ -10379,7 +10379,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:d6950c2f4a49212de17ef61afca869f0e786661b1e77d1a1eae1c4c865980641
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:88a7c43b1050dec93cf43c28dcadac524cc207a20290c8341ad40cbf9c9f2a31
   name: ''
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:a744c1b386fd5e4f94e43543e829df1bfdd1b564137917372a11da06872f4bcb
   name: proxyv2-rhel8-a744c1b386fd5e4f94e43543e829df1bfdd1b564137917372a11da06872f4bcb-annotation
