@@ -132,6 +132,19 @@ LABEL \
       odh-model-registry-operator.git.url="${ODH_MODEL_REGISTRY_OPERATOR_GIT_URL}" \
       odh-model-registry-operator.git.commit="${ODH_MODEL_REGISTRY_OPERATOR_GIT_COMMIT}"
 # Copy files to locations specified by labels.
+
+LABEL com.redhat.component="odh-operator-bundle" \
+      description="odh-operator-bundle" \
+      distribution-scope="public" \
+      name="managed-open-data-hub/odh-operator-bundle" \
+      vendor="Red Hat, Inc." \
+      summary="odh-operator-bundle" \
+      maintainer="['managed-open-data-hub@redhat.com']" \
+      io.k8s.display-name="odh-operator-bundle" \
+      io.k8s.description="odh-operator-bundle" \
+      com.redhat.delivery.operator.bundle="true" \
+      com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
+
 COPY bundle/manifests /manifests/
 COPY bundle/metadata /metadata/
 COPY bundle/tests/scorecard /tests/scorecard/
