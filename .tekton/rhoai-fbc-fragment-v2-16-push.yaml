@@ -6,9 +6,11 @@ metadata:
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "rhoai-2.16" && ( "catalog/**".pathChanged() || ".tekton/rhoai-fbc-fragment-v2-16-push.yaml".pathChanged() ) && !"catalog/catalog-patch.yaml".pathChanged() && !".github/workflows/**".pathChanged()
-  creationTimestamp: null
+    pipelinesascode.tekton.dev/on-cel-expression: '"non-existent-file.non-existent-ext".pathChanged()
+      && event == "push" && target_branch == "rhoai-2.16" && ( "catalog/**".pathChanged()
+      || ".tekton/rhoai-fbc-fragment-v2-16-push.yaml".pathChanged() ) && !"catalog/catalog-patch.yaml".pathChanged()
+      && !".github/workflows/**".pathChanged()'
+  creationTimestamp:
   labels:
     appstudio.openshift.io/application: rhoai-v2-16
     appstudio.openshift.io/component: rhoai-fbc-fragment-v2-16
@@ -200,17 +202,17 @@ spec:
 
             component_name=${pipelinerun_name/-on-*/}
             echo "component-name = $component_name"
-            
+
             KONFLUX_SERVER="https://konflux.apps.stone-prod-p02.hjvn.p1.openshiftapps.com"
             build_url="${KONFLUX_SERVER}/application-pipeline/workspaces/rhoai/applications/${application_name}/pipelineruns/${pipelinerun_name}/logs"
-            
+
             alertEmoji=":alert:"
             statusText="Failed"
             statusEmoji=":failed:"
             build_time="$(date +%Y-%m-%dT%H:%M:%S)"
             slack_message="${alertEmoji} <${build_url}|${pipelinerun_name}> - ${build_time}"
             slack_message=$(echo -e "${slack_message}\nStatus: ${statusText} ${statusEmoji}")
-            
+
             echo -n "${slack_message}" > "$(results.slack-message-failure-text.path)"
     - name: init
       params:
@@ -219,7 +221,7 @@ spec:
       - name: rebuild
         value: $(params.rebuild)
       - name: skip-checks
-        value: "false" #$(params.skip-checks)
+        value: "false"
       taskRef:
         params:
         - name: name
@@ -355,7 +357,7 @@ spec:
         value: $(tasks.build-image-index.results.IMAGE_URL)
       - name: ADDITIONAL_TAGS
         value:
-          - '{{target_branch}}-{{revision}}'
+        - '{{target_branch}}-{{revision}}'
       runAfter:
       - build-image-index
       taskRef:
@@ -487,18 +489,17 @@ spec:
 
             component_name=${pipelinerun_name/-on-*/}
             echo "component-name = $component_name"
-            
+
             KONFLUX_SERVER="https://konflux.apps.stone-prod-p02.hjvn.p1.openshiftapps.com"
             build_url="${KONFLUX_SERVER}/application-pipeline/workspaces/rhoai/applications/${application_name}/pipelineruns/${pipelinerun_name}/logs"
-            
+
             alertEmoji=":solid-success:"
             build_time="$(date +%Y-%m-%dT%H:%M:%S)"
             slack_message="${alertEmoji} A new FBC-fragment image is available for ${target_branch}: ${build_time}"
             slack_message=$(echo -e "${slack_message}\nImage: $(params.image-url)@$(params.image-digest)")
             slack_message=$(echo -e "${slack_message}\n<${build_url}|${pipelinerun_name}>")
-            
-            echo -n "${slack_message}" > "$(results.slack-message-sucess-text.path)"
 
+            echo -n "${slack_message}" > "$(results.slack-message-sucess-text.path)"
       runAfter:
       - build-image-index
     workspaces:
@@ -512,7 +513,7 @@ spec:
   - name: workspace
     volumeClaimTemplate:
       metadata:
-        creationTimestamp: null
+        creationTimestamp:
       spec:
         accessModes:
         - ReadWriteOnce
