@@ -77,7 +77,7 @@ jobs:
           PUSH_PIPELINE_PATH=${BRANCH}/.tekton/${OPERATOR_BUNDLE_COMPONENT_NAME}-push.yaml
           
           #Invoke Bundle processor to patch the catalog
-          python3 utils/utils/bundle-processor/bundle-processor.py -op bundle-patch -b ${BUILD_CONFIG_PATH} -c ${BUNDLE_CSV_PATH} -p ${PATCH_YAML_PATH} -sn ${SNAPSHOT_JSON_PATH} -o ${OUTPUT_FILE_PATH} -v ${BRANCH} -a ${ANNOTATION_YAML_PATH} --push-pipeline-yaml-path ${PUSH_PIPELINE_PATH} --push-pipeline-operation disable
+          python3 utils/utils/bundle-processor/bundle-processor.py -op bundle-patch -b ${BUILD_CONFIG_PATH} -c ${BUNDLE_CSV_PATH} -p ${PATCH_YAML_PATH} -sn ${SNAPSHOT_JSON_PATH} -o ${OUTPUT_FILE_PATH} -v ${BRANCH} -a ${ANNOTATION_YAML_PATH} --push-pipeline-yaml-path ${PUSH_PIPELINE_PATH} --push-pipeline-operation disable --build-type nightly
           cp -r ${RAW_INPUTS_DIR}/* ${BRANCH}/bundle
           
           # Update the schedule file to trigger the nightly build 
