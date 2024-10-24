@@ -128,7 +128,7 @@ jobs:
               
               #Generate the single bundle catalog
               DOCKER_CONFIG=${HOME}/.docker/ opm alpha render-template semver ${CSV_META_OPM_FLAG} -o yaml utils/utils/fbc-processor/fbc-semver-template.yaml > ${SINGLE_BUNDLE_PATH}
-              PUSH_PIPELINE_PATH=${BRANCH}/.tekton/odh-operator-bundle-${COMPONENT_SUFFIX}-push.yaml
+              PUSH_PIPELINE_PATH=${BRANCH}/.tekton/rhoai-fbc-fragment-${COMPONENT_SUFFIX}-push.yaml
           
               #Invoke FBC processor to patch the catalog
               python3 utils/utils/fbc-processor/fbc-processor.py -op catalog-patch -b ${BUILD_CONFIG_PATH} -c ${CATALOG_YAML_PATH} -p ${PATCH_YAML_PATH} -s ${SINGLE_BUNDLE_PATH} -o ${OUTPUT_CATALOG_PATH} --push-pipeline-yaml-path ${PUSH_PIPELINE_PATH} --push-pipeline-operation disable
