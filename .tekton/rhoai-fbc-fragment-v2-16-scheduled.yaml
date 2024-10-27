@@ -505,7 +505,7 @@ spec:
             KONFLUX_SERVER="https://konflux.apps.stone-prod-p02.hjvn.p1.openshiftapps.com"
             build_url="${KONFLUX_SERVER}/application-pipeline/workspaces/rhoai/applications/${application_name}/pipelineruns/${pipelinerun_name}/logs"
             
-            alertEmoji=":solid-success:"
+            alertEmoji=":nightly:"
             build_time="$(date +%Y-%m-%dT%H:%M:%S)"
             slack_message="${alertEmoji} A new FBC-fragment image is available for ${target_branch}: ${build_time}"
             slack_message=$(echo -e "${slack_message}\nImage: $(params.image-url)@$(params.image-digest)")
