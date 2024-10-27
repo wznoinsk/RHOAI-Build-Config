@@ -508,7 +508,7 @@ spec:
 
             alertEmoji=":solid-success:"
             build_time="$(date +%Y-%m-%dT%H:%M:%S)"
-            slack_message="${alertEmoji} A new FBC-fragment image is available for ${target_branch}: ${build_time}"
+            slack_message="${alertEmoji} A new CI build is available for ${target_branch}: ${build_time}"
             slack_message=$(echo -e "${slack_message}\nImage: $(params.image-url)@$(params.image-digest)")
             slack_message=$(echo -e "${slack_message}\n<${build_url}|${pipelinerun_name}>")
 
