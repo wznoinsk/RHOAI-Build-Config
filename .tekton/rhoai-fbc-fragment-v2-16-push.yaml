@@ -510,7 +510,8 @@ spec:
             slack_message="${alertEmoji} A new CI build is available for ${target_branch}: ${build_time}"
             slack_message=$(echo -e "${slack_message}\nImage: $(params.image-url)@$(params.image-digest)")
             slack_message=$(echo -e "${slack_message}\n<${build_url}|${pipelinerun_name}>")
-
+            slack_message=$(echo -e "${slack_message}\nCC - <@Deepak Chourasia>")
+            
             echo -n "${slack_message}" > "$(results.slack-message-sucess-text.path)"
       runAfter:
       - build-image-index
