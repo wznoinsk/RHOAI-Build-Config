@@ -136,3 +136,15 @@ LABEL \
       odh-model-registry-operator.git.commit="${ODH_MODEL_REGISTRY_OPERATOR_GIT_COMMIT}" \
       odh-operator-bundle.git.url="${ODH_OPERATOR_BUNDLE_GIT_URL}" \
       odh-operator-bundle.git.commit="${ODH_OPERATOR_BUNDLE_GIT_COMMIT}"
+
+LABEL com.redhat.component="rhoai-fbc-fragment" \
+      description="rhoai-fbc-fragment" \
+      distribution-scope="public" \
+      name="managed-open-data-hub/rhoai-fbc-fragment" \
+      vendor="Red Hat, Inc." \
+      summary="rhoai-fbc-fragment" \
+      maintainer="['managed-open-data-hub@redhat.com']" \
+      io.k8s.display-name="rhoai-fbc-fragment" \
+      io.k8s.description="rhoai-fbc-fragment" \
+      com.redhat.delivery.operator.bundle="true" \
+      com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
