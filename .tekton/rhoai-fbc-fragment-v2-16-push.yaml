@@ -423,7 +423,7 @@ spec:
       when:
       - input: $(params.skip-checks)
         operator: in
-        values:U04KZMFDZ2T
+        values:
         - "false"
       workspaces:
       - name: source
