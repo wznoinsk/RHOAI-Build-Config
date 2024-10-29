@@ -102,8 +102,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:0b4e7a975cf27b88a0cc867b1ded967f9a07fa866def195de255542a50735608"
-    createdAt: "2024-10-29T16:55:26Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:427aaef9fb0aa10e1e8d19b8c8adcd4df1aa93dddaa7bf3404a61da57c7dbacf"
+    createdAt: "2024-10-29T17:24:24Z"
     operatorframework.io/initialization-resource: |-
       {
         "apiVersion": "datasciencecluster.opendatahub.io/v1",
@@ -1788,7 +1788,7 @@ spec:
                 - name: RELATED_IMAGE_ODH_MODELMESH_CONTROLLER_IMAGE
                   value: "registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:ae61877913018cb45f13d77b41975540ad3523046e93efefa6e7280fca52e02c"
                 - name: RELATED_IMAGE_ODH_MODEL_CONTROLLER_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:57340ae71161bc90e7fc9ff7a8789bd65482cd776cff9f4ca6632557e6eb08c7"
+                  value: "registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:75cf2788345657b964fdbb498d96ca95086bd8e132eeedab74c954cc4a5213d7"
                 - name: RELATED_IMAGE_ODH_MM_REST_PROXY_IMAGE
                   value: "registry.redhat.io/rhoai/odh-mm-rest-proxy-rhel8@sha256:927cdaa6bfce639ae6888b7cd2999398e35d8d14006fe6ec798002261cebbbb5"
                 - name: RELATED_IMAGE_ODH_MODELMESH_IMAGE
@@ -1814,9 +1814,9 @@ spec:
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_SCHEDULEDWORKFLOW_V2_IMAGE
                   value: "registry.redhat.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:835f3f7d9b6847d1fc12dcaa327d750880458b681d07d8bfa6815419ea9e0cf0"
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_DRIVER_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:f5a3e83da0309644fcdc94b52b172c0bd0486bdbee2d6f364051827f27e3c29a"
+                  value: "registry.redhat.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:b04261ca61368340067d65e9a002aa2693bfe198b84294f2de9eddb87b650106"
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_LAUNCHER_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-ml-pipelines-launcher-rhel8@sha256:c3f7d6e05fa88b3e2dc96ca7bc52bc504e642df2f0c5d0344c591c4182c6f79b"
+                  value: "registry.redhat.io/rhoai/odh-ml-pipelines-launcher-rhel8@sha256:3a960bdbe98459e4a2bb07092dd8d094223484f545dd8bb4e302947ba1279491"
                 - name: RELATED_IMAGE_ODH_DATA_SCIENCE_PIPELINES_ARGO_ARGOEXEC_IMAGE
                   value: "registry.redhat.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:0ae3950c5d38c8d4727f9b3dedf24b0138fbd6cd3290b6a179344f27735a13ba"
                 - name: RELATED_IMAGE_ODH_DATA_SCIENCE_PIPELINES_ARGO_WORKFLOWCONTROLLER_IMAGE
@@ -1829,7 +1829,7 @@ spec:
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:7df12bb5ad0f0dfb7a29dd79d30d1bbd0949ddddde9c9c2a0acc5f091541cbbb"
                 command:
                 - /manager
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:0b4e7a975cf27b88a0cc867b1ded967f9a07fa866def195de255542a50735608"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:427aaef9fb0aa10e1e8d19b8c8adcd4df1aa93dddaa7bf3404a61da57c7dbacf"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1961,8 +1961,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-0b4e7a975cf27b88a0cc867b1ded967f9a07fa866def195de255542a50735608-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:0b4e7a975cf27b88a0cc867b1ded967f9a07fa866def195de255542a50735608"
+  - name: odh-rhel8-operator-427aaef9fb0aa10e1e8d19b8c8adcd4df1aa93dddaa7bf3404a61da57c7dbacf-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:427aaef9fb0aa10e1e8d19b8c8adcd4df1aa93dddaa7bf3404a61da57c7dbacf"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
@@ -2006,7 +2006,7 @@ spec:
   - name: odh_modelmesh_controller_image
     image: "registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:ae61877913018cb45f13d77b41975540ad3523046e93efefa6e7280fca52e02c"
   - name: odh_model_controller_image
-    image: "registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:57340ae71161bc90e7fc9ff7a8789bd65482cd776cff9f4ca6632557e6eb08c7"
+    image: "registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:75cf2788345657b964fdbb498d96ca95086bd8e132eeedab74c954cc4a5213d7"
   - name: odh_mm_rest_proxy_image
     image: "registry.redhat.io/rhoai/odh-mm-rest-proxy-rhel8@sha256:927cdaa6bfce639ae6888b7cd2999398e35d8d14006fe6ec798002261cebbbb5"
   - name: odh_modelmesh_image
@@ -2032,9 +2032,9 @@ spec:
   - name: odh_ml_pipelines_scheduledworkflow_v2_image
     image: "registry.redhat.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:835f3f7d9b6847d1fc12dcaa327d750880458b681d07d8bfa6815419ea9e0cf0"
   - name: odh_ml_pipelines_driver_image
-    image: "registry.redhat.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:f5a3e83da0309644fcdc94b52b172c0bd0486bdbee2d6f364051827f27e3c29a"
+    image: "registry.redhat.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:b04261ca61368340067d65e9a002aa2693bfe198b84294f2de9eddb87b650106"
   - name: odh_ml_pipelines_launcher_image
-    image: "registry.redhat.io/rhoai/odh-ml-pipelines-launcher-rhel8@sha256:c3f7d6e05fa88b3e2dc96ca7bc52bc504e642df2f0c5d0344c591c4182c6f79b"
+    image: "registry.redhat.io/rhoai/odh-ml-pipelines-launcher-rhel8@sha256:3a960bdbe98459e4a2bb07092dd8d094223484f545dd8bb4e302947ba1279491"
   - name: odh_data_science_pipelines_argo_argoexec_image
     image: "registry.redhat.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:0ae3950c5d38c8d4727f9b3dedf24b0138fbd6cd3290b6a179344f27735a13ba"
   - name: odh_data_science_pipelines_argo_workflowcontroller_image
