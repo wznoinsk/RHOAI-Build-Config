@@ -1,1 +1,1 @@
-quay.io/rhoai/odh-operator-bundle@sha256:c49152abd6a328f464a16d07d35f59e02cf421ae563f15d1d020ce41b41b8c27
+quay.io/rhoai/odh-operator-bundle@sha256:4637ff3573c81296ec5643a286144ea465d3c03a6d7bdd8d86f815908dcf3e63
