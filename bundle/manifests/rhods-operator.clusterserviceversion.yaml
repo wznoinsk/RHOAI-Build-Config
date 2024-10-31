@@ -102,8 +102,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:57563eddd3ef1d2b6ff6190f2c5fab926281118ea2a4e30de01fbd6a53a5968b"
-    createdAt: "2024-10-31T07:45:08Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:b849fb5a75280aa9482329f36b2f9773b454bae3826afd171362cbefa9d8a3e1"
+    createdAt: "2024-10-31T12:07:52Z"
     operatorframework.io/initialization-resource: |-
       {
         "apiVersion": "datasciencecluster.opendatahub.io/v1",
@@ -1829,7 +1829,7 @@ spec:
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:7df12bb5ad0f0dfb7a29dd79d30d1bbd0949ddddde9c9c2a0acc5f091541cbbb"
                 command:
                 - /manager
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:57563eddd3ef1d2b6ff6190f2c5fab926281118ea2a4e30de01fbd6a53a5968b"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:b849fb5a75280aa9482329f36b2f9773b454bae3826afd171362cbefa9d8a3e1"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1961,8 +1961,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-57563eddd3ef1d2b6ff6190f2c5fab926281118ea2a4e30de01fbd6a53a5968b-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:57563eddd3ef1d2b6ff6190f2c5fab926281118ea2a4e30de01fbd6a53a5968b"
+  - name: odh-rhel8-operator-b849fb5a75280aa9482329f36b2f9773b454bae3826afd171362cbefa9d8a3e1-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:b849fb5a75280aa9482329f36b2f9773b454bae3826afd171362cbefa9d8a3e1"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
