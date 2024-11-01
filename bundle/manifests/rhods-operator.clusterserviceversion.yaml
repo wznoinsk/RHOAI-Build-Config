@@ -102,8 +102,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:17304d42f47811530c2e43415118842c3cd98f749aae05953ad41b5abdddf68e"
-    createdAt: "2024-11-01T00:29:19Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:34fd45d5a82bf8f5de966e327a5ad3a8608ff331a19e1a774a8f108aa8d5f522"
+    createdAt: "2024-11-01T01:46:26Z"
     operatorframework.io/initialization-resource: |-
       {
         "apiVersion": "datasciencecluster.opendatahub.io/v1",
@@ -1824,12 +1824,12 @@ spec:
                 - name: RELATED_IMAGE_ODH_MODEL_REGISTRY_IMAGE
                   value: "registry.redhat.io/rhoai/odh-model-registry-rhel8@sha256:a540a43f5c28d121d26044e8d1fe333aa61da05042cfec43211989b0267cda17"
                 - name: RELATED_IMAGE_ODH_MODEL_REGISTRY_OPERATOR_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:02e086ee06fee8f4d141849264b23169421fa674d9aaa82057fcae23bd5241ec"
+                  value: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:304777a3bdc5af909477f9cb45eb31a7c53d5673760af7a18eb7934c3fcf842f"
                 - name: RELATED_IMAGE_ODH_TRAINING_OPERATOR_IMAGE
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:7df12bb5ad0f0dfb7a29dd79d30d1bbd0949ddddde9c9c2a0acc5f091541cbbb"
                 command:
                 - /manager
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:17304d42f47811530c2e43415118842c3cd98f749aae05953ad41b5abdddf68e"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:34fd45d5a82bf8f5de966e327a5ad3a8608ff331a19e1a774a8f108aa8d5f522"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1961,8 +1961,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-17304d42f47811530c2e43415118842c3cd98f749aae05953ad41b5abdddf68e-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:17304d42f47811530c2e43415118842c3cd98f749aae05953ad41b5abdddf68e"
+  - name: odh-rhel8-operator-34fd45d5a82bf8f5de966e327a5ad3a8608ff331a19e1a774a8f108aa8d5f522-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:34fd45d5a82bf8f5de966e327a5ad3a8608ff331a19e1a774a8f108aa8d5f522"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
@@ -2042,6 +2042,6 @@ spec:
   - name: odh_model_registry_image
     image: "registry.redhat.io/rhoai/odh-model-registry-rhel8@sha256:a540a43f5c28d121d26044e8d1fe333aa61da05042cfec43211989b0267cda17"
   - name: odh_model_registry_operator_image
-    image: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:02e086ee06fee8f4d141849264b23169421fa674d9aaa82057fcae23bd5241ec"
+    image: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:304777a3bdc5af909477f9cb45eb31a7c53d5673760af7a18eb7934c3fcf842f"
   - name: odh_training_operator_image
     image: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:7df12bb5ad0f0dfb7a29dd79d30d1bbd0949ddddde9c9c2a0acc5f091541cbbb"
