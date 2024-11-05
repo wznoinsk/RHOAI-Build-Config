@@ -7,17 +7,17 @@ patch:
       entries:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.14.0
-        skipRange: '>=2.14.0 <2.16.0'
+        skipRange: '>=2.8.0 <2.16.0'
     - name: alpha
       entries:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.14.0
-        skipRange: '>=2.14.0 <2.16.0'
+        skipRange: '>=2.8.0 <2.16.0'
     - name: stable
       entries:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.13.0
-        skipRange: '>=2.13.0 <2.16.0'
+        skipRange: '>=2.8.0 <2.16.0'
     - name: stable-2.16
       package: rhods-operator
       schema: olm.channel
@@ -103,7 +103,7 @@ patch:
         skipRange: '>=2.8.0 <2.8.3'
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.13.0
-        skipRange: '>=2.13.0 <2.16.0'
+        skipRange: '>=2.8.0 <2.16.0'
     - name: eus-2.16
       package: rhods-operator
       schema: olm.channel
