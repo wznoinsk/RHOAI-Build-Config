@@ -1,5 +1,5 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=9960fb3448a8a075df587193e2b6838722e72e25
+ODH_RHEL8_OPERATOR_GIT_COMMIT=d4bab2994146aefc6bb4c775907fe81fb23a7350
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=50395951eeb80f04eca50f6efeb6322c840e4484
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
@@ -48,5 +48,5 @@ ODH_DATA_SCIENCE_PIPELINES_ARGO_ARGOEXEC_GIT_URL=https://github.com/red-hat-data
 ODH_DATA_SCIENCE_PIPELINES_ARGO_ARGOEXEC_GIT_COMMIT=007da71424211c6d85c5e54e8e31dbc77e44cbe1
 ODH_DATA_SCIENCE_PIPELINES_ARGO_WORKFLOWCONTROLLER_GIT_URL=https://github.com/red-hat-data-services/argo-workflows
 ODH_DATA_SCIENCE_PIPELINES_ARGO_WORKFLOWCONTROLLER_GIT_COMMIT=a72bfaeea80529fcf08f2a11e4bb4aa496e933b4
-ODH_MODEL_REGISTRY_GIT_URL=https://github.com/red-hat-data-services/model-registry
+ODH_MODEL_REGISTRY_GIT_URL=https://github.com/red-hat-data-services/model-registry.git
 ODH_MODEL_REGISTRY_GIT_COMMIT=ae4bfcbb7faddbe03530feb4368f045bb9f3c8ce
