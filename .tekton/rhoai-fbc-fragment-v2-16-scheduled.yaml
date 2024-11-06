@@ -115,6 +115,7 @@ spec:
         operator: in
         values:
         - "Completed"
+        - "Succeeded"
     - name: custom-task
       params:
       - name: pipelinerun-name
