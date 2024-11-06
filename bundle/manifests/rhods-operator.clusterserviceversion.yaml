@@ -57,7 +57,7 @@ metadata:
                 "managementState": "Removed"
               },
               "trustyai": {
-                "managementState": "Removed"
+                "managementState": "Managed"
               },
               "workbenches": {
                 "managementState": "Managed"
@@ -103,7 +103,7 @@ metadata:
     categories: AI/Machine Learning, Big Data
     certified: "False"
     containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:cc6ae105d32e781762c3b9b76d8e558af47c728cf7f2649b697c134ed3c0e0d3"
-    createdAt: "2024-11-06T06:34:37Z"
+    createdAt: "2024-11-06T08:08:59Z"
     operatorframework.io/initialization-resource: |-
       {
         "apiVersion": "datasciencecluster.opendatahub.io/v1",
@@ -158,7 +158,7 @@ metadata:
               "managementState": "Removed"
             },
             "trustyai": {
-              "managementState": "Removed"
+              "managementState": "Managed"
             },
             "workbenches": {
               "managementState": "Managed"
@@ -170,6 +170,11 @@ metadata:
     operators.operatorframework.io/internal-objects: '[dscinitialization.opendatahub.io]'
     operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
     repository: https://github.com/red-hat-data-services/rhods-operator
+    description: Operator for deployment and management of Red Hat OpenShift AI
+    support: Red Hat OpenShift AI
+    operators.openshift.io/valid-subscription: '["OpenShift AI"]'
+    operatorframework.io/suggested-namespace: redhat-ods-operator
+    operators.openshift.io/infrastructure-features: '["disconnected"]'
     anaconda-cronjob-image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
     odh-etcd-image: registry.redhat.io/rhel7/etcd@sha256:d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626
     ose-oauth-proxy-image: registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4bef31eb993feb6f1096b51b4876c65a6fb1f4401fee97fa4f4542b6b7c9bc46
@@ -186,18 +191,13 @@ metadata:
     odh-ml-pipeline-mariadb-image: registry.redhat.io/rhel8/mariadb-103@sha256:3d30992e60774f887c4e7959c81b0c41b0d82d042250b3b56f05ab67fd4cdee1
     ose-oauth-proxy-dsp-image: registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4f8d66597feeb32bb18699326029f9a71a5aca4a57679d636b876377c2e95695
     odh-ml-pipeline-envoy-proxy-image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
-    features.operators.openshift.io/disconnected: "true"
-    features.operators.openshift.io/fips-compliant: "false"
-    features.operators.openshift.io/proxy-aware: "false"
-    features.operators.openshift.io/tls-profiles: "false"
-    features.operators.openshift.io/token-auth-aws: "false"
-    features.operators.openshift.io/token-auth-azure: "false"
-    features.operators.openshift.io/token-auth-gcp: "false"
-    description: Operator for deployment and management of Red Hat OpenShift AI
-    support: Red Hat OpenShift AI
-    operators.openshift.io/valid-subscription: '["OpenShift AI"]'
-    operatorframework.io/suggested-namespace: redhat-ods-operator
-    operators.openshift.io/infrastructure-features: '["disconnected"]'
+    features.operators.openshift.io/disconnected: 'true'
+    features.operators.openshift.io/fips-compliant: 'false'
+    features.operators.openshift.io/proxy-aware: 'false'
+    features.operators.openshift.io/tls-profiles: 'false'
+    features.operators.openshift.io/token-auth-aws: 'false'
+    features.operators.openshift.io/token-auth-azure: 'false'
+    features.operators.openshift.io/token-auth-gcp: 'false'
   name: rhods-operator.2.16.0
   namespace: placeholder
 spec:
@@ -1908,7 +1908,7 @@ spec:
   - Data Science
   links:
   - name: Red Hat OpenShift AI
-    url: https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.16.0
+    url: https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/${DOC_VERSION}
   maturity: stable
   minKubeVersion: 1.25.0
   provider:
