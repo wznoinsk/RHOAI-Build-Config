@@ -10132,7 +10132,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:f47212695475dc23f972e7557cbf3e29a939d5a7b2c19441a56ffce8d53cfdcf
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:750391405e0af00ad2858a16fc267912c44aa729563e5777c1b57c84bd3ed6a4
 name: rhods-operator.2.16.0
 package: rhods-operator
 properties:
@@ -10200,8 +10200,11 @@ properties:
       categories: AI/Machine Learning, Big Data
       certified: 'False'
       containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:7f38c6bb46a26449e164a9685d1204859e6b24ecc88ed45d2e7d44c7bb561b13
-      createdAt: '2024-11-07T10:10:05Z'
+      createdAt: '2024-11-07T10:25:30Z'
       description: Operator for deployment and management of Red Hat OpenShift AI
+      features.operators.openshift.io/cnf: 'false'
+      features.operators.openshift.io/cni: 'false'
+      features.operators.openshift.io/csi: 'false'
       features.operators.openshift.io/disconnected: 'true'
       features.operators.openshift.io/fips-compliant: 'false'
       features.operators.openshift.io/proxy-aware: 'false'
@@ -10232,15 +10235,14 @@ properties:
         : \"Managed\"\n      },\n      \"modelregistry\": {\n        \"managementState\"\
         : \"Removed\",\n        \"registriesNamespace\": \"rhoai-model-registries\"\
         \n      },\n      \"ray\": {\n        \"managementState\": \"Managed\"\n \
-        \     },\n      \"trainingoperator\": {\n        \"managementState\": \"Removed\"\
-        \n      },\n      \"trustyai\": {\n        \"managementState\": \"Managed\"\
-        \n      },\n      \"workbenches\": {\n        \"managementState\": \"Managed\"\
-        \n      }\n    }\n  }\n}"
+        \     },\n      \"workbenches\": {\n        \"managementState\": \"Managed\"\
+        \n      },\n      \"trainingoperator\": {\n        \"managementState\": \"\
+        Removed\"\n      },\n      \"trustyai\": {\n        \"managementState\": \"\
+        Managed\"\n      }\n    }\n  }\n}"
       operatorframework.io/suggested-namespace: redhat-ods-operator
       operators.openshift.io/infrastructure-features: '["disconnected"]'
       operators.openshift.io/valid-subscription: '["OpenShift AI"]'
-      operators.operatorframework.io/builder: operator-sdk-v1.24.1
-      operators.operatorframework.io/internal-objects: '[dscinitialization.opendatahub.io]'
+      operators.operatorframework.io/builder: operator-sdk-v1.31.0
       operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
       ose-cli-image: registry.redhat.io/openshift4/ose-cli@sha256:25fef269ac6e7491cb8340119a9b473acbeb53bc6970ad029fdaae59c3d0ca61
       ose-oauth-proxy-dashboard-image: registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4f8d66597feeb32bb18699326029f9a71a5aca4a57679d636b876377c2e95695
@@ -10337,7 +10339,7 @@ properties:
       \ to use other runtimes for serving\n* Model Monitoring\n* Distributed workloads\
       \ (KubeRay, CodeFlare, Kueue, Training Operator)\n* XAI explanations of predictive\
       \ models (TrustyAI)\n* Index and manage models, versions, and artifacts metadata\
-      \ (Model Registry)\n"
+      \ (Model Registry)"
     displayName: Red Hat OpenShift AI
     installModes:
     - supported: false
@@ -10352,13 +10354,19 @@ properties:
     - Operator
     - OpenShift
     - Open Data Hub
+    - ODH
     - opendatahub
     - Red Hat OpenShift AI
+    - RHOAI
+    - OAI
+    - ML
+    - Machine Learning
+    - Data Science
     - notebooks
     - serving
     - training
     - kserve
-    - distributed workloads
+    - distributed-workloads
     - trustyai
     - modelregistry
     - RHOAI
@@ -10370,7 +10378,7 @@ properties:
     - Data Science
     links:
     - name: Red Hat OpenShift AI
-      url: https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/${DOC_VERSION}
+      url: https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.16.0
     maintainers:
     - email: managed-open-data-hub@redhat.com
       name: Red Hat Openshift AI
@@ -10379,7 +10387,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:f47212695475dc23f972e7557cbf3e29a939d5a7b2c19441a56ffce8d53cfdcf
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:750391405e0af00ad2858a16fc267912c44aa729563e5777c1b57c84bd3ed6a4
   name: ''
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
