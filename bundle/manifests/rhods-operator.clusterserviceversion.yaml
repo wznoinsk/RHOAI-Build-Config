@@ -103,7 +103,7 @@ metadata:
     categories: AI/Machine Learning, Big Data
     certified: "False"
     containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:7f38c6bb46a26449e164a9685d1204859e6b24ecc88ed45d2e7d44c7bb561b13"
-    createdAt: "2024-11-07T10:28:19Z"
+    createdAt: "2024-11-07T11:47:40Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
@@ -1324,7 +1324,7 @@ spec:
   - Data Science
   links:
   - name: Red Hat OpenShift AI
-    url: https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.16.0
+    url: https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.16
   maintainers:
   - email: managed-open-data-hub@redhat.com
     name: Red Hat Openshift AI
