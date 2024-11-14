@@ -102,8 +102,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:82fe15f5ceb36b76ae0ff358ab8b78003cfb9e08c73cfc554591b7b8d3aa01a0"
-    createdAt: "2024-11-14T12:04:41Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:1970ecac30f06bc34bb7e428f4be4886def84530eea4a07c6463e161a5b251dd"
+    createdAt: "2024-11-14T12:08:31Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
@@ -1224,7 +1224,7 @@ spec:
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_PERSISTENCEAGENT_V2_IMAGE
                   value: "registry.redhat.io/rhoai/odh-ml-pipelines-persistenceagent-v2-rhel8@sha256:9d0a8681a2026b67550ca8155e4e91b7644635ee347fde76954960645a41878e"
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_SCHEDULEDWORKFLOW_V2_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:ee6d4fae7810b8f0326564a88ceb120adc80c0ea98f16405c1d43eedb9d791f7"
+                  value: "registry.redhat.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:e97401fef62d1c7b63bb53c176c5c12565a971557ec01fd0defbcba8929515c7"
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_DRIVER_IMAGE
                   value: "registry.redhat.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:fee95e411f8efc722512865c81c02c8661e30e490d31c7d91963232c216b4a06"
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_LAUNCHER_IMAGE
@@ -1239,7 +1239,7 @@ spec:
                   value: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:176d5996f88cca2e3413c07e259e2448ab5407284f192279dfc9e8389d459b7c"
                 - name: RELATED_IMAGE_ODH_TRAINING_OPERATOR_IMAGE
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:58c72f4e9d6a2d5cb0ea9acb235b4661f3ea1f935b42ed3074f8c0fbd4a957c2"
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:82fe15f5ceb36b76ae0ff358ab8b78003cfb9e08c73cfc554591b7b8d3aa01a0"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:1970ecac30f06bc34bb7e428f4be4886def84530eea4a07c6463e161a5b251dd"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1377,8 +1377,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-82fe15f5ceb36b76ae0ff358ab8b78003cfb9e08c73cfc554591b7b8d3aa01a0-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:82fe15f5ceb36b76ae0ff358ab8b78003cfb9e08c73cfc554591b7b8d3aa01a0"
+  - name: odh-rhel8-operator-1970ecac30f06bc34bb7e428f4be4886def84530eea4a07c6463e161a5b251dd-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:1970ecac30f06bc34bb7e428f4be4886def84530eea4a07c6463e161a5b251dd"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
@@ -1446,7 +1446,7 @@ spec:
   - name: odh_ml_pipelines_persistenceagent_v2_image
     image: "registry.redhat.io/rhoai/odh-ml-pipelines-persistenceagent-v2-rhel8@sha256:9d0a8681a2026b67550ca8155e4e91b7644635ee347fde76954960645a41878e"
   - name: odh_ml_pipelines_scheduledworkflow_v2_image
-    image: "registry.redhat.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:ee6d4fae7810b8f0326564a88ceb120adc80c0ea98f16405c1d43eedb9d791f7"
+    image: "registry.redhat.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:e97401fef62d1c7b63bb53c176c5c12565a971557ec01fd0defbcba8929515c7"
   - name: odh_ml_pipelines_driver_image
     image: "registry.redhat.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:fee95e411f8efc722512865c81c02c8661e30e490d31c7d91963232c216b4a06"
   - name: odh_ml_pipelines_launcher_image
