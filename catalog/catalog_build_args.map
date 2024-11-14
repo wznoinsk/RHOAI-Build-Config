@@ -1,4 +1,4 @@
-ODH_OPERATOR_BUNDLE_GIT_COMMIT=04ffc6d9e43e8b872a190d79b64df6bc3958e876
+ODH_OPERATOR_BUNDLE_GIT_COMMIT=ebc5d97717e14edf2d341297eacc7d9d4201e047
 ODH_OPERATOR_BUNDLE_GIT_URL=https://github.com/red-hat-data-services/RHOAI-Build-Config
 ODH_CODEFLARE_OPERATOR_GIT_COMMIT=98aabfbfde383e09a6abb7adbc687efebe1966a6
 ODH_CODEFLARE_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/codeflare-operator.git
