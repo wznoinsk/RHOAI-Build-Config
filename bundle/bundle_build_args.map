@@ -1,13 +1,13 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=a6535393584b7cd462b8d3dee7122ce4fe4f9d2f
+ODH_RHEL8_OPERATOR_GIT_COMMIT=d0939195fed8bed502b16c04af5e7bdcffd071b2
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=e6bbc1c27fcb8723794be534c7c6d4357bee200b
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
 ODH_NOTEBOOK_CONTROLLER_GIT_COMMIT=e6bbc1c27fcb8723794be534c7c6d4357bee200b
 ODH_DATA_SCIENCE_PIPELINES_OPERATOR_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines-operator
 ODH_DATA_SCIENCE_PIPELINES_OPERATOR_CONTROLLER_GIT_COMMIT=96c923bc41a20ac761bdcc19d68f1046473ee6e1
-ODH_CODEFLARE_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/codeflare-operator.git
-ODH_CODEFLARE_OPERATOR_GIT_COMMIT=98aabfbfde383e09a6abb7adbc687efebe1966a6
+ODH_CODEFLARE_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/codeflare-operator
+ODH_CODEFLARE_OPERATOR_GIT_COMMIT=a49d3a5e7a77e7a2d8a4de806d4984a9f026ce5b
 ODH_KUBERAY_OPERATOR_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kuberay.git
 ODH_KUBERAY_OPERATOR_CONTROLLER_GIT_COMMIT=d6058d975e4c0ad5ba2f1147678310abb23d37f2
 ODH_KUEUE_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kueue

@@ -102,8 +102,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:c06cf726a8a6dd50e68741cbeaabcc1004ef72bc9b3f6a07d99db40daf371f9f"
-    createdAt: "2024-11-15T14:12:44Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:34b684e2e461eef9ddc2c58112cb466e4f8c8a879f8370c3b7f7f6133e8d47f2"
+    createdAt: "2024-11-15T14:19:23Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
@@ -1212,7 +1212,7 @@ spec:
                 - name: RELATED_IMAGE_ODH_TRUSTYAI_SERVICE_OPERATOR_IMAGE
                   value: "registry.redhat.io/rhoai/odh-trustyai-service-operator-rhel8@sha256:99e1ab97d8ef4ab5db2c2602d20dee6ee788e8d3b20b3e100b30d0b654bf3915"
                 - name: RELATED_IMAGE_ODH_CODEFLARE_OPERATOR_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-codeflare-operator-rhel8@sha256:4ef302bfd32dab75a9d1034768fdea0c05d7ecc5f7ed8128165a4b87efb13839"
+                  value: "registry.redhat.io/rhoai/odh-codeflare-operator-rhel8@sha256:a675408542241e72156c29a10d88e93586b66219f50412bafd2b0137c08155c1"
                 - name: RELATED_IMAGE_ODH_KUBERAY_OPERATOR_CONTROLLER_IMAGE
                   value: "registry.redhat.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:aabb76584297a160eb607f44a2bcb9b11852ebce2433f6ebe91d1ca37441505e"
                 - name: RELATED_IMAGE_ODH_KUEUE_CONTROLLER_IMAGE
@@ -1239,7 +1239,7 @@ spec:
                   value: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:9a8cbd127951ea1c05c4a2fbba6d0b58fc2fc7e90f7e727508d811a36585b48c"
                 - name: RELATED_IMAGE_ODH_TRAINING_OPERATOR_IMAGE
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:06ff2d030005f7e64d8abd332811e90db3c40870f9b55ee8f6cd6ab58dd935c8"
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:c06cf726a8a6dd50e68741cbeaabcc1004ef72bc9b3f6a07d99db40daf371f9f"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:34b684e2e461eef9ddc2c58112cb466e4f8c8a879f8370c3b7f7f6133e8d47f2"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1377,8 +1377,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-c06cf726a8a6dd50e68741cbeaabcc1004ef72bc9b3f6a07d99db40daf371f9f-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:c06cf726a8a6dd50e68741cbeaabcc1004ef72bc9b3f6a07d99db40daf371f9f"
+  - name: odh-rhel8-operator-34b684e2e461eef9ddc2c58112cb466e4f8c8a879f8370c3b7f7f6133e8d47f2-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:34b684e2e461eef9ddc2c58112cb466e4f8c8a879f8370c3b7f7f6133e8d47f2"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
@@ -1434,7 +1434,7 @@ spec:
   - name: odh_trustyai_service_operator_image
     image: "registry.redhat.io/rhoai/odh-trustyai-service-operator-rhel8@sha256:99e1ab97d8ef4ab5db2c2602d20dee6ee788e8d3b20b3e100b30d0b654bf3915"
   - name: odh_codeflare_operator_image
-    image: "registry.redhat.io/rhoai/odh-codeflare-operator-rhel8@sha256:4ef302bfd32dab75a9d1034768fdea0c05d7ecc5f7ed8128165a4b87efb13839"
+    image: "registry.redhat.io/rhoai/odh-codeflare-operator-rhel8@sha256:a675408542241e72156c29a10d88e93586b66219f50412bafd2b0137c08155c1"
   - name: odh_kuberay_operator_controller_image
     image: "registry.redhat.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:aabb76584297a160eb607f44a2bcb9b11852ebce2433f6ebe91d1ca37441505e"
   - name: odh_kueue_controller_image
