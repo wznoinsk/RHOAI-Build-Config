@@ -177,32 +177,32 @@ jobs:
           
           CATALOG_GENERATION_REF_OCP_VERSION=v4.17
           CSV_META_MIN_OCP_VERSION=417
-          BUNDLE_OBJECT_CATALOG_YAML_PATH=bundle_object_catalog.yaml
-          CSV_META_CATALOG_YAML_PATH=csv_meta_catalog.yaml
+          BUNDLE_OBJECT_CATALOG_YAML_PATH=main/pcc/bundle_object_catalog.yaml
+          CSV_META_CATALOG_YAML_PATH=main/pcc/csv_meta_catalog.yaml
           
           opm migrate registry.redhat.io/redhat/redhat-operator-index:${CATALOG_GENERATION_REF_OCP_VERSION} ./catalog-migrate
           opm alpha convert-template basic catalog-migrate/rhods-operator/catalog.json -o yaml > catalog-template.yaml
           opm alpha render-template basic catalog-template.yaml -o yaml > ${BUNDLE_OBJECT_CATALOG_YAML_PATH}
           opm alpha render-template basic catalog-template.yaml --migrate-level=bundle-object-to-csv-metadata -o yaml > ${CSV_META_CATALOG_YAML_PATH}
           
-          while IFS= read -r value;
-          do
-              OPENSHIFT_VERSION=$value
-              NUMERIC_OCP_VERSION=${OPENSHIFT_VERSION/v4./4}
-              echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
+          #while IFS= read -r value;
+          #do
+          #    OPENSHIFT_VERSION=$value
+          #    NUMERIC_OCP_VERSION=${OPENSHIFT_VERSION/v4./4}
+          #    echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
+          #
+          #    CATALOG_YAML_PATH=${BUNDLE_OBJECT_CATALOG_YAML_PATH}
+          #    CATALOG_DIR=main/pcc/${OPENSHIFT_VERSION}/rhods-operator
+          #    mkdir -p ${CATALOG_DIR}
+          #
+          #    if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
+          #    then
+          #      CATALOG_YAML_PATH=${CSV_META_CATALOG_YAML_PATH}
+          #    fi
+          #    cp ${CATALOG_YAML_PATH} ${CATALOG_DIR}/catalog.yaml
+          #done < <(find main/pcc/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n')
           
-              CATALOG_YAML_PATH=${BUNDLE_OBJECT_CATALOG_YAML_PATH}
-              CATALOG_DIR=main/pcc/${OPENSHIFT_VERSION}/rhods-operator
-              mkdir -p ${CATALOG_DIR}
-          
-              if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
-              then
-                CATALOG_YAML_PATH=${CSV_META_CATALOG_YAML_PATH}
-              fi
-              cp ${CATALOG_YAML_PATH} ${CATALOG_DIR}/catalog.yaml
-          done < <(find main/pcc/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n')
-          
-          ls -l main/pcc/*/
+          ls -l main/pcc/
       - name: Push latest PCC Cache
         if: ${{ steps.check-if-pcc-cache-valid.outputs.PCC_CACHE_VALID == 'NO' }}
         uses: actions-js/push@master
