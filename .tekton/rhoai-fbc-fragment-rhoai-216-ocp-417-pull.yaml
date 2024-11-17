@@ -7,13 +7,13 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main" && ("catalog/rhoai-2.16/v4.16/rhods-operator/catalog.yaml".pathChanged() || "builds/force-trigger.txt".pathChanged())
+      == "main" && ("catalog/rhoai-2.16/v4.17/rhods-operator/catalog.yaml".pathChanged() || "builds/force-trigger.txt".pathChanged())
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: rhoai-fbc-fragment-ocp-416
-    appstudio.openshift.io/component: rhoai-fbc-fragment-ocp-416
+    appstudio.openshift.io/application: rhoai-fbc-fragment-ocp-417
+    appstudio.openshift.io/component: rhoai-fbc-fragment-ocp-417
     pipelines.appstudio.openshift.io/type: build
-  name: rhoai-fbc-fragment-rhoai-216-ocp-416-on-pull
+  name: rhoai-fbc-fragment-rhoai-216-ocp-417-on-pull
   namespace: rhoai-tenant
 spec:
   params:
@@ -24,13 +24,13 @@ spec:
   - name: rhoai-version
     value: 'rhoai-2.16'
   - name: ocp-version
-    value: 'ocp-4.16'
+    value: 'ocp-4.17'
   - name: output-image
     value: quay.io/rhoai/rhoai-fbc-fragment:{{revision}}
   - name: dockerfile
     value: Dockerfile
   - name: path-context
-    value: catalog/rhoai-2.16/v4.16
+    value: catalog/rhoai-2.16/v4.17
   - name: build-args-file
     value: catalog/rhoai-2.16/catalog_build_args.map
   pipelineSpec:
@@ -146,19 +146,6 @@ spec:
       description: Add built image into an OCI image index
       name: build-image-index
       type: string
-    results:
-    - description: ""
-      name: IMAGE_URL
-      value: $(tasks.build-image-index.results.IMAGE_URL)
-    - description: ""
-      name: IMAGE_DIGEST
-      value: $(tasks.build-image-index.results.IMAGE_DIGEST)
-    - description: ""
-      name: CHAINS-GIT_URL
-      value: $(tasks.clone-repository.results.url)
-    - description: ""
-      name: CHAINS-GIT_COMMIT
-      value: $(tasks.clone-repository.results.commit)
     - default: []
       description: Array of --build-arg values ("arg=value" strings) for buildah
       name: build-args
@@ -175,6 +162,19 @@ spec:
       description: current RHOAI version
       name: rhoai-version
       type: string
+    results:
+    - description: ""
+      name: IMAGE_URL
+      value: $(tasks.build-image-index.results.IMAGE_URL)
+    - description: ""
+      name: IMAGE_DIGEST
+      value: $(tasks.build-image-index.results.IMAGE_DIGEST)
+    - description: ""
+      name: CHAINS-GIT_URL
+      value: $(tasks.clone-repository.results.url)
+    - description: ""
+      name: CHAINS-GIT_COMMIT
+      value: $(tasks.clone-repository.results.commit)
     tasks:
     - name: rhoai-init
       params:
