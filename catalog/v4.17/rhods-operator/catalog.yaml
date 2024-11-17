@@ -92,8 +92,8 @@ entries:
   replaces: rhods-operator.2.8.2
   skipRange: '>=2.8.0 <2.8.3'
 - name: rhods-operator.2.16.0
-  replaces: rhods-operator.2.14.0
-  skipRange: '>=2.8.0 <2.16.0'
+  replaces: rhods-operator.2.15.0
+  skipRange: '>=2.15.0 <2.16.0'
 name: alpha
 package: rhods-operator
 schema: olm.channel
@@ -384,8 +384,8 @@ entries:
   replaces: rhods-operator.2.8.2
   skipRange: '>=2.8.0 <2.8.3'
 - name: rhods-operator.2.16.0
-  replaces: rhods-operator.2.14.0
-  skipRange: '>=2.8.0 <2.16.0'
+  replaces: rhods-operator.2.15.0
+  skipRange: '>=2.15.0 <2.16.0'
 name: fast
 package: rhods-operator
 schema: olm.channel
@@ -475,7 +475,7 @@ entries:
   skipRange: '>=2.8.0 <2.8.3'
 - name: rhods-operator.2.16.0
   replaces: rhods-operator.2.13.0
-  skipRange: '>=2.8.0 <2.16.0'
+  skipRange: '>=2.13.0 <2.16.0'
 name: stable
 package: rhods-operator
 schema: olm.channel
@@ -771,6 +771,9 @@ entries:
 - name: rhods-operator.2.13.0
   replaces: rhods-operator.2.12.0
   skipRange: '>=2.10.0 <2.13.0'
+- name: rhods-operator.2.13.1
+  replaces: rhods-operator.2.13.0
+  skipRange: '>=2.13.0 <2.13.1'
 - name: rhods-operator.2.4.0
   replaces: rhods-operator.1.33.0
   skipRange: '>=1.33.0 <2.4.0'
@@ -797,7 +800,7 @@ entries:
   skipRange: '>=2.8.0 <2.8.3'
 - name: rhods-operator.2.16.0
   replaces: rhods-operator.2.13.0
-  skipRange: '>=2.8.0 <2.16.0'
+  skipRange: '>=2.13.0 <2.16.0'
 ---
 name: eus-2.16
 package: rhods-operator
@@ -857,6 +860,21 @@ entries:
 - name: rhods-operator.2.8.0
   replaces: rhods-operator.2.7.0
   skipRange: '>=2.6.0 <2.8.0'
+- name: rhods-operator.2.8.1
+  replaces: rhods-operator.2.8.0
+  skipRange: '>=2.8.0 <2.8.1'
+- name: rhods-operator.2.8.2
+  replaces: rhods-operator.2.8.1
+  skipRange: '>=2.8.0 <2.8.2'
+- name: rhods-operator.2.8.3
+  replaces: rhods-operator.2.8.2
+  skipRange: '>=2.8.0 <2.8.3'
+- name: rhods-operator.2.8.4
+  replaces: rhods-operator.2.8.3
+  skipRange: '>=2.8.0 <2.8.4'
+- name: rhods-operator.2.8.5
+  replaces: rhods-operator.2.8.4
+  skipRange: '>=2.8.0 <2.8.5'
 - name: rhods-operator.2.16.0
   replaces: rhods-operator.2.8.0
   skipRange: '>=2.8.0 <2.16.0'
