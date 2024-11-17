@@ -130,32 +130,32 @@ jobs:
           
           CATALOG_GENERATION_REF_OCP_VERSION=v4.17
           CSV_META_MIN_OCP_VERSION=417
-          BUNDLE_OBJECT_CATALOG_YAML_PATH=bundle_object_catalog.yaml
-          CSV_META_CATALOG_YAML_PATH=csv_meta_catalog.yaml
+          BUNDLE_OBJECT_CATALOG_YAML_PATH=main/pcc/bundle_object_catalog.yaml
+          CSV_META_CATALOG_YAML_PATH=main/pcc/csv_meta_catalog.yaml
           
           opm migrate registry.redhat.io/redhat/redhat-operator-index:${CATALOG_GENERATION_REF_OCP_VERSION} ./catalog-migrate
           opm alpha convert-template basic catalog-migrate/rhods-operator/catalog.json -o yaml > catalog-template.yaml
           opm alpha render-template basic catalog-template.yaml -o yaml > ${BUNDLE_OBJECT_CATALOG_YAML_PATH}
           opm alpha render-template basic catalog-template.yaml --migrate-level=bundle-object-to-csv-metadata -o yaml > ${CSV_META_CATALOG_YAML_PATH}
           
-          while IFS= read -r value;
-          do
-              OPENSHIFT_VERSION=$value
-              NUMERIC_OCP_VERSION=${OPENSHIFT_VERSION/v4./4}
-              echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
+          #while IFS= read -r value;
+          #do
+          #    OPENSHIFT_VERSION=$value
+          #    NUMERIC_OCP_VERSION=${OPENSHIFT_VERSION/v4./4}
+          #    echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
+          #
+          #    CATALOG_YAML_PATH=${BUNDLE_OBJECT_CATALOG_YAML_PATH}
+          #    CATALOG_DIR=main/pcc/${OPENSHIFT_VERSION}/rhods-operator
+          #    mkdir -p ${CATALOG_DIR}
+          #
+          #    if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
+          #    then
+          #      CATALOG_YAML_PATH=${CSV_META_CATALOG_YAML_PATH}
+          #    fi
+          #    cp ${CATALOG_YAML_PATH} ${CATALOG_DIR}/catalog.yaml
+          #done < <(find main/pcc/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n')
           
-              CATALOG_YAML_PATH=${BUNDLE_OBJECT_CATALOG_YAML_PATH}
-              CATALOG_DIR=main/pcc/${OPENSHIFT_VERSION}/rhods-operator
-              mkdir -p ${CATALOG_DIR}
-          
-              if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
-              then
-                CATALOG_YAML_PATH=${CSV_META_CATALOG_YAML_PATH}
-              fi
-              cp ${CATALOG_YAML_PATH} ${CATALOG_DIR}/catalog.yaml
-          done < <(find main/pcc/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n')
-          
-          ls -l main/pcc/*/
+          ls -l main/pcc/
       - name: Push latest PCC Cache
         if: ${{ steps.check-if-pcc-cache-valid.outputs.PCC_CACHE_VALID == 'NO' }}
         uses: actions-js/push@master
@@ -205,33 +205,43 @@ jobs:
           yq e -i '.stable.bundles[0].image = "$LATEST_BUNDLE_IMAGE"' utils/utils/fbc-processor/fbc-semver-template.yaml
           LATEST_BUNDLE_IMAGE="$LATEST_BUNDLE_IMAGE" yq e -i '.stable.bundles[0].image = env(LATEST_BUNDLE_IMAGE)' utils/utils/fbc-processor/fbc-semver-template.yaml
           
+          #Generate the single bundle catalog === sbc
           CSV_META_MIN_OCP_VERSION=417
+          WORK_DIR=utils/utils/fbc
+          mkdir -p ${WORK_DIR}
+          BUNDLE_OBJECT_SINGLE_BUNDLE_PATH=${WORK_DIR}/bundle_object_sbc_semver.yaml
+          CSV_META_SINGLE_BUNDLE_PATH=${WORK_DIR}/csv_meta_sbc_semver.yaml
+          CSV_META_OPM_FLAG="--migrate-level=bundle-object-to-csv-metadata"
+          
+          DOCKER_CONFIG=${HOME}/.docker/ opm alpha render-template semver -o yaml utils/utils/fbc-processor/fbc-semver-template.yaml > ${BUNDLE_OBJECT_SINGLE_BUNDLE_PATH}
+          DOCKER_CONFIG=${HOME}/.docker/ opm alpha render-template semver ${CSV_META_OPM_FLAG} -o yaml utils/utils/fbc-processor/fbc-semver-template.yaml > ${CSV_META_SINGLE_BUNDLE_PATH}
+          
+          PCC_BUNDLE_OBJECT_CATALOG_YAML_PATH=main/pcc/bundle_object_catalog.yaml
+          PCC_CSV_META_CATALOG_YAML_PATH=main/pcc/csv_meta_catalog.yaml
+          
+          BUNDLE_OBJECT_CATALOG_YAML_PATH=${WORK_DIR}/bundle_object_catalog.yaml
+          CSV_META_CATALOG_YAML_PATH=${WORK_DIR}/csv_meta_catalog.yaml
+          
+          PUSH_PIPELINE_PATH=${BRANCH}/.tekton/rhoai-fbc-fragment-${COMPONENT_SUFFIX}-push.yaml
+          
+          #Invoke FBC processor to patch the catalog
+          python3 utils/utils/fbc-processor/fbc-processor.py -op catalog-patch -b ${BUILD_CONFIG_PATH} -c ${PCC_BUNDLE_OBJECT_CATALOG_YAML_PATH} -p ${PATCH_YAML_PATH} -s ${BUNDLE_OBJECT_SINGLE_BUNDLE_PATH} -o ${BUNDLE_OBJECT_CATALOG_YAML_PATH} --push-pipeline-yaml-path ${PUSH_PIPELINE_PATH} --push-pipeline-operation disable
+          python3 utils/utils/fbc-processor/fbc-processor.py -op catalog-patch -b ${BUILD_CONFIG_PATH} -c ${PCC_CSV_META_CATALOG_YAML_PATH} -p ${PATCH_YAML_PATH} -s ${CSV_META_SINGLE_BUNDLE_PATH} -o ${CSV_META_CATALOG_YAML_PATH} --push-pipeline-yaml-path ${PUSH_PIPELINE_PATH} --push-pipeline-operation disable
           
           while IFS= read -r value;
           do
+              #Declare FBC processing variables
               OPENSHIFT_VERSION=$value
               NUMERIC_OCP_VERSION=${OPENSHIFT_VERSION/v4./4}
-              CSV_META_OPM_FLAG=""
               echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
-              
-              if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
-              then
-                CSV_META_OPM_FLAG="--migrate-level=bundle-object-to-csv-metadata"
-              fi
-              
-              #Declare FBC processing variables
-              CATALOG_YAML_PATH=main/pcc/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
-              SINGLE_BUNDLE_DIR=utils/utils/${OPENSHIFT_VERSION}
-              mkdir -p ${SINGLE_BUNDLE_DIR}
-              SINGLE_BUNDLE_PATH=${SINGLE_BUNDLE_DIR}/single_bundle_catalog_semver.yaml
               OUTPUT_CATALOG_PATH=${BRANCH}/catalog/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
               
-              #Generate the single bundle catalog
-              DOCKER_CONFIG=${HOME}/.docker/ opm alpha render-template semver ${CSV_META_OPM_FLAG} -o yaml utils/utils/fbc-processor/fbc-semver-template.yaml > ${SINGLE_BUNDLE_PATH}
-              PUSH_PIPELINE_PATH=${BRANCH}/.tekton/rhoai-fbc-fragment-${COMPONENT_SUFFIX}-push.yaml
-          
-              #Invoke FBC processor to patch the catalog
-              python3 utils/utils/fbc-processor/fbc-processor.py -op catalog-patch -b ${BUILD_CONFIG_PATH} -c ${CATALOG_YAML_PATH} -p ${PATCH_YAML_PATH} -s ${SINGLE_BUNDLE_PATH} -o ${OUTPUT_CATALOG_PATH} --push-pipeline-yaml-path ${PUSH_PIPELINE_PATH} --push-pipeline-operation disable
+              SOURCE_CATALOG=${BUNDLE_OBJECT_CATALOG_YAML_PATH}
+              if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
+              then
+                SOURCE_CATALOG=${CSV_META_CATALOG_YAML_PATH}
+              fi
+              cp ${SOURCE_CATALOG} ${OUTPUT_CATALOG_PATH}
               #cat ${OUTPUT_CATALOG_PATH}
           done < <(yq eval '.config.supported-ocp-versions.build[].name' $BUILD_CONFIG_PATH)
           
