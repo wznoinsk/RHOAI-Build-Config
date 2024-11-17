@@ -365,7 +365,6 @@ spec:
       - name: ADDITIONAL_TAGS
         value:
           - '$(params.ocp-version)-$(params.rhoai-version)'
-          - '$(params.ocp-version)-$(params.rhoai-version)-{{revision}}'
       runAfter:
       - build-image-index
       taskRef:
