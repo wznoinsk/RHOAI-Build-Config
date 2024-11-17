@@ -26,7 +26,7 @@ spec:
   - name: ocp-version
     value: 'ocp-4.16'
   - name: output-image
-    value: quay.io/rhoai/rhoai-fbc-fragment:{{revision}}
+    value: quay.io/rhoai/rhoai-fbc-fragment:ocp-4.16-rhoai-2.16-{{revision}}
   - name: dockerfile
     value: Dockerfile
   - name: path-context
@@ -364,7 +364,6 @@ spec:
       - name: ADDITIONAL_TAGS
         value:
           - '$(params.ocp-version)-$(params.rhoai-version)'
-          - '$(params.ocp-version)-$(params.rhoai-version)-{{revision}}'
       runAfter:
       - build-image-index
       taskRef:
