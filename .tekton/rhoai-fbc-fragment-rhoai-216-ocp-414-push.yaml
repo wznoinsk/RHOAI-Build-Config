@@ -33,6 +33,7 @@ spec:
     value: catalog/rhoai-2.16/v4.14
   - name: build-args-file
     value: catalog/rhoai-2.16/catalog_build_args.map
+
   pipelineSpec:
     description: |
       This pipeline is ideal for building and verifying [file-based catalogs](https://konflux-ci.dev/docs/advanced-how-tos/building-olm.adoc#building-the-file-based-catalog).
@@ -145,6 +146,22 @@ spec:
     - default: "false"
       description: Add built image into an OCI image index
       name: build-image-index
+      type: string
+    - default: []
+      description: Array of --build-arg values ("arg=value" strings) for buildah
+      name: build-args
+      type: array
+    - default: ""
+      description: Path to a file with build arguments for buildah, see https://www.mankier.com/1/buildah-build#--build-arg-file
+      name: build-args-file
+      type: string
+    - default: ""
+      description: current OCP version
+      name: ocp-version
+      type: string
+    - default: ""
+      description: current RHOAI version
+      name: rhoai-version
       type: string
     results:
     - description: ""
