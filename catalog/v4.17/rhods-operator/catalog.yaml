@@ -474,7 +474,7 @@ entries:
   replaces: rhods-operator.2.8.2
   skipRange: '>=2.8.0 <2.8.3'
 - name: rhods-operator.2.16.0
-  replaces: rhods-operator.2.13.0
+  replaces: rhods-operator.2.13.1
   skipRange: '>=2.13.0 <2.16.0'
 name: stable
 package: rhods-operator
@@ -799,7 +799,7 @@ entries:
   replaces: rhods-operator.2.8.2
   skipRange: '>=2.8.0 <2.8.3'
 - name: rhods-operator.2.16.0
-  replaces: rhods-operator.2.13.0
+  replaces: rhods-operator.2.13.1
   skipRange: '>=2.13.0 <2.16.0'
 ---
 name: eus-2.16
@@ -876,7 +876,7 @@ entries:
   replaces: rhods-operator.2.8.4
   skipRange: '>=2.8.0 <2.8.5'
 - name: rhods-operator.2.16.0
-  replaces: rhods-operator.2.8.0
+  replaces: rhods-operator.2.8.5
   skipRange: '>=2.8.0 <2.16.0'
 ---
 image: registry.redhat.io/rhods/odh-operator-bundle@sha256:26ab11ab19bc25bb0132949dce9f29f01b9674647057d30a1a0369736762308f
