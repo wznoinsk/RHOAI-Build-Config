@@ -6,14 +6,14 @@ metadata:
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "main" && ("catalog/rhoai-2.16/v4.14/rhods-operator/catalog.yaml".pathChanged() || "builds/force-trigger.txt".pathChanged())
+    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
+      == "main"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: rhoai-fbc-fragment-ocp-414
-    appstudio.openshift.io/component: rhoai-fbc-fragment-ocp-414
+    appstudio.openshift.io/application: rhoai-fbc-fragment-ocp-412
+    appstudio.openshift.io/component: rhoai-fbc-fragment-ocp-412
     pipelines.appstudio.openshift.io/type: build
-  name: rhoai-fbc-fragment-rhoai-216-ocp-414-on-push
+  name: rhoai-fbc-fragment-rhoai-216-ocp-412-on-pull
   namespace: rhoai-tenant
 spec:
   params:
@@ -24,16 +24,15 @@ spec:
   - name: rhoai-version
     value: 'rhoai-2.16'
   - name: ocp-version
-    value: 'ocp-4.14'
+    value: 'ocp-4.12'
   - name: output-image
     value: quay.io/rhoai/rhoai-fbc-fragment:{{revision}}
   - name: dockerfile
     value: Dockerfile
   - name: path-context
-    value: catalog/rhoai-2.16/v4.14
+    value: catalog/rhoai-2.16/v4.12
   - name: build-args-file
     value: catalog/rhoai-2.16/catalog_build_args.map
-
   pipelineSpec:
     description: |
       This pipeline is ideal for building and verifying [file-based catalogs](https://konflux-ci.dev/docs/advanced-how-tos/building-olm.adoc#building-the-file-based-catalog).

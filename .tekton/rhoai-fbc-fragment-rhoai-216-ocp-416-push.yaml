@@ -159,6 +159,22 @@ spec:
     - description: ""
       name: CHAINS-GIT_COMMIT
       value: $(tasks.clone-repository.results.commit)
+    - default: []
+      description: Array of --build-arg values ("arg=value" strings) for buildah
+      name: build-args
+      type: array
+    - default: ""
+      description: Path to a file with build arguments for buildah, see https://www.mankier.com/1/buildah-build#--build-arg-file
+      name: build-args-file
+      type: string
+    - default: ""
+      description: current OCP version
+      name: ocp-version
+      type: string
+    - default: ""
+      description: current RHOAI version
+      name: rhoai-version
+      type: string
     tasks:
     - name: rhoai-init
       params:
