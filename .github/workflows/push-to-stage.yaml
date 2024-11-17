@@ -308,3 +308,5 @@ jobs:
         env:
           SLACK_MESSAGE: '${{ steps.monitor-fbc-builds.outputs.SLACK_MESSAGE }}'
           SLACK_WEBHOOK: ${{ secrets.SLACK_NOTIFICATIONS_WEBHOOK }}
+          MSG_MINIMAL: true
+          SLACK_COLOR: ${{ job.status }}
