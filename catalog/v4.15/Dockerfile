@@ -57,7 +57,7 @@ ARG ODH_MODEL_REGISTRY_OPERATOR_GIT_COMMIT=
 ARG ODH_OPERATOR_BUNDLE_GIT_COMMIT
 ARG ODH_OPERATOR_BUNDLE_GIT_URL
 
-USER root
+
 # Configure the entrypoint and command
 ENTRYPOINT ["/bin/opm"]
 CMD ["serve", "/configs", "--cache-dir=/tmp/cache"]
