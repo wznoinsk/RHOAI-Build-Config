@@ -236,7 +236,9 @@ jobs:
               echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
               CATALOG_YAML_PATH=main/pcc/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
               RELEASE_CATALOG_YAML_PATH=${BRANCH}/catalog/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
-              OUTPUT_CATALOG_PATH=main/catalog/${BRANCH}/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
+              OUTPUT_CATALOG_DIR=main/catalog/${BRANCH}/${OPENSHIFT_VERSION}/rhods-operator/
+              mkdir -p ${OUTPUT_CATALOG_DIR}
+              OUTPUT_CATALOG_PATH=${OUTPUT_CATALOG_DIR}/catalog.yaml
 
               #Invoke the stage promoter to patch the main catalog with release branch
               python3 utils/utils/stage-promoter/stage_promoter.py -op stage-catalog-patch -c ${CATALOG_YAML_PATH} -p ${PATCH_YAML_PATH} -r ${RELEASE_CATALOG_YAML_PATH} -o ${OUTPUT_CATALOG_PATH} -v ${RHOAI_VERSION}
