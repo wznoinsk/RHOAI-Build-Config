@@ -230,11 +230,22 @@ jobs:
           BUILD_CONFIG_PATH=${BRANCH}/config/build-config.yaml
           PATCH_YAML_PATH=${BRANCH}/catalog/catalog-patch.yaml
 
+          PCC_BUNDLE_OBJECT_CATALOG_YAML_PATH=main/pcc/bundle_object_catalog.yaml
+          PCC_CSV_META_CATALOG_YAML_PATH=main/pcc/csv_meta_catalog.yaml
+          CSV_META_MIN_OCP_VERSION=417
+          
           while IFS= read -r value;
           do
               OPENSHIFT_VERSION=$value
               echo "OPENSHIFT_VERSION=$OPENSHIFT_VERSION"
-              CATALOG_YAML_PATH=main/pcc/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
+              NUMERIC_OCP_VERSION=${OPENSHIFT_VERSION/v4./4}
+          
+              CATALOG_YAML_PATH=${PCC_BUNDLE_OBJECT_CATALOG_YAML_PATH}
+              if [[ $NUMERIC_OCP_VERSION -ge $CSV_META_MIN_OCP_VERSION ]]
+              then
+                CATALOG_YAML_PATH=${PCC_CSV_META_CATALOG_YAML_PATH}
+              fi
+          
               RELEASE_CATALOG_YAML_PATH=${BRANCH}/catalog/${OPENSHIFT_VERSION}/rhods-operator/catalog.yaml
               OUTPUT_CATALOG_DIR=main/catalog/${BRANCH}/${OPENSHIFT_VERSION}/rhods-operator/
               mkdir -p ${OUTPUT_CATALOG_DIR}
