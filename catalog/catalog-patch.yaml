@@ -16,7 +16,7 @@ patch:
     - name: stable
       entries:
       - name: rhods-operator.2.16.0
-        replaces: rhods-operator.2.13.0
+        replaces: rhods-operator.2.13.1
         skipRange: '>=2.13.0 <2.16.0'
     - name: stable-2.16
       package: rhods-operator
@@ -105,7 +105,7 @@ patch:
         replaces: rhods-operator.2.8.2
         skipRange: '>=2.8.0 <2.8.3'
       - name: rhods-operator.2.16.0
-        replaces: rhods-operator.2.13.0
+        replaces: rhods-operator.2.13.1
         skipRange: '>=2.13.0 <2.16.0'
     - name: eus-2.16
       package: rhods-operator
@@ -181,7 +181,7 @@ patch:
         replaces: rhods-operator.2.8.4
         skipRange: '>=2.8.0 <2.8.5'
       - name: rhods-operator.2.16.0
-        replaces: rhods-operator.2.8.0
+        replaces: rhods-operator.2.8.5
         skipRange: '>=2.8.0 <2.16.0'
 
   olm.bundle:
