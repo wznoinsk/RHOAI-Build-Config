@@ -34,7 +34,7 @@ on:
 permissions:
   contents: write
 env:
-  GITHUB_ORG: rhoai-rhtap
+  GITHUB_ORG: red-hat-data-services
   GITHUB_RKA_ORG: rhoai-rhtap
 
 jobs:
