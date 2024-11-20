@@ -102,8 +102,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:fbfa76b7bef810427ee18e4d78c6c912c4dff70e6d393ed7b0a32e00317cce69"
-    createdAt: "2024-11-20T14:43:32Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:df3d19aa33816aa076f674ba6185e655d9b8855fbac8f60aac4e10893aeab95f"
+    createdAt: "2024-11-20T15:04:50Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
@@ -1198,7 +1198,7 @@ spec:
                 - name: RELATED_IMAGE_ODH_DATA_SCIENCE_PIPELINES_OPERATOR_CONTROLLER_IMAGE
                   value: "registry.redhat.io/rhoai/odh-data-science-pipelines-operator-controller-rhel8@sha256:0dfe54ddd4283233ce16e42a31002b061ccdd6610ddb823fff24e40b3ee98596"
                 - name: RELATED_IMAGE_ODH_MODELMESH_CONTROLLER_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:9e7e9b980e63a25b40c414c187d0574b7d2990de11f0d79c555ab77766ce9055"
+                  value: "registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:c2a92500292ae42ef50f2d5bcbbe3feb4eebbfbd7f038e40acf92a608e6d371b"
                 - name: RELATED_IMAGE_ODH_MODEL_CONTROLLER_IMAGE
                   value: "registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:df80220b81a5ad2823471eb6470b78f4683075819b4feaacc6f6d1524172198b"
                 - name: RELATED_IMAGE_ODH_MM_REST_PROXY_IMAGE
@@ -1239,7 +1239,7 @@ spec:
                   value: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:5df4d51e9c4745e365be3860683e701542d644d0a17201716e813541d384d37b"
                 - name: RELATED_IMAGE_ODH_TRAINING_OPERATOR_IMAGE
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:ba4cb74258a3be63f619ff92ac1f643edeccbd84f6fe83b41d75c236bdcfcbd6"
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:fbfa76b7bef810427ee18e4d78c6c912c4dff70e6d393ed7b0a32e00317cce69"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:df3d19aa33816aa076f674ba6185e655d9b8855fbac8f60aac4e10893aeab95f"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1377,8 +1377,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-fbfa76b7bef810427ee18e4d78c6c912c4dff70e6d393ed7b0a32e00317cce69-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:fbfa76b7bef810427ee18e4d78c6c912c4dff70e6d393ed7b0a32e00317cce69"
+  - name: odh-rhel8-operator-df3d19aa33816aa076f674ba6185e655d9b8855fbac8f60aac4e10893aeab95f-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:df3d19aa33816aa076f674ba6185e655d9b8855fbac8f60aac4e10893aeab95f"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
@@ -1420,7 +1420,7 @@ spec:
   - name: odh_data_science_pipelines_operator_controller_image
     image: "registry.redhat.io/rhoai/odh-data-science-pipelines-operator-controller-rhel8@sha256:0dfe54ddd4283233ce16e42a31002b061ccdd6610ddb823fff24e40b3ee98596"
   - name: odh_modelmesh_controller_image
-    image: "registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:9e7e9b980e63a25b40c414c187d0574b7d2990de11f0d79c555ab77766ce9055"
+    image: "registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:c2a92500292ae42ef50f2d5bcbbe3feb4eebbfbd7f038e40acf92a608e6d371b"
   - name: odh_model_controller_image
     image: "registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:df80220b81a5ad2823471eb6470b78f4683075819b4feaacc6f6d1524172198b"
   - name: odh_mm_rest_proxy_image
