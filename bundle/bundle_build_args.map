@@ -1,5 +1,5 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=ea7f87db1c2207084ed3ab4f56c6d4b668c6de84
+ODH_RHEL8_OPERATOR_GIT_COMMIT=89190e87b09bef2a86c897ccf49b8b80a470ee10
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow.git
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=7bf917583997f3c9b51867a858e0f9db2ee023a3
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
@@ -38,8 +38,8 @@ ODH_ML_PIPELINES_API_SERVER_V2_GIT_URL=https://github.com/red-hat-data-services/
 ODH_ML_PIPELINES_API_SERVER_V2_GIT_COMMIT=9da3def0b24640ed9653a914bddfdbf8a392507b
 ODH_ML_PIPELINES_PERSISTENCEAGENT_V2_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines
 ODH_ML_PIPELINES_PERSISTENCEAGENT_V2_GIT_COMMIT=9da3def0b24640ed9653a914bddfdbf8a392507b
-ODH_ML_PIPELINES_SCHEDULEDWORKFLOW_V2_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines
-ODH_ML_PIPELINES_SCHEDULEDWORKFLOW_V2_GIT_COMMIT=30c5d65279d5bca54e76cfb9079b7d1b1db035c5
+ODH_ML_PIPELINES_SCHEDULEDWORKFLOW_V2_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines.git
+ODH_ML_PIPELINES_SCHEDULEDWORKFLOW_V2_GIT_COMMIT=9da3def0b24640ed9653a914bddfdbf8a392507b
 ODH_ML_PIPELINES_DRIVER_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines
 ODH_ML_PIPELINES_DRIVER_GIT_COMMIT=9da3def0b24640ed9653a914bddfdbf8a392507b
 ODH_ML_PIPELINES_LAUNCHER_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines
