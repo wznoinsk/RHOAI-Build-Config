@@ -1,5 +1,5 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=c86a8659ab5ea13405d3118370e4bd8d872ee91d
+ODH_RHEL8_OPERATOR_GIT_COMMIT=caba5a956a3e830995a8aafb958cb55d35bf020d
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=af884ab471dbcb6b00a9fb74677b006466cdebe6
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
@@ -30,8 +30,8 @@ ODH_MODELMESH_GIT_URL=https://github.com/red-hat-data-services/modelmesh.git
 ODH_MODELMESH_GIT_COMMIT=1940a5e81e9df2faf2cadcb8f1ff51efad977575
 ODH_MODELMESH_RUNTIME_ADAPTER_GIT_URL=https://github.com/red-hat-data-services/modelmesh-runtime-adapter
 ODH_MODELMESH_RUNTIME_ADAPTER_GIT_COMMIT=319c1718c1e791f058863207c84f8554b8ff4826
-ODH_TRUSTYAI_SERVICE_GIT_URL=https://github.com/red-hat-data-services/trustyai-explainability.git
-ODH_TRUSTYAI_SERVICE_GIT_COMMIT=2e517f22397078208ec4ca9038ecbe7763c00dd2
+ODH_TRUSTYAI_SERVICE_GIT_URL=https://github.com/red-hat-data-services/trustyai-explainability
+ODH_TRUSTYAI_SERVICE_GIT_COMMIT=89928d74c1b0675dd572c632b74021131265bc74
 ODH_MLMD_GRPC_SERVER_GIT_URL=https://github.com/red-hat-data-services/ml-metadata.git
 ODH_MLMD_GRPC_SERVER_GIT_COMMIT=d28af93b7b0af8ed0ac48b1569e8e5abb6ca3213
 ODH_ML_PIPELINES_API_SERVER_V2_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines
