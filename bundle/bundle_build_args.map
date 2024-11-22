@@ -1,5 +1,5 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=c83b67d24e4748bac4a25fdd0dd1421a6f5d6ead
+ODH_RHEL8_OPERATOR_GIT_COMMIT=e6f850b32da177733b8307d1d9f213a66eec6156
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=af884ab471dbcb6b00a9fb74677b006466cdebe6
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
@@ -27,7 +27,7 @@ ODH_TRAINING_OPERATOR_GIT_COMMIT=93e45baac1d971239e30bae24a62e1efae6668d9
 ODH_MM_REST_PROXY_GIT_URL=https://github.com/red-hat-data-services/rest-proxy
 ODH_MM_REST_PROXY_GIT_COMMIT=7bd98343aaab1b5aa1a157c8a7b7725f20200a93
 ODH_MODELMESH_GIT_URL=https://github.com/red-hat-data-services/modelmesh
-ODH_MODELMESH_GIT_COMMIT=2683391f9bf7a6b096554afa95c0a5bf9d3ed355
+ODH_MODELMESH_GIT_COMMIT=7aadb9ab81bb86df4b29d4aadcb5fee527b284d3
 ODH_MODELMESH_RUNTIME_ADAPTER_GIT_URL=https://github.com/red-hat-data-services/modelmesh-runtime-adapter
 ODH_MODELMESH_RUNTIME_ADAPTER_GIT_COMMIT=3b91ed12248d61bd14cf8c7876ffe70aa5484668
 ODH_TRUSTYAI_SERVICE_GIT_URL=https://github.com/red-hat-data-services/trustyai-explainability
