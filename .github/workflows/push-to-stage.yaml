@@ -291,7 +291,7 @@ jobs:
           BUILD_CONFIG_PATH=latest_rbc_release/config/build-config.yaml
           GIT_COMMIT=${LATEST_RBC_MAIN_COMMIT}
           if [[ -z ${{ github.event.inputs.release_branch }} ]]; then GIT_COMMIT=${{ github.event.inputs.release_branch }}; fi
-          python3 -u utils/utils/stage-promoter/stage_promoter.py -op monitor-fbc-builds -o utils/fbc_images.json -v ${BRANCH} --timeout 20 -b ${BUILD_CONFIG_PATH} --git-commit ${GIT_COMMIT}
+          python3 -u utils/utils/stage-promoter/stage_promoter.py -op monitor-fbc-builds -o utils/fbc_images.json -v ${BRANCH} --timeout 60 -b ${BUILD_CONFIG_PATH} --git-commit ${GIT_COMMIT}
           #${LATEST_RBC_MAIN_COMMIT}
           cat utils/slack_message.txt
           SLACK_MESSAGE=$(cat utils/slack_message.txt)
