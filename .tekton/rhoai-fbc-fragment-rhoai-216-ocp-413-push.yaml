@@ -286,7 +286,8 @@ spec:
         - url=$(params.git-url)
         - git.url=$(params.git-url)
         - git.commit=$(params.revision)
-        - release='$(tasks.clone-repository.results.commit-timestamp)'
+        - release=$(tasks.clone-repository.results.commit-timestamp)
+        - io.openshift.tags=rhoai-fbc-fragment
       runAfter:
       - clone-repository
       taskRef:
