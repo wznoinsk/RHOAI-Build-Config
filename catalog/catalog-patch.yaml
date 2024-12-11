@@ -18,6 +18,9 @@ patch:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.13.1
         skipRange: '>=2.13.0 <2.16.0'
+      - name: rhods-operator.2.16.1
+        replaces: rhods-operator.2.16.0
+        skipRange: '>=2.16.0 <2.16.1'
     - name: stable-2.16
       package: rhods-operator
       schema: olm.channel
@@ -107,6 +110,9 @@ patch:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.13.1
         skipRange: '>=2.13.0 <2.16.0'
+      - name: rhods-operator.2.16.1
+        replaces: rhods-operator.2.16.0
+        skipRange: '>=2.16.0 <2.16.1'
     - name: eus-2.16
       package: rhods-operator
       schema: olm.channel
@@ -183,6 +189,9 @@ patch:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.8.5
         skipRange: '>=2.8.0 <2.16.0'
+      - name: rhods-operator.2.16.1
+        replaces: rhods-operator.2.16.0
+        skipRange: '>=2.16.0 <2.16.1'
 
   olm.bundle:
     - quay.io/rhoai/odh-operator-bundle@sha256:7d68ed8db2dfcfe2d762e360ee3e917e9fd827c212f91b82b2a0f2481e1acdbb
