@@ -8,11 +8,17 @@ patch:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.15.0
         skipRange: '>=2.15.0 <2.16.0'
+      - name: rhods-operator.2.17.0
+        replaces: rhods-operator.2.16.0
+        skipRange: '>=2.16.0 <2.17.0'
     - name: alpha
       entries:
       - name: rhods-operator.2.16.0
         replaces: rhods-operator.2.15.0
         skipRange: '>=2.15.0 <2.16.0'
+      - name: rhods-operator.2.17.0
+        replaces: rhods-operator.2.16.0
+        skipRange: '>=2.16.0 <2.17.0'
     - name: stable
       entries:
       - name: rhods-operator.2.16.0
