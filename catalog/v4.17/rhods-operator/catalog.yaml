@@ -12259,7 +12259,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:26c5b31e0df6668d476ad2aec7c54b7311bfa79e2a31c98dce5d97a3496a665b
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:144cd77418317efb48f08cfc9fac69e2ecae84ca770e1f3535ef1fc61869a416
 name: rhods-operator.2.16.1
 package: rhods-operator
 properties:
@@ -12386,8 +12386,8 @@ properties:
       capabilities: Full Lifecycle
       categories: AI/Machine Learning, Big Data
       certified: "False"
-      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:b32e7f38a775cb7112bf2b197a16b63afa18064c09fd347cf121925098e86d50
-      createdAt: "2024-12-13T10:37:10Z"
+      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:f3969952cc1d8126ca954f84d8d8e88e041e74437e2f6d8355b3d66b7655115b
+      createdAt: "2024-12-13T12:37:17Z"
       description: Operator for deployment and management of Red Hat OpenShift AI
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -12605,7 +12605,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:26c5b31e0df6668d476ad2aec7c54b7311bfa79e2a31c98dce5d97a3496a665b
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:144cd77418317efb48f08cfc9fac69e2ecae84ca770e1f3535ef1fc61869a416
   name: ""
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
@@ -12645,9 +12645,9 @@ relatedImages:
   name: odh_data_science_pipelines_operator_controller_image
 - image: registry.redhat.io/rhoai/odh-kf-notebook-controller-rhel8@sha256:5ea4dcb735bb11c8fe9966f505650fbc9b65d889c4cf4ab699ff933b13697396
   name: odh_kf_notebook_controller_image
-- image: registry.redhat.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:5ad447127e91d1ea02e52d44674088a92d8236da4989b2015c5548219a347e08
+- image: registry.redhat.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:0f54148f810d5ae758ff57db0d4c05d122d17e28fb10293e220926eb7d262b20
   name: odh_kuberay_operator_controller_image
-- image: registry.redhat.io/rhoai/odh-kueue-controller-rhel8@sha256:251e4ba1c4e83e914e121cf87aa767ab9657cfb760505699840c038919565279
+- image: registry.redhat.io/rhoai/odh-kueue-controller-rhel8@sha256:cf0688539fe4556a1089293e741602feaa0749b0a58b4e91228b0e7534e0f92a
   name: odh_kueue_controller_image
 - image: registry.redhat.io/rhoai/odh-ml-pipelines-api-server-v2-rhel8@sha256:ca3e90b6547ae57887dc5053f6d52e9eb80ebdccbf94fbc2fc2c6cf186e7d869
   name: odh_ml_pipelines_api_server_v2_image
@@ -12677,8 +12677,8 @@ relatedImages:
   name: odh_modelmesh_controller_image
 - image: registry.redhat.io/rhoai/odh-notebook-controller-rhel8@sha256:7c316c8cee4233297b5f9f758779cdfef3fa93a6d49416b27d9622f7c7c8d7b3
   name: odh_notebook_controller_image
-- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:b32e7f38a775cb7112bf2b197a16b63afa18064c09fd347cf121925098e86d50
-  name: odh-rhel8-operator-b32e7f38a775cb7112bf2b197a16b63afa18064c09fd347cf121925098e86d50-annotation
+- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:f3969952cc1d8126ca954f84d8d8e88e041e74437e2f6d8355b3d66b7655115b
+  name: odh-rhel8-operator-f3969952cc1d8126ca954f84d8d8e88e041e74437e2f6d8355b3d66b7655115b-annotation
 - image: registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:f789cea4eed0980f84de3f8a338625ad5c07a299ac126145bd7d2edf6a069361
   name: odh_training_operator_image
 - image: registry.redhat.io/rhoai/odh-trustyai-service-operator-rhel8@sha256:b4a982faac81b446055614d1f3840fd437dc76b79d00f1540462844db81525f4
