@@ -12,7 +12,7 @@ metadata:
     appstudio.openshift.io/application: rhoai-v2-16
     appstudio.openshift.io/component: rhoai-fbc-fragment-v2-16
     pipelines.appstudio.openshift.io/type: build
-  name: rhoai-fbc-fragment-v2-16-on-schedule
+  name: rhoai-fbc-fragment-v2-16-on-pull-request
   namespace: rhoai-tenant
 spec:
   params:
