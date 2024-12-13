@@ -101,7 +101,7 @@ spec:
       - name: pipelinerun-name
         value: "$(context.pipelineRun.name)"
       - name: fbc-check-status
-        value: "$(tasks.fbc-related-image-check.status)"
+        value: "$(tasks.validate-fbc.status)"
       - name: overall-task-status
         value: "$(tasks.status)"
       taskSpec:
