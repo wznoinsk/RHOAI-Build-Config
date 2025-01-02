@@ -46,7 +46,7 @@ patch:
     - name: RELATED_IMAGE_ODH_DATA_SCIENCE_PIPELINES_ARGO_WORKFLOWCONTROLLER_IMAGE
       value: "quay.io/rhoai/odh-data-science-pipelines-argo-workflowcontroller-rhel8@sha256:a036e1e1655201ff292b062c973f4a908b05318ab5e2c255b5c7dc5bb01e898d"
     - name: RELATED_IMAGE_ODH_OPERATOR_IMAGE
-      value: "quay.io/rhoai/odh-rhel8-operator@sha256:798341a41af3f6a3ffe9b3b04064d58330d84e4fd349461f39ac0aa78a7678fd"
+      value: "quay.io/rhoai/odh-rhel8-operator@sha256:773318fbb90935fbb8bf15eac440c7659857e53bc3faf682fb91b5853c28d8d7"
     - name: RELATED_IMAGE_ODH_MODEL_REGISTRY_IMAGE
       value: "quay.io/rhoai/odh-model-registry-rhel8@sha256:d48a82a554199966f04d5848718e9a26eff0c7f4fb74d7243b87c8404e3458a2"
     - name: RELATED_IMAGE_ODH_MODEL_REGISTRY_OPERATOR_IMAGE
