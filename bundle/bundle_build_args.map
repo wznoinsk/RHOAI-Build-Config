@@ -1,5 +1,5 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=4e539490d3fb76a9a2146c1cd8c586c3f842fd76
+ODH_RHEL8_OPERATOR_GIT_COMMIT=efdd9c692f3793d54e5428fa988ad3c66e1e764b
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=3b41456b071d8580a978800f82761a999579aa0d
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
