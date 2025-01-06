@@ -1,5 +1,5 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=efdd9c692f3793d54e5428fa988ad3c66e1e764b
+ODH_RHEL8_OPERATOR_GIT_COMMIT=8bc21fb04fa2be1d7b0032381c09120188b1d7a7
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=3b41456b071d8580a978800f82761a999579aa0d
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
@@ -10,8 +10,8 @@ ODH_CODEFLARE_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/codeflar
 ODH_CODEFLARE_OPERATOR_GIT_COMMIT=87936b63f5302015e5e0378863fe2cea5dd96fb0
 ODH_KUBERAY_OPERATOR_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kuberay
 ODH_KUBERAY_OPERATOR_CONTROLLER_GIT_COMMIT=a3922b73ee7d9e0d440710d33cd95dcbb83c48cf
-ODH_KUEUE_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kueue
-ODH_KUEUE_CONTROLLER_GIT_COMMIT=a165a41847d389d53d65cc1b61a6c625c505eba9
+ODH_KUEUE_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kueue.git
+ODH_KUEUE_CONTROLLER_GIT_COMMIT=0f1e93dd2ae25e34c5647a58eed965a176db46ad
 ODH_TRUSTYAI_SERVICE_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/trustyai-service-operator
 ODH_TRUSTYAI_SERVICE_OPERATOR_GIT_COMMIT=d3f2994b421764dcdd110157f3d35d86c6e18b28
 ODH_MODEL_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/odh-model-controller
