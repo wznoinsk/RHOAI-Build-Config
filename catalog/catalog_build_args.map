@@ -1,4 +1,4 @@
-ODH_OPERATOR_BUNDLE_GIT_COMMIT=b31534d3a4b0cc73db592bb7630e0fc5386be3d7
+ODH_OPERATOR_BUNDLE_GIT_COMMIT=bef2e9c27928d0769e71d3797e6d75aeb4d0febd
 ODH_OPERATOR_BUNDLE_GIT_URL=https://github.com/red-hat-data-services/RHOAI-Build-Config
 ODH_CODEFLARE_OPERATOR_GIT_COMMIT=6a6c2001f2f4e60cee7392a8b20ebda94168e988
 ODH_CODEFLARE_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/codeflare-operator
@@ -44,7 +44,7 @@ ODH_MODELMESH_GIT_COMMIT=e72cfcb24598e2f2d3bfa26cb3b5fd53db103dcb
 ODH_MODELMESH_GIT_URL=https://github.com/red-hat-data-services/modelmesh
 ODH_NOTEBOOK_CONTROLLER_GIT_COMMIT=277bc288ed6a092bd7cb94773ef936721204342a
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow
-ODH_RHEL8_OPERATOR_GIT_COMMIT=00558cc8ffacff2c4b86a9f63c77c9cc1270dad8
+ODH_RHEL8_OPERATOR_GIT_COMMIT=4f0038862a57cd126d709f7dd62a312869f4c86d
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
 ODH_TRAINING_OPERATOR_GIT_COMMIT=3aabd66028f796d9bb9f13c2f6a8a08d770743ca
 ODH_TRAINING_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/training-operator
