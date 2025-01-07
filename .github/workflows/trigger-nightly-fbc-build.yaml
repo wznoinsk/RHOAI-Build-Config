@@ -159,6 +159,7 @@ jobs:
 
       - name: Validate PCC Cache
         id: validate-pcc-cache
+        if: ${{ steps.check-if-pcc-cache-valid.outputs.PCC_CACHE_VALID == 'NO' }}
         env:
           BRANCH: ${{ steps.get_branch.outputs.branch }}
         run: |
