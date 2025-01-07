@@ -203,6 +203,21 @@ jobs:
           #done < <(find main/pcc/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n')
           
           ls -l main/pcc/
+
+      - name: Validate PCC Cache
+        id: validate-pcc-cache
+        if: ${{ steps.check-if-pcc-cache-valid.outputs.PCC_CACHE_VALID == 'NO' }}
+        env:
+          BRANCH: ${{ github.event.inputs.release_branch }}
+        run: |
+          #Declare basic variables
+          BUILD_CONFIG_PATH=${BRANCH}/config/build-config.yaml
+          SHIPPED_RHOAI_VERSIONS_PATH=main/pcc/shipped_rhoai_versions.txt
+          PCC_FOLDER_PATH=main/pcc
+          
+          #Validate PCC
+          python3 utils/utils/validators/catalog_validator.py -op validate-pcc --build-config-path ${BUILD_CONFIG_PATH} --catalog-folder-path ${PCC_FOLDER_PATH} --shipped-rhoai-versions-path ${SHIPPED_RHOAI_VERSIONS_PATH}
+
       - name: Push latest PCC Cache
         if: ${{ steps.check-if-pcc-cache-valid.outputs.PCC_CACHE_VALID == 'NO' }}
         uses: actions-js/push@master
@@ -265,6 +280,20 @@ jobs:
           CATALOGS_CHANGED=YES
           if [[ $GIT_STATUS == *"nothing to commit"* ]]; then CATALOGS_CHANGED=NO; fi
           echo "CATALOGS_CHANGED=${CATALOGS_CHANGED}" >> $GITHUB_OUTPUT
+
+      - name: Validate Catalogs
+        id: validate-catalogs
+        env:
+          BRANCH: ${{ github.event.inputs.release_branch }}
+        run: |
+          #Declare basic variables
+          BUILD_CONFIG_PATH=${BRANCH}/config/build-config.yaml
+          SHIPPED_RHOAI_VERSIONS_PATH=main/pcc/shipped_rhoai_versions.txt
+          CATALOG_FOLDER_PATH=main/catalog/${BRANCH}
+          
+          #Validate Catalogs
+          python3 utils/utils/validators/catalog_validator.py -op validate-catalogs --build-config-path ${BUILD_CONFIG_PATH} --catalog-folder-path ${CATALOG_FOLDER_PATH} --shipped-rhoai-versions-path ${SHIPPED_RHOAI_VERSIONS_PATH}
+
 
       - name: Commit and push the changes to main branch
         if: ${{ steps.push-to-stage.outputs.CATALOGS_CHANGED == 'YES' }}
