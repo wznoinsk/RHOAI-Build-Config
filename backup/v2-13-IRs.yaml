@@ -1,0 +1,1419 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T12:17:44Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-codeflare-operator-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-codeflare-operator-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-codeflare-operator-v2-13
+    uid: 594a9785-403a-43d4-9bc2-704a54c45c25
+  resourceVersion: "276231200"
+  uid: e094b02f-50f4-4594-a2cf-59634d9e07fa
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-codeflare-operator-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T12:17:46Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_codeflare_operator_v2_13_47c7526bf9_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-codeflare-operator-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_codeflare_operator_v2_13_251700b4bc
+    push-secret: imagerepository-for-rhoai-v2-13-odh-codeflare-operator-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-codeflare-operator-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 2c2e5b1d-3a4c-47d4-893c-eb6c8b76ed95
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T10:03:49Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-dashboard-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-dashboard-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-dashboard-v2-13
+    uid: 2f959565-b4d8-40ef-9afd-1d1a87307a0a
+  resourceVersion: "273022724"
+  uid: 406939f8-472e-47a4-beee-9cfaee7aa10d
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-dashboard-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T10:03:52Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_dashboard_v2_13_f00d760f37_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-dashboard-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_dashboard_v2_13_5090ef8cfb
+    push-secret: imagerepository-for-rhoai-v2-13-odh-dashboard-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-dashboard-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 448d3dcf-0b19-4cd2-ae46-049aebae0406
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-13T05:02:21Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-data-science-pipelines-argo-argoexec-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-argo-argoexec-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-data-science-pipelines-argo-argoexec-v2-13
+    uid: bbc1f41f-31a6-40b0-9a6d-c1594326cc70
+  resourceVersion: "278122711"
+  uid: 7883e68b-5e4f-4e58-ba92-a9411a7022a0
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-data-science-pipelines-argo-argoexec-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-13T05:02:23Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_data_science_pipelines_argo_argoexec_v2_13_88e95c02d9_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-argo-argoexec-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_data_science_pipelines_argo_argoexec_v2_13_c6bc18e93a
+    push-secret: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-argo-argoexec-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-data-science-pipelines-argo-argoexec-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 525a1c07-3f39-45cb-a902-8adf09caac59
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-13T05:05:08Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-data-science-pipelines-argo-workflowcontroller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-argo-workflowcontroller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-data-science-pipelines-argo-workflowcontroller-v2-13
+    uid: c42a662a-e5f6-44f1-854f-4a4f8917113f
+  resourceVersion: "278128991"
+  uid: 1ac26dc7-1521-4b7e-a869-9c5cc9dd2c18
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-data-science-pipelines-argo-workflowcontroller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-13T05:05:11Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_data_science_pipelines_argo_workflowcontroller_v2_13_d7814853eb_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-argo-workflowcontroller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_data_science_pipelines_argo_workflowcontroller_v2_13_a1f1e061c7
+    push-secret: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-argo-workflowcontroller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-data-science-pipelines-argo-workflowcontroller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 4688e421-c77a-41a2-b55b-d3a8eb9f518e
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T03:54:40Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-data-science-pipelines-operator-controller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-operator-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-data-science-pipelines-operator-controller-v2-13
+    uid: c343e3b5-ebbe-470c-a9ac-d2d9d8c74fa7
+  resourceVersion: "275109764"
+  uid: eaff2b4f-c71e-4580-85e4-21362563e9ee
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-data-science-pipelines-operator-controller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T03:54:43Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_data_science_pipelines_operator_controller_v2_13_395d2648ad_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-operator-controller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_data_science_pipelines_operator_controller_v2_13_2551f59d93
+    push-secret: imagerepository-for-rhoai-v2-13-odh-data-science-pipelines-operator-controller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-data-science-pipelines-operator-controller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 8733539d-2369-4228-b6a4-80fac3e044bb
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T10:15:47Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-kf-notebook-controller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-kf-notebook-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-kf-notebook-controller-v2-13
+    uid: abf07e6d-37a8-4566-ad7f-dc35f39f3636
+  resourceVersion: "273087152"
+  uid: 2f2a27a3-4a3d-4d0b-b3ee-6acaac9fc4a9
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-kf-notebook-controller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T10:15:50Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_kf_notebook_controller_v2_13_2ca9d02a8f_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-kf-notebook-controller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_kf_notebook_controller_v2_13_183007732e
+    push-secret: imagerepository-for-rhoai-v2-13-odh-kf-notebook-controller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-kf-notebook-controller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 484e0cdf-d284-4820-a6cf-f5f1d0d23780
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T09:54:49Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-kuberay-operator-controller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-kuberay-operator-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-kuberay-operator-controller-v2-13
+    uid: 9f7dec42-1e5b-4baf-beba-81becf8a4f83
+  resourceVersion: "272985519"
+  uid: ef01a2c6-ceaf-4ddd-9a61-fc6383db9b02
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-kuberay-operator-controller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T09:54:52Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_kuberay_operator_controller_v2_13_76e78be073_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-kuberay-operator-controller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_kuberay_operator_controller_v2_13_72d767f62c
+    push-secret: imagerepository-for-rhoai-v2-13-odh-kuberay-operator-controller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-kuberay-operator-controller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 64d27856-6fe7-419c-be9d-58a4dd939a59
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T10:22:49Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-kueue-controller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-kueue-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-kueue-controller-v2-13
+    uid: 66712bf7-6a13-47ba-be5e-5a39f258c7ab
+  resourceVersion: "273114713"
+  uid: b23192d0-abee-4361-a832-11be05f12bbe
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-kueue-controller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T10:22:52Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_kueue_controller_v2_13_080615dd09_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-kueue-controller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_kueue_controller_v2_13_b81a447ecc
+    push-secret: imagerepository-for-rhoai-v2-13-odh-kueue-controller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-kueue-controller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 885a4309-ea04-43db-a6f8-6085348e4ee5
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-13T08:10:16Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-api-server-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-api-server-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-api-server-v2-13
+    uid: 38717f06-7bfe-449e-8486-7974dc5ed56e
+  resourceVersion: "278491503"
+  uid: 7f6e15c6-343b-4ed4-abaa-e635593d062b
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-api-server-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-13T08:10:21Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_api_server_v2_13_e00d8b1d28_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-api-server-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_api_server_v2_13_8008b1c914
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-api-server-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-api-server-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 6bd7279f-1f1f-4974-9530-41a6a9c83f9c
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-13T06:52:13Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-api-server-v2-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-api-server-v2-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-api-server-v2-v2-13
+    uid: 39ddafef-a17b-4cda-a4f3-c433ccdc7c2e
+  resourceVersion: "278365848"
+  uid: 2d98bdc4-eef5-415d-8583-ffe73c75be97
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-api-server-v2-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-13T06:52:16Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_api_server_v2_v2_13_af3bc6cd9a_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-api-server-v2-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_api_server_v2_v2_13_c851e82f95
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-api-server-v2-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-api-server-v2-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 43196547-248b-429f-9dae-57a0d075f373
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T10:40:42Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-artifact-manager-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-artifact-manager-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-artifact-manager-v2-13
+    uid: ee02a54f-ac7e-4677-ac2f-1b28faaa11a0
+  resourceVersion: "273181650"
+  uid: 1a4722ec-761a-4aba-b17e-fcbf3f6d46c7
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-artifact-manager-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T10:40:45Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_artifact_manager_v2_13_aa79203cf7_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-artifact-manager-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_artifact_manager_v2_13_daa85e1481
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-artifact-manager-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-artifact-manager-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 62b4ff33-bdbe-4a69-88eb-09b45abf2c9b
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-16T10:11:00Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-cache-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-cache-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-cache-v2-13
+    uid: fac35d8f-e06a-49c3-a78a-46b13d802b14
+  resourceVersion: "285896290"
+  uid: ffa775c1-ede9-4ef4-8684-661a4cdfe674
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-cache-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-16T10:11:03Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_cache_v2_13_df6e3f72df_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-cache-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_cache_v2_13_a43ab3fdc2
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-cache-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-cache-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 45b55f39-41bd-4d01-b712-f424fde4addf
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T12:12:49Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-driver-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-driver-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-driver-v2-13
+    uid: c2237bc1-e77f-4aed-acd5-3b35562082c6
+  resourceVersion: "273419064"
+  uid: e69563ce-8d02-4b87-9059-f0d4d52f35ae
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-driver-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T12:12:52Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_driver_v2_13_cb2891a4ec_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-driver-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_driver_v2_13_cbe148424e
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-driver-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-driver-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: df49e9da-8aa8-43b9-a5c2-449c19b7093c
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T04:01:29Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-launcher-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-launcher-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-launcher-v2-13
+    uid: 71d80eb9-2af7-49f0-b873-3fcbf1ce67c9
+  resourceVersion: "275125059"
+  uid: 42509109-5548-4f2a-bb6c-13c292307108
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-launcher-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T04:01:32Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_launcher_v2_13_77d3b6675e_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-launcher-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_launcher_v2_13_2a7cee8024
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-launcher-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-launcher-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: de00c0be-5160-449a-9701-f58f3c86e5f0
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T04:56:20Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-persistenceagent-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-persistenceagent-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-persistenceagent-v2-13
+    uid: d84a7198-b5e0-4796-b734-ab7fa08b4120
+  resourceVersion: "275258082"
+  uid: b1a85466-db6c-46ed-b35b-0e1dd86e28eb
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-persistenceagent-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T04:56:23Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_persistenceagent_v2_13_0c8f86ead3_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-persistenceagent-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_persistenceagent_v2_13_5f48ffc56c
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-persistenceagent-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-persistenceagent-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: df232e6d-c56f-4409-9075-bbf8dc0a4594
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T04:29:46Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-persistenceagent-v2-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-persistenceagent-v2-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-persistenceagent-v2-v2-13
+    uid: 833644b4-427f-4768-b90e-f9666605155b
+  resourceVersion: "275192409"
+  uid: 420d4fcc-6595-4ca3-b5ab-50837f33d065
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-persistenceagent-v2-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T04:29:50Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_persistenceagent_v2_v2_13_9382614bde_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-persistenceagent-v2-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_persistenceagent_v2_v2_13_9a23531898
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-persistenceagent-v2-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-persistenceagent-v2-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: f352b4a7-bb69-4056-9c49-8c7f84a6e406
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T05:01:08Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-scheduledworkflow-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-scheduledworkflow-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-scheduledworkflow-v2-13
+    uid: ee4cdf10-1dcb-4d28-ad6a-713cca20afe6
+  resourceVersion: "275270305"
+  uid: 42c9eaeb-b97f-4f36-88d1-438d0445cc57
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-scheduledworkflow-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T05:01:11Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_scheduledworkflow_v2_13_710245d108_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-scheduledworkflow-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_scheduledworkflow_v2_13_1fe6ba0976
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-scheduledworkflow-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-scheduledworkflow-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 3acbf652-91ba-446b-91c0-e094cf9216d6
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T05:16:30Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-ml-pipelines-scheduledworkflow-v2-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-scheduledworkflow-v2-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-ml-pipelines-scheduledworkflow-v2-v2-13
+    uid: 24a0f8bd-e49f-4053-bdd0-5a60c2798252
+  resourceVersion: "275304512"
+  uid: cf2fe356-790e-4c20-831b-f4edbbae8654
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-scheduledworkflow-v2-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T05:16:32Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_scheduledworkflow_v2_v2_13_bc8756f7d5_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-scheduledworkflow-v2-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_ml_pipelines_scheduledworkflow_v2_v2_13_114a23bc45
+    push-secret: imagerepository-for-rhoai-v2-13-odh-ml-pipelines-scheduledworkflow-v2-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-scheduledworkflow-v2-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: e0c58932-12d8-45f8-9568-943c88faabeb
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-13T06:08:56Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-mlmd-grpc-server-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-mlmd-grpc-server-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-mlmd-grpc-server-v2-13
+    uid: 558fcb80-817b-4b16-a5f5-2a7394aebeca
+  resourceVersion: "278282307"
+  uid: 4f3f767f-2cbb-4184-a347-f12286cbe2f1
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-mlmd-grpc-server-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-13T06:08:58Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_mlmd_grpc_server_v2_13_3e9ef22f60_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-mlmd-grpc-server-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_mlmd_grpc_server_v2_13_9050b8b822
+    push-secret: imagerepository-for-rhoai-v2-13-odh-mlmd-grpc-server-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-mlmd-grpc-server-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 9814ef66-8d50-4c0e-97ef-ff3d224d82c4
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T05:23:19Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-mm-rest-proxy-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-mm-rest-proxy-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-mm-rest-proxy-v2-13
+    uid: 43841b9c-7c81-4e64-8cb6-7f45c11fc7a8
+  resourceVersion: "275322654"
+  uid: 1e8e18a9-363b-416f-b8c1-7680c64133af
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-mm-rest-proxy-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T05:23:22Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_mm_rest_proxy_v2_13_85ec8ce71d_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-mm-rest-proxy-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_mm_rest_proxy_v2_13_a98e32a4a2
+    push-secret: imagerepository-for-rhoai-v2-13-odh-mm-rest-proxy-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-mm-rest-proxy-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 2af67286-a322-4118-a542-3dd9fc5514dd
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T09:16:33Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-model-controller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-model-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-model-controller-v2-13
+    uid: 8d5a6f84-7671-4b83-8ec4-f255ec9b322c
+  resourceVersion: "275786814"
+  uid: c5310007-e1e3-4c8e-a023-caf073b2a154
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-model-controller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T09:16:36Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_model_controller_v2_13_424f1f6137_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-model-controller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_model_controller_v2_13_3c4bfcc324
+    push-secret: imagerepository-for-rhoai-v2-13-odh-model-controller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-model-controller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 863ee841-799d-4165-8cd8-ea4f50180417
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-10-07T05:25:34Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-model-registry-operator-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-model-registry-operator-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-model-registry-operator-v2-13
+    uid: bb2da5cb-bd4d-4ce7-ba04-8ceb8485dfa2
+  resourceVersion: "350666046"
+  uid: 883bee8d-c8c4-4d0b-9653-6115817c52e2
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-model-registry-operator-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-10-07T05:25:37Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_model_registry_operator_v2_13_9e697e201c_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-model-registry-operator-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_model_registry_operator_v2_13_4da095aac0
+    push-secret: imagerepository-for-rhoai-v2-13-odh-model-registry-operator-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-model-registry-operator-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 69162ae5-90fe-4978-bc83-c0eb7d94255a
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-26T09:28:20Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-model-registry-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-model-registry-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-model-registry-v2-13
+    uid: 0e4b28e1-d998-4beb-a848-f3572f3c1965
+  resourceVersion: "314913313"
+  uid: 9ed34b8a-22d4-4d3c-a0b3-dcbcccc08847
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-model-registry-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-26T09:28:23Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_model_registry_v2_13_81f6690567_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-model-registry-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_model_registry_v2_13_bece30258f
+    push-secret: imagerepository-for-rhoai-v2-13-odh-model-registry-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-model-registry-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: c7ee3db6-0630-4531-aa9d-1834a72e8b06
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T09:38:25Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-modelmesh-runtime-adapter-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-modelmesh-runtime-adapter-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-modelmesh-runtime-adapter-v2-13
+    uid: 29ecadb4-5578-4016-b7de-e65b88945557
+  resourceVersion: "275828188"
+  uid: b8dd5a1a-7aab-48d5-bbb2-fc39488281de
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-modelmesh-runtime-adapter-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T09:38:27Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_modelmesh_runtime_adapter_v2_13_97db213e2b_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-modelmesh-runtime-adapter-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_modelmesh_runtime_adapter_v2_13_912b13aaa6
+    push-secret: imagerepository-for-rhoai-v2-13-odh-modelmesh-runtime-adapter-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-modelmesh-runtime-adapter-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 6fb3ec6d-e7c0-4ed7-9e56-161c6cacd047
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T11:44:26Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-modelmesh-serving-controller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-modelmesh-serving-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-modelmesh-serving-controller-v2-13
+    uid: e9421b96-e251-4da4-a8fb-e609677b8205
+  resourceVersion: "276118700"
+  uid: 8ea24b1f-a2b9-46ea-8ed8-d15fa87aabd7
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-modelmesh-serving-controller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T11:44:29Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_modelmesh_serving_controller_v2_13_0a9d9025c2_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-modelmesh-serving-controller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_modelmesh_serving_controller_v2_13_bea29004c7
+    push-secret: imagerepository-for-rhoai-v2-13-odh-modelmesh-serving-controller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-modelmesh-serving-controller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 59f64af7-71a7-4095-8433-be002e231e8f
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-13T05:55:53Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-modelmesh-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-modelmesh-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-modelmesh-v2-13
+    uid: d4279759-0544-41f0-845c-3a14cfe478ef
+  resourceVersion: "278249605"
+  uid: 0f5fd304-c215-43e2-b4ac-802e1fd5cf9d
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-modelmesh-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-13T05:55:56Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_modelmesh_v2_13_f0bddc79ee_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-modelmesh-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_modelmesh_v2_13_dc95aebbec
+    push-secret: imagerepository-for-rhoai-v2-13-odh-modelmesh-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-modelmesh-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 037cb215-7254-4b2d-a209-0f45a1fa8550
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T11:50:52Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-notebook-controller-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-notebook-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-notebook-controller-v2-13
+    uid: a660cebd-2383-4877-9e33-e900124d705b
+  resourceVersion: "276135267"
+  uid: dd780634-94f8-4bf5-b04e-ce60fff12214
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-notebook-controller-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T11:50:55Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_notebook_controller_v2_13_2ba6e4de20_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-notebook-controller-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_notebook_controller_v2_13_e88d44d8ea
+    push-secret: imagerepository-for-rhoai-v2-13-odh-notebook-controller-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-notebook-controller-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: cac05286-4d18-4c64-bd05-9c5008482de0
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T10:56:21Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-operator-bundle-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-operator-bundle-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-operator-bundle-v2-13
+    uid: 7e1b7d64-9e7e-42e1-a961-b13acc2e6f92
+  resourceVersion: "273238851"
+  uid: e0dcf345-efda-4ff2-8f5c-74e8d0afa9be
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-operator-bundle-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T10:56:24Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_operator_bundle_v2_13_15f67b8dd4_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-operator-bundle-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_operator_bundle_v2_13_a4b2c94175
+    push-secret: imagerepository-for-rhoai-v2-13-odh-operator-bundle-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-operator-bundle-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 85b816e0-05c0-45e6-8309-897c27a24bd8
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T10:15:54Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-operator-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-operator-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-operator-v2-13
+    uid: 7b109f23-7ecf-478f-b38c-ff59544b271d
+  resourceVersion: "273087610"
+  uid: 2aeebb1a-e39d-42cc-8937-05ba3161ce78
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-operator-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T10:15:58Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_operator_v2_13_0e02701807_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-operator-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_operator_v2_13_adfafad6f4
+    push-secret: imagerepository-for-rhoai-v2-13-odh-operator-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-operator-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: aec4d5ac-4f2e-43f9-bd43-3cd8a5aec3ed
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T11:59:47Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-training-operator-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-training-operator-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-training-operator-v2-13
+    uid: 485af203-a7db-4257-9b4d-252ca7a3e0cb
+  resourceVersion: "276168024"
+  uid: cef57091-59f2-4a55-b2c4-89cf839ac54f
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-training-operator-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T11:59:49Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_training_operator_v2_13_3b9639ada1_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-training-operator-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_training_operator_v2_13_a118c7e8bd
+    push-secret: imagerepository-for-rhoai-v2-13-odh-training-operator-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-training-operator-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: bf701452-a975-435b-8411-2341bbdd98b5
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-12T12:05:06Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-trustyai-service-operator-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-trustyai-service-operator-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-trustyai-service-operator-v2-13
+    uid: 0df1f554-11f5-4a38-938a-069b554acb62
+  resourceVersion: "276186568"
+  uid: 1cee1b21-68f3-41b0-806d-61f154b63f33
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-trustyai-service-operator-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-12T12:05:08Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_trustyai_service_operator_v2_13_8f8ed443e1_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-trustyai-service-operator-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_trustyai_service_operator_v2_13_3c9894e8a1
+    push-secret: imagerepository-for-rhoai-v2-13-odh-trustyai-service-operator-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-trustyai-service-operator-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 456f88fb-7fe2-4f9e-adbd-caf1dfca27c2
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-13T05:51:58Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: odh-trustyai-service-v2-13
+  name: imagerepository-for-rhoai-v2-13-odh-trustyai-service-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: odh-trustyai-service-v2-13
+    uid: b0118192-1f76-4fe7-8dca-931471e86582
+  resourceVersion: "278239973"
+  uid: cd7c3d68-c505-48b5-accd-b5f954578484
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/odh-trustyai-service-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-13T05:52:01Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_odh_trustyai_service_v2_13_72a37cc9ab_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-odh-trustyai-service-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_odh_trustyai_service_v2_13_28713a68a0
+    push-secret: imagerepository-for-rhoai-v2-13-odh-trustyai-service-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-trustyai-service-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: e874ea23-1107-4aa3-855c-dc4a6c9e23ae
+  state: ready
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2024-09-11T13:32:31Z"
+  finalizers:
+  - appstudio.openshift.io/image-repository
+  generation: 2
+  labels:
+    appstudio.redhat.com/application: rhoai-v2-13
+    appstudio.redhat.com/component: rhoai-fbc-fragment-v2-13
+  name: imagerepository-for-rhoai-v2-13-rhoai-fbc-fragment-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Component
+    name: rhoai-fbc-fragment-v2-13
+    uid: 11c20ee4-6d90-49ac-ba49-f3c2c1c441ea
+  resourceVersion: "273577612"
+  uid: 715ad438-dd8a-44c8-b983-9ab5da4ba5af
+spec:
+  image:
+    name: rhoai-tenant/rhoai-v2-13/rhoai-fbc-fragment-v2-13
+    visibility: public
+  notifications:
+  - config:
+      url: https://bombino.api.redhat.com/v1/sbom/quay/push
+    event: repo_push
+    method: webhook
+    title: SBOM-event-to-Bombino
+status:
+  credentials:
+    generationTimestamp: "2024-09-11T13:32:34Z"
+    pull-robot-account: rhoai_tenant_rhoai_v2_13_rhoai_fbc_fragment_v2_13_10e17cbb13_pull
+    pull-secret: imagerepository-for-rhoai-v2-13-rhoai-fbc-fragment-v2-13-image-pull
+    push-robot-account: rhoai_tenant_rhoai_v2_13_rhoai_fbc_fragment_v2_13_599e122418
+    push-secret: imagerepository-for-rhoai-v2-13-rhoai-fbc-fragment-v2-13-image-push
+  image:
+    url: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/rhoai-fbc-fragment-v2-13
+    visibility: public
+  notifications:
+  - title: SBOM-event-to-Bombino
+    uuid: 4d5ddee2-969f-4ad8-8425-8b88caf7d435
+  state: ready
