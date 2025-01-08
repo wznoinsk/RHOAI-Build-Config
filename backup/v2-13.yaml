@@ -1,0 +1,1032 @@
+apiVersion: v1
+items: []
+kind: List
+metadata:
+  resourceVersion: ""
+miram@fedora:~$ cat v2-13-components-backup.yaml
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/codeflare-operator/pull/59","configuration-time":"Thu,
+      12 Sep 2024 12:17:50 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T12:17:43Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 68
+  name: odh-codeflare-operator-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675262641"
+  uid: 594a9785-403a-43d4-9bc2-704a54c45c25
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-codeflare-operator-v2-13
+  containerImage: quay.io/rhoai/odh-codeflare-operator-rhel8@sha256:699d64313f76e21f0119c745562ba930142a400adf8786c796db23a9915ab9ef
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/codeflare-operator.git
+status:
+  gitops: {}
+  lastBuiltCommit: 244a2cf62ce1b591dd7d3b6cd51222ec9fd5e912
+  lastPromotedImage: quay.io/rhoai/odh-codeflare-operator-rhel8@sha256:c9e3f2c38e93bf16b2f630ffee37facc74fa13cd89f73e5a6ba3eaf0fd64aa8e
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/odh-dashboard/pull/13","configuration-time":"Wed,
+      11 Sep 2024 10:03:56 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-11T10:03:49Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 19
+  name: odh-dashboard-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675308853"
+  uid: 2f959565-b4d8-40ef-9afd-1d1a87307a0a
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-dashboard-v2-13
+  containerImage: quay.io/rhoai/odh-dashboard-rhel8@sha256:625ba06145436da9931476b994e112e3fcd564e4130cae8ffbd55ecddc7b9ad8
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/odh-dashboard.git
+status:
+  gitops: {}
+  lastBuiltCommit: 18359e0a1a945eae1ca04c8c0d6cb20f5a1fb309
+  lastPromotedImage: quay.io/rhoai/odh-dashboard-rhel8@sha256:9567a9e17b6b474b7be0abe0e0ee339555c361eb57b3edc5b476151c726084f8
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/argo-workflows/pull/39","configuration-time":"Fri,
+      13 Sep 2024 05:02:27 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-13T05:02:20Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 17
+  name: odh-data-science-pipelines-argo-argoexec-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675341452"
+  uid: bbc1f41f-31a6-40b0-9a6d-c1594326cc70
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-data-science-pipelines-argo-argoexec-v2-13
+  containerImage: quay.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:3370fae7485b379ef16d91a5e0dcf97e1c5a46d58f820a87455875f576e070b4
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: rhoai/Dockerfile.argoexec
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/argo-workflows.git
+status:
+  gitops: {}
+  lastBuiltCommit: 2a111c6c053bc856ca3a64f0822da2f7744119eb
+  lastPromotedImage: quay.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:dfacd91bc7a16660e4112edbf03f398dc4f3cd6fa3989cc5214b18784256cf4b
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/argo-workflows/pull/40","configuration-time":"Fri,
+      13 Sep 2024 05:05:14 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-13T05:05:08Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 13
+  name: odh-data-science-pipelines-argo-workflowcontroller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675342573"
+  uid: c42a662a-e5f6-44f1-854f-4a4f8917113f
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-data-science-pipelines-argo-workflowcontroller-v2-13
+  containerImage: quay.io/rhoai/odh-data-science-pipelines-argo-workflowcontroller-rhel8@sha256:f637902213390f933bf189622d7c1ee3cbfa4945392351397cc1d372ed0ee16c
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: rhoai/Dockerfile.workflowcontroller
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/argo-workflows.git
+status:
+  gitops: {}
+  lastBuiltCommit: 2a111c6c053bc856ca3a64f0822da2f7744119eb
+  lastPromotedImage: quay.io/rhoai/odh-data-science-pipelines-argo-workflowcontroller-rhel8@sha256:5be943c31848e2ce7d548ff0a34969387ef13296980622d28ca693385fe0c57f
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-operator/pull/26","configuration-time":"Thu,
+      12 Sep 2024 03:54:46 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T03:54:40Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 18
+  name: odh-data-science-pipelines-operator-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675348137"
+  uid: c343e3b5-ebbe-470c-a9ac-d2d9d8c74fa7
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-data-science-pipelines-operator-controller-v2-13
+  containerImage: quay.io/rhoai/odh-data-science-pipelines-operator-controller-rhel8@sha256:1dc5f5c0b6c75e5fa154e3c20cdc04f0251e13c27a214650183542f500946812
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-operator.git
+status:
+  gitops: {}
+  lastBuiltCommit: b470214b597cb26c0c18b37d9d4b4db1a6fa2717
+  lastPromotedImage: quay.io/rhoai/odh-data-science-pipelines-operator-controller-rhel8@sha256:5e59526dd071f7e9e9d0b12b8be0c452e6954c1c3056eb2b228c3142cd677f77
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/kubeflow/pull/48","configuration-time":"Wed,
+      11 Sep 2024 10:15:53 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-11T10:15:47Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 42
+  name: odh-kf-notebook-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675376019"
+  uid: abf07e6d-37a8-4566-ad7f-dc35f39f3636
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-kf-notebook-controller-v2-13
+  containerImage: quay.io/rhoai/odh-kf-notebook-controller-rhel8@sha256:165f6e7b42bfed7a372cf25b43964d8f766d66ed48194b99dab9d7607e06cd37
+  resources: {}
+  source:
+    git:
+      context: ./components/
+      dockerfileUrl: notebook-controller/Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/kubeflow.git
+status:
+  gitops: {}
+  lastBuiltCommit: a101eba75653b0ec84e3f7bb8c98db18feb70649
+  lastPromotedImage: quay.io/rhoai/odh-kf-notebook-controller-rhel8@sha256:2e4259a6881a40beb02bb2895332ae2a6f038b0728f3bd3cf4701c419a545b20
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/kuberay/pull/22","configuration-time":"Wed,
+      11 Sep 2024 09:54:55 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-11T09:54:49Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 20
+  name: odh-kuberay-operator-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675387497"
+  uid: 9f7dec42-1e5b-4baf-beba-81becf8a4f83
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-kuberay-operator-controller-v2-13
+  containerImage: quay.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:90708d45ed04f8d14090e46a1b624651c1414bb1ceda839930f1fb8f7695e653
+  resources: {}
+  source:
+    git:
+      context: ./ray-operator/
+      dockerfileUrl: ./ray-operator/Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/kuberay.git
+status:
+  gitops: {}
+  lastBuiltCommit: d9a43d11e363cbb715580a7655fe4d42cdc23d15
+  lastPromotedImage: quay.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:239dd75d374834ab8d1886221c2c6accc3374cc0bcfcd11e84366b55462d68b5
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/kueue/pull/20","configuration-time":"Wed,
+      11 Sep 2024 10:22:56 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-11T10:22:48Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 23
+  name: odh-kueue-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675405767"
+  uid: 66712bf7-6a13-47ba-be5e-5a39f258c7ab
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-kueue-controller-v2-13
+  containerImage: quay.io/rhoai/odh-kueue-controller-rhel8@sha256:97629a13642e6aded9664833895c0ac79c2d9873e1f485ff3b66631257c2c428
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile.rhoai
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/kueue.git
+status:
+  gitops: {}
+  lastBuiltCommit: da8f4fd960f9df42071e0dec792620ea75222954
+  lastPromotedImage: quay.io/rhoai/odh-kueue-controller-rhel8@sha256:8c2280deb2745906b8fec33192a611b62d457f7d276c7e1dcf45f4870a75990a
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-tekton/pull/30","configuration-time":"Fri,
+      13 Sep 2024 08:10:24 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-13T08:10:16Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 21
+  name: odh-ml-pipelines-api-server-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609473"
+  uid: 38717f06-7bfe-449e-8486-7974dc5ed56e
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-api-server-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-api-server-v2-rhel8@sha256:c21fd1906004fe8463e7a388a7248e2439aad0a2dc6f7515148b9733f6a7bfb3
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-tekton.git
+status:
+  gitops: {}
+  lastBuiltCommit: 369b631ff17255dd5284eb4fc8747eab0c349a90
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-api-server-v2-rhel8@sha256:c21fd1906004fe8463e7a388a7248e2439aad0a2dc6f7515148b9733f6a7bfb3
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-dsp/pull/45","configuration-time":"Fri,
+      13 Sep 2024 06:52:19 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-13T06:52:13Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 25
+  name: odh-ml-pipelines-api-server-v2-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609510"
+  uid: 39ddafef-a17b-4cda-a4f3-c433ccdc7c2e
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-api-server-v2-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-api-server-v2-rhel8@sha256:26dd3ca951228a86c53d28ad0fb6c4edb28de845af055595e9716559d43690da
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-dsp.git
+status:
+  gitops: {}
+  lastBuiltCommit: 2faa7449bb4d844c894e93876dbd582d64614e60
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-api-server-v2-rhel8@sha256:26dd3ca951228a86c53d28ad0fb6c4edb28de845af055595e9716559d43690da
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-tekton/pull/26","configuration-time":"Wed,
+      11 Sep 2024 10:40:48 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-11T10:40:42Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 72
+  name: odh-ml-pipelines-artifact-manager-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609567"
+  uid: ee02a54f-ac7e-4677-ac2f-1b28faaa11a0
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-artifact-manager-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-artifact-manager-rhel8@sha256:7c31d10240f1ace90fbd2479899181dfa8b2c3a423ce71fd419f9e63813719c4
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/artifact_manager/Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-tekton.git
+status:
+  gitops: {}
+  lastBuiltCommit: 369b631ff17255dd5284eb4fc8747eab0c349a90
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-artifact-manager-rhel8@sha256:7c31d10240f1ace90fbd2479899181dfa8b2c3a423ce71fd419f9e63813719c4
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-tekton/pull/31","configuration-time":"Mon,
+      16 Sep 2024 10:11:07 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-16T10:11:00Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 46
+  name: odh-ml-pipelines-cache-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609596"
+  uid: fac35d8f-e06a-49c3-a78a-46b13d802b14
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-cache-v2-13
+  containerImage: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-cache-v2-13@sha256:db9de6687bd8f488393abcd0a532fa23de7bfeff6e5ac56d7b83f86d89177e45
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile.cachekonflux
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-tekton.git
+status:
+  gitops: {}
+  lastBuiltCommit: 369b631ff17255dd5284eb4fc8747eab0c349a90
+  lastPromotedImage: quay.io/redhat-user-workloads/rhoai-tenant/rhoai-v2-13/odh-ml-pipelines-cache-v2-13@sha256:db9de6687bd8f488393abcd0a532fa23de7bfeff6e5ac56d7b83f86d89177e45
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-dsp/pull/37","configuration-time":"Wed,
+      11 Sep 2024 12:12:55 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-11T12:12:49Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 63
+  name: odh-ml-pipelines-driver-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609612"
+  uid: c2237bc1-e77f-4aed-acd5-3b35562082c6
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-driver-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:1a11f5ad179b0cdbb346d58150488c7af8f252abb56059b685559177cae99cfd
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile.driver
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-dsp.git
+status:
+  gitops: {}
+  lastBuiltCommit: 2faa7449bb4d844c894e93876dbd582d64614e60
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:1a11f5ad179b0cdbb346d58150488c7af8f252abb56059b685559177cae99cfd
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-dsp/pull/40","configuration-time":"Thu,
+      12 Sep 2024 04:01:35 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T04:01:29Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 58
+  name: odh-ml-pipelines-launcher-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609657"
+  uid: 71d80eb9-2af7-49f0-b873-3fcbf1ce67c9
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-launcher-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-launcher-rhel8@sha256:274894f2d3677c5119a8368c8ac7619770ba1f5c9566e9b94b08404fc1c6a653
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile.launcher
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-dsp.git
+status:
+  gitops: {}
+  lastBuiltCommit: 2faa7449bb4d844c894e93876dbd582d64614e60
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-launcher-rhel8@sha256:274894f2d3677c5119a8368c8ac7619770ba1f5c9566e9b94b08404fc1c6a653
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-tekton/pull/28","configuration-time":"Thu,
+      12 Sep 2024 04:56:26 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T04:56:20Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 63
+  name: odh-ml-pipelines-persistenceagent-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609695"
+  uid: d84a7198-b5e0-4796-b734-ab7fa08b4120
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-persistenceagent-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-persistenceagent-rhel8@sha256:b0781ad91053e8a1f910fb5e9a712971023ad48932a3f92c06691b5d0b4a5278
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile.persistenceagent
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-tekton.git
+status:
+  gitops: {}
+  lastBuiltCommit: 369b631ff17255dd5284eb4fc8747eab0c349a90
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-persistenceagent-rhel8@sha256:b0781ad91053e8a1f910fb5e9a712971023ad48932a3f92c06691b5d0b4a5278
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-dsp/pull/42","configuration-time":"Thu,
+      12 Sep 2024 04:29:53 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T04:29:46Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 39
+  name: odh-ml-pipelines-persistenceagent-v2-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609723"
+  uid: 833644b4-427f-4768-b90e-f9666605155b
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-persistenceagent-v2-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-persistenceagent-v2-rhel8@sha256:d3a536cad3c33ef29f6f51e23bab089b685505c611ec5a01da5b4d589940c499
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile.persistenceagent
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-dsp.git
+status:
+  gitops: {}
+  lastBuiltCommit: 2faa7449bb4d844c894e93876dbd582d64614e60
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-persistenceagent-v2-rhel8@sha256:d3a536cad3c33ef29f6f51e23bab089b685505c611ec5a01da5b4d589940c499
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-tekton/pull/29","configuration-time":"Thu,
+      12 Sep 2024 05:01:14 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T05:01:08Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 54
+  name: odh-ml-pipelines-scheduledworkflow-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609781"
+  uid: ee4cdf10-1dcb-4d28-ad6a-713cca20afe6
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-scheduledworkflow-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-scheduledworkflow-rhel8@sha256:0d346630841150753aff8b599642a2b0895f22492d7c54dc61bbb4292652fcd9
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile.scheduledworkflow
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-tekton.git
+status:
+  gitops: {}
+  lastBuiltCommit: 369b631ff17255dd5284eb4fc8747eab0c349a90
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-scheduledworkflow-rhel8@sha256:0d346630841150753aff8b599642a2b0895f22492d7c54dc61bbb4292652fcd9
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/data-science-pipelines-dsp/pull/43","configuration-time":"Thu,
+      12 Sep 2024 05:16:36 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T05:16:29Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 37
+  name: odh-ml-pipelines-scheduledworkflow-v2-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609813"
+  uid: 24a0f8bd-e49f-4053-bdd0-5a60c2798252
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-ml-pipelines-scheduledworkflow-v2-v2-13
+  containerImage: quay.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:152e09c8ef118a34168d834dcebef6b55436ee407f22690d8a6b721e50674ca2
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: backend/Dockerfile.scheduledworkflow
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/data-science-pipelines-dsp.git
+status:
+  gitops: {}
+  lastBuiltCommit: 2faa7449bb4d844c894e93876dbd582d64614e60
+  lastPromotedImage: quay.io/rhoai/odh-ml-pipelines-scheduledworkflow-v2-rhel8@sha256:152e09c8ef118a34168d834dcebef6b55436ee407f22690d8a6b721e50674ca2
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/ml-metadata/pull/31","configuration-time":"Fri,
+      13 Sep 2024 06:09:01 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-13T06:08:55Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 9
+  name: odh-mlmd-grpc-server-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573609862"
+  uid: 558fcb80-817b-4b16-a5f5-2a7394aebeca
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-mlmd-grpc-server-v2-13
+  containerImage: quay.io/rhoai/odh-mlmd-grpc-server-rhel8@sha256:9b70ed7780b30590e6e28d8ebe19ba4703bd76e6e506e8d6f55ff21486ee6643
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: ml_metadata/tools/docker_server/Dockerfile.redhat
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/ml-metadata.git
+status:
+  gitops: {}
+  lastBuiltCommit: 8e798379cf190b5e84e99846209a055df2cd3c9d
+  lastPromotedImage: quay.io/rhoai/odh-mlmd-grpc-server-rhel8@sha256:9b70ed7780b30590e6e28d8ebe19ba4703bd76e6e506e8d6f55ff21486ee6643
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/rest-proxy/pull/13","configuration-time":"Thu,
+      12 Sep 2024 05:23:25 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T05:23:19Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 18
+  name: odh-mm-rest-proxy-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675710104"
+  uid: 43841b9c-7c81-4e64-8cb6-7f45c11fc7a8
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-mm-rest-proxy-v2-13
+  containerImage: quay.io/rhoai/odh-mm-rest-proxy-rhel8@sha256:dae54392563e8bb9679beef452569ce57f6cf19c793d95ba748b0bc1692d76aa
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/rest-proxy.git
+status:
+  gitops: {}
+  lastBuiltCommit: 6fe78b6dd5df0bd4660c69b8b52ab64da4a6a630
+  lastPromotedImage: quay.io/rhoai/odh-mm-rest-proxy-rhel8@sha256:9b306f94465a535fe41163c79b0fbfa9e10ba3130f337e9162087f70a8addf26
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/odh-model-controller/pull/32","configuration-time":"Thu,
+      12 Sep 2024 09:16:39 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T09:16:33Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 47
+  name: odh-model-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675714558"
+  uid: 8d5a6f84-7671-4b83-8ec4-f255ec9b322c
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-model-controller-v2-13
+  containerImage: quay.io/rhoai/odh-model-controller-rhel8@sha256:010d9acf7305690607e50cbec097344189e0f0dc619cd570177da52bd38dbdd3
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Containerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/odh-model-controller.git
+status:
+  gitops: {}
+  lastBuiltCommit: ba388fdc2fc1aba54563aa8a73d00dc957785583
+  lastPromotedImage: quay.io/rhoai/odh-model-controller-rhel8@sha256:fab4f6eb54d7064c27f91d7d344453260f8886e0ce370b552f690dcc2ec3dd89
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/model-registry-operator/pull/5","configuration-time":"Mon,
+      07 Oct 2024 05:25:40 UTC"},"message":"done"}'
+  creationTimestamp: "2024-10-07T05:25:34Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 17
+  name: odh-model-registry-operator-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "660360728"
+  uid: bb2da5cb-bd4d-4ce7-ba04-8ceb8485dfa2
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-model-registry-operator-v2-13
+  containerImage: quay.io/rhoai/odh-model-registry-operator-rhel8@sha256:36784a4c59735ee57ffb391c1d0e75e2e55efa483f73ce024baaf00a9161dbea
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile.konflux
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/model-registry-operator.git
+status:
+  gitops: {}
+  lastBuiltCommit: f4957de64ca01f72e69d8d71e8bf104b178c825e
+  lastPromotedImage: quay.io/rhoai/odh-model-registry-operator-rhel8@sha256:750f46401af43ee8481351d178b953efb09addf84cc38a57cd27e9ad97a967d0
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/model-registry/pull/13","configuration-time":"Thu,
+      26 Sep 2024 10:05:28 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-26T09:28:20Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 24
+  name: odh-model-registry-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573610085"
+  uid: 0e4b28e1-d998-4beb-a848-f3572f3c1965
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-model-registry-v2-13
+  containerImage: quay.io/rhoai/odh-model-registry-rhel8@sha256:86d0f33089d75e1bcaaa824ad833d68d33f380e5f1ec59a0c180bf8b9c36d77b
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile.konflux
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/model-registry.git
+status:
+  gitops: {}
+  lastBuiltCommit: fe8f77a6dd026313a6a12265debab002e7f4de8a
+  lastPromotedImage: quay.io/rhoai/odh-model-registry-rhel8@sha256:86d0f33089d75e1bcaaa824ad833d68d33f380e5f1ec59a0c180bf8b9c36d77b
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/modelmesh-runtime-adapter/pull/26","configuration-time":"Thu,
+      12 Sep 2024 09:38:31 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T09:38:25Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 11
+  name: odh-modelmesh-runtime-adapter-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675751191"
+  uid: 29ecadb4-5578-4016-b7de-e65b88945557
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-modelmesh-runtime-adapter-v2-13
+  containerImage: quay.io/rhoai/odh-modelmesh-runtime-adapter-rhel8@sha256:4566f92e4eb06a00d3b0544ced06ff49e9e890de1aebb0a781ce9383338aee2f
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/modelmesh-runtime-adapter.git
+status:
+  gitops: {}
+  lastBuiltCommit: 05c366efdfc847ccc6b05719be435a2c767387db
+  lastPromotedImage: quay.io/rhoai/odh-modelmesh-runtime-adapter-rhel8@sha256:130686c95b7738476eb5265abc5ff41753203252ed0a06d3e266ecac3854d7c6
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/modelmesh-serving/pull/16","configuration-time":"Thu,
+      12 Sep 2024 11:44:33 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T11:44:26Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 11
+  name: odh-modelmesh-serving-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675743304"
+  uid: e9421b96-e251-4da4-a8fb-e609677b8205
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-modelmesh-serving-controller-v2-13
+  containerImage: quay.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:44279dd9695d40ee0bcee57d6b4dcb3ac3c6451055a7786a4b5d887fb4d1da9b
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/modelmesh-serving.git
+status:
+  gitops: {}
+  lastBuiltCommit: 42998557244cb911f7454d1ad85b4147845e4508
+  lastPromotedImage: quay.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:6afe9548d1dce2299a9fabf349ba18523e4bec99b072bd31037807bb775a9442
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/modelmesh/pull/10","configuration-time":"Fri,
+      13 Sep 2024 05:55:59 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-13T05:55:53Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 16
+  name: odh-modelmesh-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "573610210"
+  uid: d4279759-0544-41f0-845c-3a14cfe478ef
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-modelmesh-v2-13
+  containerImage: quay.io/rhoai/odh-modelmesh-rhel8@sha256:1e8ef3da732e0bd9ff0c718d183a32df2d7ba22c2f7992c70d3d6cec70341fa7
+  resources: {}
+  source:
+    git:
+      context: ./
+      dockerfileUrl: Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/modelmesh.git
+status:
+  gitops: {}
+  lastBuiltCommit: 7ba65220691ac7c37a43275d6c5f0bdb37c723ed
+  lastPromotedImage: quay.io/rhoai/odh-modelmesh-rhel8@sha256:1e8ef3da732e0bd9ff0c718d183a32df2d7ba22c2f7992c70d3d6cec70341fa7
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/status: '{"pac":{"state":"enabled","merge-url":"https://github.com/rhoai-rhtap/kubeflow/pull/50","configuration-time":"Thu,
+      12 Sep 2024 11:50:58 UTC"},"message":"done"}'
+  creationTimestamp: "2024-09-12T11:50:52Z"
+  finalizers:
+  - test.appstudio.openshift.io/component
+  - pac.component.appstudio.openshift.io/finalizer
+  generation: 33
+  name: odh-notebook-controller-v2-13
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "675377493"
+  uid: a660cebd-2383-4877-9e33-e900124d705b
+spec:
+  application: rhoai-v2-13
+  build-nudges-ref:
+  - odh-operator-v2-13
+  componentName: odh-notebook-controller-v2-13
+  containerImage: quay.io/rhoai/odh-notebook-controller-rhel8@sha256:e785a2692b4102fc41fa41f3f115a2a610b73b70a5120360dde794d798fa23df
+  resources: {}
+  source:
+    git:
+      context: ./components/
+      dockerfileUrl: odh-notebook-controller/Dockerfile
+      revision: rhoai-2.13
+      url: https://github.com/rhoai-rhtap/kubeflow.git
+status:
+  gitops: {}
+  lastBuiltCommit: a101eba75653b0ec84e3f7bb8c98db18feb70649
+  lastPromotedImage: quay.io/rhoai/odh-notebook-controller-rhel8@sha256:73ec8abbe8dc69f3dd9a573e2004b4f57784ed43d178a9494fad45e699b263ad
