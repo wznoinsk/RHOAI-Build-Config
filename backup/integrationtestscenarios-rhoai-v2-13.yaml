@@ -1,0 +1,46 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  annotations:
+    test.appstudio.openshift.io/kind: enterprise-contract
+  creationTimestamp: "2024-09-10T05:38:14Z"
+  generation: 3
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: rhoai-v2-13-enterprise-contract
+  namespace: rhoai-tenant
+  ownerReferences:
+  - apiVersion: appstudio.redhat.com/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Application
+    name: rhoai-v2-13
+    uid: 38b8e101-abc2-49b1-bdec-6c466d8987e6
+  resourceVersion: "374029750"
+  uid: dcf42def-af7f-4121-a955-8d3d69d7c42d
+spec:
+  application: rhoai-v2-13
+  contexts:
+  - description: Application testing
+    name: application
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rhtap-releng-tenant/tmp-onboard-policy
+  - name: TIMEOUT
+    value: 10m0s
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/rhoai-rhtap/RHOAI-Build-Config
+    - name: revision
+      value: rhoai-2.13
+    - name: pathInRepo
+      value: integration-tests/enterprise-contract.yaml
+    resolver: git
+status:
+  conditions:
+  - lastTransitionTime: "2024-09-10T05:38:14Z"
+    message: IntegrationTestScenario is Valid.
+    reason: Valid
+    status: "True"
+    type: IntegrationTestScenarioValid
