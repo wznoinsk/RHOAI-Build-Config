@@ -1,0 +1,34 @@
+apiVersion: appstudio.redhat.com/v1beta2
+kind: IntegrationTestScenario
+metadata:
+  labels:
+    test.appstudio.openshift.io/optional: "false"
+  name: rhoai-v2-17-enterprise-contract
+  namespace: rhoai-tenant
+spec:
+  application: rhoai-v2-16
+  contexts:
+  - description: execute the integration test when component rhoai-fbc-fragment-v2-16
+      updates
+    name: component_rhoai-fbc-fragment-v2-16
+  params:
+  - name: POLICY_CONFIGURATION
+    value: rhoai-tenant/registry-rhoai-prod
+  - name: TIMEOUT
+    value: 10m0s
+  resolverRef:
+    params:
+    - name: url
+      value: https://github.com/redhat-appstudio/build-definitions
+    - name: revision
+      value: main
+    - name: pathInRepo
+      value: pipelines/enterprise-contract.yaml
+    resolver: git
+status:
+  conditions:
+  - lastTransitionTime: "2024-10-22T10:50:08Z"
+    message: IntegrationTestScenario is Valid.
+    reason: Valid
+    status: "True"
+    type: IntegrationTestScenarioValid
