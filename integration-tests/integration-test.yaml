@@ -8,7 +8,7 @@ metadata:
 spec:
   application: rhoai-v2-17
   contexts:
-  - description: execute the integration test when component rhoai-fbc-fragment-v2-16
+  - description: execute the integration test when component rhoai-fbc-fragment-v2-17
       updates
     name: component_rhoai-fbc-fragment-v2-17
   params:
