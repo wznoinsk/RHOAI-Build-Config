@@ -7,13 +7,13 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "main" && ("catalog/rhoai-2.17/v4.13/rhods-operator/catalog.yaml".pathChanged() || "builds/force-trigger.txt".pathChanged())
+      == "main" && ("catalog/rhoai-2.16/v4.18/rhods-operator/catalog.yaml".pathChanged() || "builds/force-trigger.txt".pathChanged())
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: rhoai-fbc-fragment-ocp-413
-    appstudio.openshift.io/component: rhoai-fbc-fragment-ocp-413
+    appstudio.openshift.io/application: rhoai-fbc-fragment-ocp-418
+    appstudio.openshift.io/component: rhoai-fbc-fragment-ocp-418
     pipelines.appstudio.openshift.io/type: build
-  name: rhoai-fbc-fragment-rhoai-217-ocp-413-on-push
+  name: rhoai-fbc-fragment-rhoai-216-ocp-418-on-push
   namespace: rhoai-tenant
 spec:
   params:
@@ -22,20 +22,20 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: rhoai-version
-    value: 'rhoai-2.17'
+    value: 'rhoai-2.16'
   - name: ocp-version
-    value: 'ocp-4.13'
+    value: 'ocp-4.18'
   - name: build-platforms
     value:
     - linux/x86_64
   - name: output-image
-    value: quay.io/rhoai/rhoai-fbc-fragment:ocp-4.13-rhoai-2.17-{{revision}}
+    value: quay.io/rhoai/rhoai-fbc-fragment:ocp-4.18-rhoai-2.16-{{revision}}
   - name: dockerfile
     value: Dockerfile
   - name: path-context
-    value: catalog/rhoai-2.17/v4.13
+    value: catalog/rhoai-2.16/v4.18
   - name: build-args-file
-    value: catalog/rhoai-2.17/catalog_build_args.map
+    value: catalog/rhoai-2.16/catalog_build_args.map
   pipelineSpec:
     description: |
       This pipeline is ideal for building and verifying [file-based catalogs](https://konflux-ci.dev/docs/advanced-how-tos/building-olm.adoc#building-the-file-based-catalog).
@@ -332,7 +332,7 @@ spec:
         value: "false"
       - name: LABELS
         value:
-        - version=v2.17.0
+        - version=v2.16.1
         - url=$(params.git-url)
         - git.url=$(params.git-url)
         - git.commit=$(params.revision)
