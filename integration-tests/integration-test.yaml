@@ -6,11 +6,11 @@ metadata:
   name: rhoai-v2-17-enterprise-contract
   namespace: rhoai-tenant
 spec:
-  application: rhoai-v2-16
+  application: rhoai-v2-17
   contexts:
   - description: execute the integration test when component rhoai-fbc-fragment-v2-16
       updates
-    name: component_rhoai-fbc-fragment-v2-16
+    name: component_rhoai-fbc-fragment-v2-17
   params:
   - name: POLICY_CONFIGURATION
     value: rhoai-tenant/registry-rhoai-prod
@@ -25,10 +25,3 @@ spec:
     - name: pathInRepo
       value: pipelines/enterprise-contract.yaml
     resolver: git
-status:
-  conditions:
-  - lastTransitionTime: "2024-10-22T10:50:08Z"
-    message: IntegrationTestScenario is Valid.
-    reason: Valid
-    status: "True"
-    type: IntegrationTestScenarioValid
