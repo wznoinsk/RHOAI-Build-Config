@@ -12256,7 +12256,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:b6a1124a81e37b1257ceba5376e4931abf2c3ceef599a475c9968455b2e4b0e0
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:fb7b0e36f689492ff5d8b399bd9112bdf2b77c9b158f0ebc1e7091e07ae20552
 name: rhods-operator.2.17.0
 package: rhods-operator
 properties:
@@ -12383,8 +12383,8 @@ properties:
       capabilities: Full Lifecycle
       categories: AI/Machine Learning, Big Data
       certified: "False"
-      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8a250dd4da11e4ddf5c69855782b90e0bc46095ee4fdd9c8c747503a13c642e7
-      createdAt: "2025-01-11T00:28:18Z"
+      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:302dd4c044369eedf4720252285549cc5f636e28d88b9d8c0bef1742a0952ade
+      createdAt: "2025-01-11T01:47:17Z"
       description: Operator for deployment and management of Red Hat OpenShift AI
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -12602,7 +12602,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:b6a1124a81e37b1257ceba5376e4931abf2c3ceef599a475c9968455b2e4b0e0
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:fb7b0e36f689492ff5d8b399bd9112bdf2b77c9b158f0ebc1e7091e07ae20552
   name: ""
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
@@ -12632,7 +12632,7 @@ relatedImages:
   name: mariadb-103-3d30992e60774f887c4e7959c81b0c41b0d82d042250b3b56f05ab67fd4cdee1-annotation
 - image: registry.redhat.io/rhoai/odh-codeflare-operator-rhel8@sha256:1b46874eda42f1e162a51a096234b80c64d724ed7d9583f374e8a7075e469be6
   name: odh_codeflare_operator_image
-- image: registry.redhat.io/rhoai/odh-dashboard-rhel8@sha256:3e5fc7137871a2da664b242c5b960b1a1f2beb8a781b53379425e05c516df6a5
+- image: registry.redhat.io/rhoai/odh-dashboard-rhel8@sha256:dfe5dc2372cc959150fbde83fef0dc156eca1d1b1bac3184176beb3eceee9322
   name: odh_dashboard_image
 - image: registry.redhat.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:ae93ffe78861e002c446d4c76ebc74c82aed9d5bff0632fe9874a429c5f9a262
   name: odh_data_science_pipelines_argo_argoexec_image
@@ -12670,12 +12670,12 @@ relatedImages:
   name: odh_modelmesh_image
 - image: registry.redhat.io/rhoai/odh-modelmesh-runtime-adapter-rhel8@sha256:a271d00b4d04efe96042b466615a2acb2367db24af397c1ebb1869b85c39bf19
   name: odh_modelmesh_runtime_adapter_image
-- image: registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:bdb6c6a1f02b4bc03db026d237b0923f91ef1ae152ebed3ad4ff435ff2f2970e
+- image: registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:f6cd87b43aaee4d2596c512398c5c6d9bbab8874c1fb0771989628f7bd6e540f
   name: odh_modelmesh_controller_image
 - image: registry.redhat.io/rhoai/odh-notebook-controller-rhel8@sha256:577fd55202f10b2378f5790418d2477beec231b050ea88244b9e3b4c5402d381
   name: odh_notebook_controller_image
-- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8a250dd4da11e4ddf5c69855782b90e0bc46095ee4fdd9c8c747503a13c642e7
-  name: odh-rhel8-operator-8a250dd4da11e4ddf5c69855782b90e0bc46095ee4fdd9c8c747503a13c642e7-annotation
+- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:302dd4c044369eedf4720252285549cc5f636e28d88b9d8c0bef1742a0952ade
+  name: odh-rhel8-operator-302dd4c044369eedf4720252285549cc5f636e28d88b9d8c0bef1742a0952ade-annotation
 - image: registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:01a893fde81d45dac703707d97436325f0d79cf3d3a826f6d66417717f86e8be
   name: odh_training_operator_image
 - image: registry.redhat.io/rhoai/odh-trustyai-service-operator-rhel8@sha256:3de97c998d6d311859d97d22a0aa323adf4ae56fab61dd36d1e810c4efc01178
