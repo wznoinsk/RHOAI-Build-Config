@@ -1,1 +1,1 @@
-quay.io/rhoai/odh-rhel8-operator@sha256:4549e815b81fe4d2a30a0472ff1fdc99351d29c68fdbda2a3eb152a3c687e72d
+quay.io/rhoai/odh-rhel8-operator@sha256:8bbfa924ceb0d5288bfa537d2a64b57ab7d5f0b0341d9701cb096890e6974882
