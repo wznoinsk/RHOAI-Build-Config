@@ -12256,7 +12256,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:ce0a2d2fa098c27152c8468e5ed24ac26bdd3bc96ab9e70343bb30abb3e04587
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:4d0199f153524ce2bbc61e98f93f01ad34beda1745cb9900487cdbf574d5409a
 name: rhods-operator.2.17.0
 package: rhods-operator
 properties:
@@ -12383,8 +12383,8 @@ properties:
       capabilities: Full Lifecycle
       categories: AI/Machine Learning, Big Data
       certified: "False"
-      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:54cbd5c901defc918d77a4fb775e744457830599ba1e8995756f4567592d92a3
-      createdAt: "2025-01-15T20:12:56Z"
+      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:7962dd5f9fc21e5e1c43546e9e224eeb4a2f77c6d17f9256f25e242e66667b1f
+      createdAt: "2025-01-15T20:16:46Z"
       description: Operator for deployment and management of Red Hat OpenShift AI
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -12602,7 +12602,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:ce0a2d2fa098c27152c8468e5ed24ac26bdd3bc96ab9e70343bb30abb3e04587
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:4d0199f153524ce2bbc61e98f93f01ad34beda1745cb9900487cdbf574d5409a
   name: ""
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
@@ -12634,7 +12634,7 @@ relatedImages:
   name: odh_codeflare_operator_image
 - image: registry.redhat.io/rhoai/odh-dashboard-rhel8@sha256:99bacc1651b1ea27169e3781b5ae613ef6f4185c4fd39e9d17c499f00120021b
   name: odh_dashboard_image
-- image: registry.redhat.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:08ce2717efa6c0e11e5db8b1fd481874e4b2005e92f7e28c72f72f1d977552d5
+- image: registry.redhat.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:eabfd4ea2db72ffb0f6810a614aa5c7e9ac7ee113f7ab53d5bb61d7682ec5f12
   name: odh_data_science_pipelines_argo_argoexec_image
 - image: registry.redhat.io/rhoai/odh-data-science-pipelines-argo-workflowcontroller-rhel8@sha256:48426154f6362b3b7a5b8f96a539759521e9b870c2d149f05e9faf2a725589ea
   name: odh_data_science_pipelines_argo_workflowcontroller_image
@@ -12670,12 +12670,12 @@ relatedImages:
   name: odh_modelmesh_image
 - image: registry.redhat.io/rhoai/odh-modelmesh-runtime-adapter-rhel8@sha256:b85646c3995a492a03b4d2840ae20f98b2aef31671e9c9e7d84e7abfa6c48b93
   name: odh_modelmesh_runtime_adapter_image
-- image: registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:fa357e1b5e0b2977993b36f18c18424a0efb54653cab684bb71fc6157002fb0d
+- image: registry.redhat.io/rhoai/odh-modelmesh-serving-controller-rhel8@sha256:9cbefa728700b51d3abdc14bb73445205c697cf155e18aaa7dc0a72c65630dbe
   name: odh_modelmesh_controller_image
 - image: registry.redhat.io/rhoai/odh-notebook-controller-rhel8@sha256:bd2ef60a1ff7f126262f0572336c54581296a61cee75d051a8b5f3b186047428
   name: odh_notebook_controller_image
-- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:54cbd5c901defc918d77a4fb775e744457830599ba1e8995756f4567592d92a3
-  name: odh-rhel8-operator-54cbd5c901defc918d77a4fb775e744457830599ba1e8995756f4567592d92a3-annotation
+- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:7962dd5f9fc21e5e1c43546e9e224eeb4a2f77c6d17f9256f25e242e66667b1f
+  name: odh-rhel8-operator-7962dd5f9fc21e5e1c43546e9e224eeb4a2f77c6d17f9256f25e242e66667b1f-annotation
 - image: registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:01a893fde81d45dac703707d97436325f0d79cf3d3a826f6d66417717f86e8be
   name: odh_training_operator_image
 - image: registry.redhat.io/rhoai/odh-trustyai-service-operator-rhel8@sha256:ec87a1f4d81c16c7c7bd9567e32d5d752e555e73fa8f75a20a526cb09f271aab
