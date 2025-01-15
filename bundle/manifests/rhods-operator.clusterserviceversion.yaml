@@ -102,8 +102,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:7c0663fac8da3f19c68f1efbccbfb039c12c7f64c16c54ef0d49a6b431e4de8b"
-    createdAt: "2025-01-15T00:29:38Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:1585fc37b934a661a372d29cea3b5b3d3a32825ce479970a552c5a624e00aee0"
+    createdAt: "2025-01-15T05:28:29Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
@@ -1216,7 +1216,7 @@ spec:
                 - name: RELATED_IMAGE_ODH_KUBERAY_OPERATOR_CONTROLLER_IMAGE
                   value: "registry.redhat.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:3623cfa3ccb135fce19c3683f429fe9a1974f9f92da0ef305731c811e3d0a32c"
                 - name: RELATED_IMAGE_ODH_KUEUE_CONTROLLER_IMAGE
-                  value: "registry.redhat.io/rhoai/odh-kueue-controller-rhel8@sha256:42b70d57e1472fe9f6b05eca1c420be4e3403e50f008639e85554bd551ebb9da"
+                  value: "registry.redhat.io/rhoai/odh-kueue-controller-rhel8@sha256:49691f60b4be046e6ffdb3e35237f0ea8c1adb64014b8548c55a581652af7b47"
                 - name: RELATED_IMAGE_ODH_MLMD_GRPC_SERVER_IMAGE
                   value: "registry.redhat.io/rhoai/odh-mlmd-grpc-server-rhel8@sha256:90e77de3ae444231b4bd55be1b30cfc9630fe87b5c91395f328dec2e1abdb0e2"
                 - name: RELATED_IMAGE_ODH_ML_PIPELINES_API_SERVER_V2_IMAGE
@@ -1239,7 +1239,7 @@ spec:
                   value: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:f2daff2797f3de9fb0086cc32c8f643b0bee7b97f69d72b4d550fec2dade0cc1"
                 - name: RELATED_IMAGE_ODH_TRAINING_OPERATOR_IMAGE
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:01a893fde81d45dac703707d97436325f0d79cf3d3a826f6d66417717f86e8be"
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:7c0663fac8da3f19c68f1efbccbfb039c12c7f64c16c54ef0d49a6b431e4de8b"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:1585fc37b934a661a372d29cea3b5b3d3a32825ce479970a552c5a624e00aee0"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1377,8 +1377,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-7c0663fac8da3f19c68f1efbccbfb039c12c7f64c16c54ef0d49a6b431e4de8b-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:7c0663fac8da3f19c68f1efbccbfb039c12c7f64c16c54ef0d49a6b431e4de8b"
+  - name: odh-rhel8-operator-1585fc37b934a661a372d29cea3b5b3d3a32825ce479970a552c5a624e00aee0-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:1585fc37b934a661a372d29cea3b5b3d3a32825ce479970a552c5a624e00aee0"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
@@ -1438,7 +1438,7 @@ spec:
   - name: odh_kuberay_operator_controller_image
     image: "registry.redhat.io/rhoai/odh-kuberay-operator-controller-rhel8@sha256:3623cfa3ccb135fce19c3683f429fe9a1974f9f92da0ef305731c811e3d0a32c"
   - name: odh_kueue_controller_image
-    image: "registry.redhat.io/rhoai/odh-kueue-controller-rhel8@sha256:42b70d57e1472fe9f6b05eca1c420be4e3403e50f008639e85554bd551ebb9da"
+    image: "registry.redhat.io/rhoai/odh-kueue-controller-rhel8@sha256:49691f60b4be046e6ffdb3e35237f0ea8c1adb64014b8548c55a581652af7b47"
   - name: odh_mlmd_grpc_server_image
     image: "registry.redhat.io/rhoai/odh-mlmd-grpc-server-rhel8@sha256:90e77de3ae444231b4bd55be1b30cfc9630fe87b5c91395f328dec2e1abdb0e2"
   - name: odh_ml_pipelines_api_server_v2_image
