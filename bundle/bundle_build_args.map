@@ -1,5 +1,5 @@
 ODH_RHEL8_OPERATOR_GIT_URL=https://github.com/red-hat-data-services/rhods-operator
-ODH_RHEL8_OPERATOR_GIT_COMMIT=755c8d023bbb00dd446e386c307ee0a519b8efa3
+ODH_RHEL8_OPERATOR_GIT_COMMIT=e62e7971a2c36881c21c8bdb18bf99e05ef46133
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow.git
 ODH_KF_NOTEBOOK_CONTROLLER_GIT_COMMIT=b189164d7e2c47b2317e27b8fbfacc818bef290b
 ODH_NOTEBOOK_CONTROLLER_GIT_URL=https://github.com/red-hat-data-services/kubeflow.git
@@ -44,7 +44,7 @@ ODH_ML_PIPELINES_DRIVER_GIT_URL=https://github.com/red-hat-data-services/data-sc
 ODH_ML_PIPELINES_DRIVER_GIT_COMMIT=b9b9e8f5637934a61263bf8ae92a59eac0f1d00f
 ODH_ML_PIPELINES_LAUNCHER_GIT_URL=https://github.com/red-hat-data-services/data-science-pipelines
 ODH_ML_PIPELINES_LAUNCHER_GIT_COMMIT=b9b9e8f5637934a61263bf8ae92a59eac0f1d00f
-ODH_DATA_SCIENCE_PIPELINES_ARGO_ARGOEXEC_GIT_URL=https://github.com/red-hat-data-services/argo-workflows
+ODH_DATA_SCIENCE_PIPELINES_ARGO_ARGOEXEC_GIT_URL=https://github.com/red-hat-data-services/argo-workflows.git
 ODH_DATA_SCIENCE_PIPELINES_ARGO_ARGOEXEC_GIT_COMMIT=25cdbfb3e5015fe4d53a38421e1cecfa99ef936b
 ODH_DATA_SCIENCE_PIPELINES_ARGO_WORKFLOWCONTROLLER_GIT_URL=https://github.com/red-hat-data-services/argo-workflows.git
 ODH_DATA_SCIENCE_PIPELINES_ARGO_WORKFLOWCONTROLLER_GIT_COMMIT=25cdbfb3e5015fe4d53a38421e1cecfa99ef936b
