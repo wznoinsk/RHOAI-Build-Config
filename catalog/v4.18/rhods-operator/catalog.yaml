@@ -12256,10 +12256,70 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:d1c255a294d4c257f3ef6d48f8cde09f19047713a52dc3666931cd4601ff417d
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:1884f16cfb70a761d0edfbbb7693d4b19e5a0aa65e030f26fa55019b5e84cf94
 name: rhods-operator.2.17.0
 package: rhods-operator
 properties:
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: CodeFlare
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: Dashboard
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: DataSciencePipelines
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: Kserve
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: Kueue
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: ModelController
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: ModelMeshServing
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: ModelRegistry
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: Ray
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: TrainingOperator
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: TrustyAI
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: components.platform.opendatahub.io
+    kind: Workbenches
+    version: v1alpha1
 - type: olm.gvk
   value:
     group: datasciencecluster.opendatahub.io
@@ -12275,6 +12335,16 @@ properties:
     group: features.opendatahub.io
     kind: FeatureTracker
     version: v1
+- type: olm.gvk
+  value:
+    group: services.platform.opendatahub.io
+    kind: Auth
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: services.platform.opendatahub.io
+    kind: Monitoring
+    version: v1alpha1
 - type: olm.package
   value:
     packageName: rhods-operator
@@ -12310,6 +12380,9 @@ properties:
                 },
                 "kserve": {
                   "managementState": "Managed",
+                  "nim": {
+                    "managementState": "Managed"
+                  },
                   "serving": {
                     "ingressGateway": {
                       "certificate": {
@@ -12384,7 +12457,7 @@ properties:
       categories: AI/Machine Learning, Big Data
       certified: "False"
       containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:3780860cb77375bbdfd221ad2ef6f21af8a921872ba20c3e679fad94839c6cee
-      createdAt: "2025-01-16T00:27:39Z"
+      createdAt: "2025-01-16T01:32:41Z"
       description: Operator for deployment and management of Red Hat OpenShift AI
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -12466,6 +12539,14 @@ properties:
       operators.openshift.io/infrastructure-features: '["disconnected"]'
       operators.openshift.io/valid-subscription: '["OpenShift AI"]'
       operators.operatorframework.io/builder: operator-sdk-v1.31.0
+      operators.operatorframework.io/internal-objects: |-
+        ["featuretrackers.features.opendatahub.io",
+        "codeflares.components.platform.opendatahub.io", "dashboards.components.platform.opendatahub.io",
+        "datasciencepipelines.components.platform.opendatahub.io", "kserves.components.platform.opendatahub.io",
+        "kueues.components.platform.opendatahub.io", "modelmeshservings.components.platform.opendatahub.io",
+        "modelregistries.components.platform.opendatahub.io", "rays.components.platform.opendatahub.io",
+        "trainingoperators.components.platform.opendatahub.io", "trustyais.components.platform.opendatahub.io",  "workbenches.components.platform.opendatahub.io",
+        "monitorings.services.platform.opendatahub.io","modelcontrollers.components.platform.opendatahub.io"]
       operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
       ose-cli-image: registry.redhat.io/openshift4/ose-cli@sha256:25fef269ac6e7491cb8340119a9b473acbeb53bc6970ad029fdaae59c3d0ca61
       ose-oauth-proxy-dashboard-image: registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4f8d66597feeb32bb18699326029f9a71a5aca4a57679d636b876377c2e95695
@@ -12483,6 +12564,21 @@ properties:
     apiServiceDefinitions: {}
     crdDescriptions:
       owned:
+      - description: Auth is the Schema for the auths API
+        displayName: Auth
+        kind: Auth
+        name: auths.services.platform.opendatahub.io
+        version: v1alpha1
+      - description: CodeFlare is the Schema for the codeflares API
+        displayName: Code Flare
+        kind: CodeFlare
+        name: codeflares.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: Dashboard is the Schema for the dashboards API
+        displayName: Dashboard
+        kind: Dashboard
+        name: dashboards.components.platform.opendatahub.io
+        version: v1alpha1
       - description: DataScienceCluster is the Schema for the datascienceclusters
           API.
         displayName: Data Science Cluster
@@ -12493,6 +12589,12 @@ properties:
           displayName: Components
           path: components
         version: v1
+      - description: DataSciencePipelines is the Schema for the datasciencepipelines
+          API
+        displayName: Data Science Pipelines
+        kind: DataSciencePipelines
+        name: datasciencepipelines.components.platform.opendatahub.io
+        version: v1alpha1
       - description: DSCInitialization is the Schema for the dscinitializations API.
         displayName: DSC Initialization
         kind: DSCInitialization
@@ -12532,6 +12634,54 @@ properties:
       - kind: FeatureTracker
         name: featuretrackers.features.opendatahub.io
         version: v1
+      - description: Kserve is the Schema for the kserves API
+        displayName: Kserve
+        kind: Kserve
+        name: kserves.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: Kueue is the Schema for the kueues API
+        displayName: Kueue
+        kind: Kueue
+        name: kueues.components.platform.opendatahub.io
+        version: v1alpha1
+      - kind: ModelController
+        name: modelcontrollers.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: ModelMeshServing is the Schema for the modelmeshservings API
+        displayName: Model Mesh Serving
+        kind: ModelMeshServing
+        name: modelmeshservings.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: ModelRegistry is the Schema for the modelregistries API
+        displayName: Model Registry
+        kind: ModelRegistry
+        name: modelregistries.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: Monitoring is the Schema for the monitorings API
+        displayName: Monitoring
+        kind: Monitoring
+        name: monitorings.services.platform.opendatahub.io
+        version: v1alpha1
+      - description: Ray is the Schema for the rays API
+        displayName: Ray
+        kind: Ray
+        name: rays.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: TrainingOperator is the Schema for the trainingoperators API
+        displayName: Training Operator
+        kind: TrainingOperator
+        name: trainingoperators.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: TrustyAI is the Schema for the trustyais API
+        displayName: Trusty AI
+        kind: TrustyAI
+        name: trustyais.components.platform.opendatahub.io
+        version: v1alpha1
+      - description: Workbenches is the Schema for the workbenches API
+        displayName: Workbenches
+        kind: Workbenches
+        name: workbenches.components.platform.opendatahub.io
+        version: v1alpha1
     description: |-
       Red Hat OpenShift AI is a complete platform for the entire lifecycle of your AI/ML projects.
 
@@ -12602,7 +12752,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:d1c255a294d4c257f3ef6d48f8cde09f19047713a52dc3666931cd4601ff417d
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:1884f16cfb70a761d0edfbbb7693d4b19e5a0aa65e030f26fa55019b5e84cf94
   name: ""
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
