@@ -106,7 +106,7 @@ metadata:
     categories: AI/Machine Learning, Big Data
     certified: "False"
     containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8f0442bd9b595367382e45c399ce0e6195343b4bd63036703b4dd66c1e0583e0"
-    createdAt: "2025-01-19T00:27:58Z"
+    createdAt: "2025-01-19T01:33:10Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
@@ -388,6 +388,8 @@ spec:
           - admissionregistration.k8s.io
           resources:
           - mutatingwebhookconfigurations
+          - validatingadmissionpolicies
+          - validatingadmissionpolicybindings
           - validatingwebhookconfigurations
           verbs:
           - create
