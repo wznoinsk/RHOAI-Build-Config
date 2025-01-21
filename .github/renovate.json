@@ -10,6 +10,7 @@
   "automerge": true,
   "enabledManagers": ["tekton"],
   "tekton": {
+    "schedule": ["at any time"],
     "fileMatch": [
       "\\.yaml$",
       "\\.yml$"
