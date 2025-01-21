@@ -103,7 +103,7 @@ metadata:
     categories: AI/Machine Learning, Big Data
     certified: "False"
     containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:c389583aebd52374374b72c6aa7807e4198609ce86acba7bded1452b486dedb8"
-    createdAt: "2025-01-21T13:33:38Z"
+    createdAt: "2025-01-21T13:34:38Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
