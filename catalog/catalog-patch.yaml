@@ -15,5 +15,5 @@ patch:
         skipRange: '>=2.16.0 <2.17.0'
 
   olm.bundle:
-    - quay.io/rhoai/odh-operator-bundle@sha256:449451a6f9e0b8144bb05f1e267692f23fc674d639b458f944f6220d43d25e9c
+    - quay.io/rhoai/odh-operator-bundle@sha256:1f719645e043f3515c5ecd193efe2512efc4aadb7e4c22a493d4c2ef346d2846
     # only for nudging purpose
