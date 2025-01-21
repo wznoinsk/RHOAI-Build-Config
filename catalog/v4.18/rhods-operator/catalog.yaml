@@ -12256,7 +12256,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:2d1159ed7b8d761b3b7d0e058e7ae8a746388fb43bf96a1fec376368f96bcf96
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:dcc27d57e0713c303050666101df29f214ca549b3cc238d32eebc035308abe59
 name: rhods-operator.2.17.0
 package: rhods-operator
 properties:
@@ -12456,8 +12456,8 @@ properties:
       capabilities: Full Lifecycle
       categories: AI/Machine Learning, Big Data
       certified: "False"
-      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8528e2599d9dde87f0321def0f41e68500ebd4b7e230adfa632a171500475867
-      createdAt: "2025-01-21T05:36:38Z"
+      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:5658654878c64c0b491f81d9814e5d08c4e2a721b774cc202b795f4a207a067b
+      createdAt: "2025-01-21T07:02:57Z"
       description: Operator for deployment and management of Red Hat OpenShift AI
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -12752,7 +12752,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:2d1159ed7b8d761b3b7d0e058e7ae8a746388fb43bf96a1fec376368f96bcf96
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:dcc27d57e0713c303050666101df29f214ca549b3cc238d32eebc035308abe59
   name: ""
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
@@ -12788,7 +12788,7 @@ relatedImages:
   name: odh_data_science_pipelines_argo_argoexec_image
 - image: registry.redhat.io/rhoai/odh-data-science-pipelines-argo-workflowcontroller-rhel8@sha256:0de4b4670c620d008afa9b0429f7dfcc6a47fd4ac2279e6c9a932cfa633c95fd
   name: odh_data_science_pipelines_argo_workflowcontroller_image
-- image: registry.redhat.io/rhoai/odh-data-science-pipelines-operator-controller-rhel8@sha256:7922bf381f8849b3ac8af085b98fbbf585ebd2941547eadcdfc8ae28880d4982
+- image: registry.redhat.io/rhoai/odh-data-science-pipelines-operator-controller-rhel8@sha256:8d44abecc6b2e5c14506ce209d3b097a6f3292318d0dc572075842b85a0acb16
   name: odh_data_science_pipelines_operator_controller_image
 - image: registry.redhat.io/rhoai/odh-kf-notebook-controller-rhel8@sha256:8e3941699e1358a72e4c6ce25b0e39be0f7d2ff46f358ff5decd047952d84d20
   name: odh_kf_notebook_controller_image
@@ -12824,13 +12824,13 @@ relatedImages:
   name: odh_modelmesh_controller_image
 - image: registry.redhat.io/rhoai/odh-notebook-controller-rhel8@sha256:fe1fe0d3329e57957be238a9008060dd267a5855235b968b1e1bd236ea0c6279
   name: odh_notebook_controller_image
-- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8528e2599d9dde87f0321def0f41e68500ebd4b7e230adfa632a171500475867
-  name: odh-rhel8-operator-8528e2599d9dde87f0321def0f41e68500ebd4b7e230adfa632a171500475867-annotation
+- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:5658654878c64c0b491f81d9814e5d08c4e2a721b774cc202b795f4a207a067b
+  name: odh-rhel8-operator-5658654878c64c0b491f81d9814e5d08c4e2a721b774cc202b795f4a207a067b-annotation
 - image: registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:c2491d06f1a92bda91345b14b28285b4848c2ed2de7c9f593f7e0d17245373f8
   name: odh_training_operator_image
 - image: registry.redhat.io/rhoai/odh-trustyai-service-operator-rhel8@sha256:311899ccd79d0834d7ed4996cf1206ee771546071fc0b5e2d75d891d13e20256
   name: odh_trustyai_service_operator_image
-- image: registry.redhat.io/rhoai/odh-trustyai-service-rhel8@sha256:d46ce37d26a9e98298662dd337e77ae3e1578f705528cb2d7c20e71799a5844f
+- image: registry.redhat.io/rhoai/odh-trustyai-service-rhel8@sha256:0ef3eadbe79a3d176cef4980cd303a0960d3ef72d76a47ea60afd0521b66efd1
   name: odh_trustyai_service_image
 - image: registry.redhat.io/ubi8/ubi-micro@sha256:396baed3d689157d96aa7d8988fdfea7eb36684c8335eb391cf1952573e689c1
   name: ubi-micro-396baed3d689157d96aa7d8988fdfea7eb36684c8335eb391cf1952573e689c1-annotation
