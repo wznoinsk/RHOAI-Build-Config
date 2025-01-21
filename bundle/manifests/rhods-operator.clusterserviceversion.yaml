@@ -105,8 +105,8 @@ metadata:
     capabilities: Full Lifecycle
     categories: AI/Machine Learning, Big Data
     certified: "False"
-    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:5e116c92af8d0dc123eb1da981a1683e6f7d02f20b5495fd482c93bf0c317c86"
-    createdAt: "2025-01-21T05:03:55Z"
+    containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8528e2599d9dde87f0321def0f41e68500ebd4b7e230adfa632a171500475867"
+    createdAt: "2025-01-21T05:36:38Z"
     description: Operator for deployment and management of Red Hat OpenShift AI
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
@@ -1426,7 +1426,7 @@ spec:
                   value: "registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:194293b2210a05a27a1991f28d44b5d53ab9a274358a51372d8bb731d3414d8e"
                 - name: RELATED_IMAGE_ODH_TRAINING_OPERATOR_IMAGE
                   value: "registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:c2491d06f1a92bda91345b14b28285b4848c2ed2de7c9f593f7e0d17245373f8"
-                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:5e116c92af8d0dc123eb1da981a1683e6f7d02f20b5495fd482c93bf0c317c86"
+                image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8528e2599d9dde87f0321def0f41e68500ebd4b7e230adfa632a171500475867"
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -1564,8 +1564,8 @@ spec:
     type: ValidatingAdmissionWebhook
     webhookPath: /validate-opendatahub-io-v1
   relatedImages:
-  - name: odh-rhel8-operator-5e116c92af8d0dc123eb1da981a1683e6f7d02f20b5495fd482c93bf0c317c86-annotation
-    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:5e116c92af8d0dc123eb1da981a1683e6f7d02f20b5495fd482c93bf0c317c86"
+  - name: odh-rhel8-operator-8528e2599d9dde87f0321def0f41e68500ebd4b7e230adfa632a171500475867-annotation
+    image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8528e2599d9dde87f0321def0f41e68500ebd4b7e230adfa632a171500475867"
   - name: ose-cli-75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4-annotation
     image: registry.redhat.io/openshift4/ose-cli@sha256:75bf9b911b6481dcf29f7942240d1555adaa607eec7fc61bedb7f624f87c36d4
   - name: etcd-d3495b263b103681f1b09a558be43c21989bfc269eb90f84c2609042cebdc626-annotation
