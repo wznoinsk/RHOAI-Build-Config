@@ -12256,7 +12256,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:b956d43be5db172b97c25d5b250a93422a36fbc4e823b4fd97f941d4d1bbf68c
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:5e48c0eff38f422207a02bdbcd0f680e7060c86051d88eb1f7d1a1efc83dcc0b
 name: rhods-operator.2.17.0
 package: rhods-operator
 properties:
@@ -12752,7 +12752,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:b956d43be5db172b97c25d5b250a93422a36fbc4e823b4fd97f941d4d1bbf68c
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:5e48c0eff38f422207a02bdbcd0f680e7060c86051d88eb1f7d1a1efc83dcc0b
   name: ""
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
