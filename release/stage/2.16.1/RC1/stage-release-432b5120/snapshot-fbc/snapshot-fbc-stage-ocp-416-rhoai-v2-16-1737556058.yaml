@@ -1,0 +1,19 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Snapshot
+metadata:
+  name: rhoai-fbc-fragment-ocp-416-1737556058
+  namespace: rhoai-tenant
+  labels:
+    test.appstudio.openshift.io/type: override
+    konflux-release-data/rbc-release-commit: 432b5120ff05dfb6905deb376d9ed499a8608d16
+    konflux-release-data/ocp-version: ocp-416
+    konflux-release-data/artifact-type: fbc
+spec:
+  application: rhoai-fbc-fragment-ocp-416
+  components:
+    - name: rhoai-fbc-fragment-ocp-416
+      containerImage: quay.io/rhoai/rhoai-fbc-fragment@sha256:7bc7c7fac7f60e904eb9c5ef25c01f40a4bd5a71eff0fc41e9b50a550a9a48b0
+      source:
+        git:
+          url: https://github.com/red-hat-data-services/RHOAI-Build-Config
+          revision: 41a4c67debb1e5067f8ab28d2fefddd66c77ffc8
