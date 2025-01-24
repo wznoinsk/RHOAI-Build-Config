@@ -99,7 +99,7 @@ metadata:
     categories: AI/Machine Learning, Big Data
     certified: "False"
     containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:a6c396532b7797b84ea6334dea8f118bd46a68072d67b1ea879d1963a7655159"
-    createdAt: '2025-01-24T12:41:27Z'
+    createdAt: '2025-01-24T13:07:08Z'
     operatorframework.io/initialization-resource: |-
       {
         "apiVersion": "datasciencecluster.opendatahub.io/v1",
@@ -190,7 +190,7 @@ metadata:
     features.operators.openshift.io/token-auth-aws: 'false'
     features.operators.openshift.io/token-auth-azure: 'false'
     features.operators.openshift.io/token-auth-gcp: 'false'
-  name: rhods-operator.2.13.0
+  name: rhods-operator.2.13.2
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -1811,7 +1811,7 @@ spec:
   maintainers:
   - name: 'Red Hat Openshift AI'
     email: managed-open-data-hub@redhat.com
-  version: "2.13.0"
+  version: "2.13.2"
   relatedImages:
   - name: odh-rhel8-operator-a6c396532b7797b84ea6334dea8f118bd46a68072d67b1ea879d1963a7655159-annotation
     image: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:a6c396532b7797b84ea6334dea8f118bd46a68072d67b1ea879d1963a7655159"
