@@ -12256,7 +12256,7 @@ relatedImages:
   name: ubi-minimal-5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00-annotation
 schema: olm.bundle
 ---
-image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:f77fdce721ba6d0ed49562dfd1d5b84e08089d520aadf799e9989c0e21abf777
+image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:2d1013a435343bdae9125e57e5d4c8fead9d4d34514d89b1c6ff8f4045466f2d
 name: rhods-operator.2.17.0
 package: rhods-operator
 properties:
@@ -12456,8 +12456,8 @@ properties:
       capabilities: Full Lifecycle
       categories: AI/Machine Learning, Big Data
       certified: "False"
-      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8ecb7a017c34de1b9a109730419b0c2adce5c1d50bab74e40d5117eb26ed8c99
-      createdAt: "2025-01-23T20:29:53Z"
+      containerImage: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:004fa4e2e94ce334f0ae2d19c14c0e4b484bd7164e1350ccf736949cba3a11df
+      createdAt: "2025-01-24T00:24:22Z"
       description: Operator for deployment and management of Red Hat OpenShift AI
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -12752,7 +12752,7 @@ properties:
     provider:
       name: Red Hat, Inc.
 relatedImages:
-- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:f77fdce721ba6d0ed49562dfd1d5b84e08089d520aadf799e9989c0e21abf777
+- image: registry.redhat.io/rhoai/odh-operator-bundle@sha256:2d1013a435343bdae9125e57e5d4c8fead9d4d34514d89b1c6ff8f4045466f2d
   name: ""
 - image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a
   name: proxyv2-rhel8-02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a-annotation
@@ -12810,13 +12810,13 @@ relatedImages:
   name: odh_mlmd_grpc_server_image
 - image: registry.redhat.io/rhoai/odh-mm-rest-proxy-rhel8@sha256:8311359541b11b0778b94cc0d839da4558893a05ea797dfb503ea4dbc841816c
   name: odh_mm_rest_proxy_image
-- image: registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:8d5ff9be5a73ee290ed3b3309e65c1b80f3e91ee84b2c4d8ba8c0d9b7cc1641d
+- image: registry.redhat.io/rhoai/odh-model-controller-rhel8@sha256:baf5da600003e5fbe6a9a883eadc9a322ba55dbb098202bdb85d0af33b4f4434
   name: odh_model_controller_image
 - image: registry.redhat.io/rhoai/odh-model-registry-operator-rhel8@sha256:bd62fcdb7cb74a3d2fb0554ec736e644885f3baaae7aa78d476f93d8ab7a9b90
   name: odh_model_registry_operator_image
 - image: registry.redhat.io/rhoai/odh-model-registry-rhel8@sha256:5c51b21d95e75855f8095a55757ed887505bd0b838f69cd77cd70dec64393ef8
   name: odh_model_registry_image
-- image: registry.redhat.io/rhoai/odh-modelmesh-rhel8@sha256:156d1bd23f6b9aa14e6ad07e36162ebb6c3ea8206903abf133b77eaa490b7267
+- image: registry.redhat.io/rhoai/odh-modelmesh-rhel8@sha256:9d70754edf8dbd54857227db7856165d75ccb9397d0b9479df2905e48400ede4
   name: odh_modelmesh_image
 - image: registry.redhat.io/rhoai/odh-modelmesh-runtime-adapter-rhel8@sha256:ef7637aea237ca3960c2e3968bb483504189087e59b91f897a9343c711ed1859
   name: odh_modelmesh_runtime_adapter_image
@@ -12824,8 +12824,8 @@ relatedImages:
   name: odh_modelmesh_controller_image
 - image: registry.redhat.io/rhoai/odh-notebook-controller-rhel8@sha256:70cf7c04ea8792efc19db08498cc3acc42f165d3f658db41ece35514d2b62e8e
   name: odh_notebook_controller_image
-- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:8ecb7a017c34de1b9a109730419b0c2adce5c1d50bab74e40d5117eb26ed8c99
-  name: odh-rhel8-operator-8ecb7a017c34de1b9a109730419b0c2adce5c1d50bab74e40d5117eb26ed8c99-annotation
+- image: registry.redhat.io/rhoai/odh-rhel8-operator@sha256:004fa4e2e94ce334f0ae2d19c14c0e4b484bd7164e1350ccf736949cba3a11df
+  name: odh-rhel8-operator-004fa4e2e94ce334f0ae2d19c14c0e4b484bd7164e1350ccf736949cba3a11df-annotation
 - image: registry.redhat.io/rhoai/odh-training-operator-rhel8@sha256:7d02bd2f30b7659ef8e1d983675a075eda2b347077d3464c9266810d6833aa15
   name: odh_training_operator_image
 - image: registry.redhat.io/rhoai/odh-trustyai-service-operator-rhel8@sha256:545760c3d18dd96659eda182df9e0bbf5f52f6d29e1d6a30fe11c619b2523dd1
