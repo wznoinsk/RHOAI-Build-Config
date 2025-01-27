@@ -99,7 +99,7 @@ metadata:
     categories: AI/Machine Learning, Big Data
     certified: "False"
     containerImage: "registry.redhat.io/rhoai/odh-rhel8-operator@sha256:27caddf36578ffac4a26d57a04cc30a399c2e5b80ca98d4c56a517597601660f"
-    createdAt: '2025-01-27T08:35:08Z'
+    createdAt: '2025-01-27T08:39:49Z'
     operatorframework.io/initialization-resource: |-
       {
         "apiVersion": "datasciencecluster.opendatahub.io/v1",
