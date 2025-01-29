@@ -1,27 +1,26 @@
 name: Remove blocked renovate Pull Requests
 
 on:
-  push:
-    branches:
-      - 'wznoinsk_RHOAIENG-14372_test'
+  # push:
+  #   branches:
+  #     - 'wznoinsk_RHOAIENG-14372_test'
 
   # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
   # this may not work as per above doc: Scheduled workflows will only run on the default branch.
   # schedule:
 
-  # pull_request:
-  #   branches:
-  #     - 'rhoai-2.1[6-9]+'  # Trigger the workflow on pushes to any rhoai-2.16 branch
-  #     - 'wznoinsk_RHOAIENG-14372_test'
-  #   types:
-  #     - opened
-  #     - reopened
-  #     - edited
-  #   paths:
-  #     - bundle/bundle-patch.yaml
-  #     - schedule/bundle-github-trigger.txt
-  #     - catalog/catalog-patch.yaml
-  #     - schedule/catalog-github-trigger.txt
+  pull_request:
+    branches:
+      - 'wznoinsk_RHOAIENG-14372_test'
+    types:
+      - opened
+      - reopened
+      - edited
+    paths:
+      - bundle/bundle-patch.yaml
+      - schedule/bundle-github-trigger.txt
+      - catalog/catalog-patch.yaml
+      - schedule/catalog-github-trigger.txt
 
 # env:
 #   GITHUB_ORG: red-hat-data-services
