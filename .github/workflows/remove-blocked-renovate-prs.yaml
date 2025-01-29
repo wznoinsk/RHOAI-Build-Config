@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - 'rhoai-2.1[6-9]+'  # Trigger the workflow on pushes to any rhoai-2.16 branch
-      - 'wznoinsk_RHOAIENG-14372_test'  # Trigger the workflow on pushes to any rhoai-2.16 branch
+      - 'wznoinsk_RHOAIENG-14372_test' 
     types:
       - opened
       - reopened
@@ -33,7 +33,7 @@ permissions:
 
 jobs:
   remove-blocked-prs:
-    if: ${{ ( github.event.sender.login == 'wznoinsk' || github.event.sender.login == 'konflux-internal-p02[bot]') && contains(github.event.pull_request.title, 'update odh-')}}
+    # if: ${{ ( github.event.sender.login == 'wznoinsk' || github.event.sender.login == 'konflux-internal-p02[bot]') && contains(github.event.pull_request.title, 'update odh-')}}
     runs-on: ubuntu-latest
     steps:
       - name: check what's on the filesystem
