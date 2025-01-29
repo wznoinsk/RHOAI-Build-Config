@@ -40,6 +40,12 @@ jobs:
     # if: ${{ ( github.event.sender.login == 'wznoinsk' || github.event.sender.login == 'konflux-internal-p02[bot]') && contains(github.event.pull_request.title, 'update odh-')}}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+
       - name: check what's on the filesystem
         if: ${{ steps.changed-files.outputs.all_changed_files == 'catalog/catalog-patch.yaml' || steps.changed-files.outputs.all_changed_files == 'schedule/catalog-github-trigger.txt' || steps.changed-files.outputs.all_changed_files == 'bundle/bundle-patch.yaml' || steps.changed-files.outputs.all_changed_files == 'schedule/bundle-github-trigger.txt'}}
         id: filesystem-content-check
