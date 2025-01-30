@@ -49,7 +49,7 @@ jobs:
       - name: check what's on the filesystem
         if: ${{ steps.changed-files.outputs.all_changed_files == 'catalog/catalog-patch.yaml' || steps.changed-files.outputs.all_changed_files == 'schedule/catalog-github-trigger.txt' || steps.changed-files.outputs.all_changed_files == 'bundle/bundle-patch.yaml' || steps.changed-files.outputs.all_changed_files == 'schedule/bundle-github-trigger.txt'}}
         id: filesystem-content-check
-        run:
+        run: |
           pwd
           find .
 
@@ -57,8 +57,11 @@ jobs:
         run:
           echo "${{ steps.filesystem-content-check.outputs }}"
 
-      # TODO: do we need this?
-      # - uses: actions/checkout@v4
+
+      - name: find blocked renovate Pull Requests
+        run: |
+          gh search prs --state=closed --repo=red-hat-data-services/rhods-operator --match comments "because it does not recognize the last commit author and assumes somebody else" --json "number,title,state,url"
+
 
       # - name: Merge Feasibility Check
       #   if: ${{ steps.changed-files.outputs.all_changed_files == 'catalog/catalog-patch.yaml' || steps.changed-files.outputs.all_changed_files == 'schedule/catalog-github-trigger.txt' }}
