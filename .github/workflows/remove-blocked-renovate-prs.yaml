@@ -53,16 +53,55 @@ jobs:
           pwd
           find .
 
-      - name: show filesystem content
-        run:
-          echo "${{ steps.filesystem-content-check.outputs }}"
-
-
       - name: find blocked renovate Pull Requests
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          SLACK_WORKFLOW_URL: ${{ secrets.SLACK_WORKFLOW_URL }}
         run: |
-          gh search prs --state=closed --repo=red-hat-data-services/rhods-operator --match comments "because it does not recognize the last commit author and assumes somebody else" --json "number,title,state,url"
+          #!/usr/bin/env bash
+
+          export REPO_NAME="red-hat-data-services/rhods-operator"
+          RUN_DATETIME=$(date +%Y-%m-%d_%H:%M:%S)
+
+          IFS="\n"
+          PRS_RAW="$(gh search prs  \
+                      --state=closed \
+                      --repo=$REPO_NAME \
+                      --match comments "because it does not recognize the last commit author and assumes somebody else" \
+                      --json "number,title,state,url" \
+                      | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
+                      | head -1)"
+
+          echo "--- RAW ---"
+          echo $PRS_RAW
+          echo "--- /RAW ---"
+
+          echo "PRS_RAW: $PRS_RAW"
+
+          # ### SEND MESSAGE HEADER TO SLACK
+          # if [ "$PRS_RAW" != "" ] ; then
+          #   echo "sending the message header to Slack"
+          #   set -x
+          #   curl -X POST \
+          #     -H 'Content-type: application/json' \
+          #     -d '{"msg_pre": "\n||||||||||||||| '$RUN_DATETIME' |||||||||||||||"}' \
+          #     $SLACK_WORKFLOW_URL
+          #     echo -e
+          # fi
+
+          SLACK_MSG=''
+          while read -r line; do
+            echo "processing: $line"
+            IFS="," read -r -a PR <<<"$line"
+
+            set -x
+            curl -X POST \
+              -H 'Content-type: application/json' \
+              -d '{"msg_pre": "-->", "run_datetime": "'$RUN_DATETIME'", "repo_name": "'"$REPO_NAME"'", "pr_number":"'${PR[0]}'", "pr_title": '${PR[1]}', "pr_state": '${PR[2]}', "pr_url": '${PR[3]}', "msg_post": ""}' \
+              $SLACK_WORKFLOW_URL
+
+          done <<<$PRS_RAW
+
 
 
       # - name: Merge Feasibility Check
