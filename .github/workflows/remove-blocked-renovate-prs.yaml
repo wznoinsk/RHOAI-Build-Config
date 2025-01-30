@@ -59,6 +59,8 @@ jobs:
 
 
       - name: find blocked renovate Pull Requests
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh search prs --state=closed --repo=red-hat-data-services/rhods-operator --match comments "because it does not recognize the last commit author and assumes somebody else" --json "number,title,state,url"
 
