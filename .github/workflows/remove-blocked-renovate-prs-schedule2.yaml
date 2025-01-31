@@ -38,7 +38,7 @@ jobs:
               $SLACK_WORKFLOW_URL
           }
 
-          trap 'EXITCODE=$?; SCRIPT_NAME=$0; if [ $EXITCODE -ne 1 ]; then send_error_report_to_slack $EXITCODE $SCRIPT_NAME; fi; exit $EXITCODE' 1 2 3 6 14 15 EXIT
+          trap 'EXITCODE=$?; SCRIPT_NAME=$0; if [ $EXITCODE -ne 0 ]; then send_error_report_to_slack $EXITCODE $SCRIPT_NAME; fi; exit $EXITCODE' 1 2 3 6 14 15 EXIT
 
           set -ue # fail on any error or unset variable
 
