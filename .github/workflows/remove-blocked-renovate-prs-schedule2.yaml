@@ -35,29 +35,31 @@ jobs:
           echo "GITHUB_REPOS: ${GITHUB_REPOS[@]}"
 
           for REPO_NAME in ${GITHUB_REPOS[@]}; do
-            echo "- PROCESSING REPO: $REPO_NAME"
+            echo -e "\n\n- PROCESSING REPO: $REPO_NAME"
 
             RUN_DATETIME=$(date +%Y-%m-%d_%H:%M:%S)
 
             IFS="\n"
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
+            set -x
             PRS_RAW=$(gh search prs  \
                         --state=open \
-                        --repo=$REPO_NAME \
+                        --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')
+            set +x
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
             PRS_RAW+=$(gh search prs  \
                         --state=closed \
-                        --repo=$REPO_NAME \
+                        --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
                         | head -1 )
 
-            echo "PRS_RAW/ $PRS_RAW /PRS_RAW"
+            echo -e "\n--- PRS_RAW --- \n$PRS_RAW \n/--- PRS_RAW ---"
 
             # ### SEND MESSAGE HEADER TO SLACK
             # if [ "$PRS_RAW" != "" ] ; then
@@ -70,21 +72,20 @@ jobs:
             #     echo -e
             # fi
 
-            set -x
             while read -r line; do
               echo "processing line/ $line /line"
               IFS="," read -r -a PR <<<"$line"
 
+              set -x
               curl -X POST \
                 -H 'Content-type: application/json' \
                 -d '{"msg_pre": "-->", "run_datetime": "'$RUN_DATETIME'", "repo_name": "'"$REPO_NAME"'", "pr_number":"'${PR[0]}'", "pr_title": '${PR[1]}', "pr_state": '${PR[2]}', "pr_url": '${PR[3]}', "msg_post": ""}' \
                 $SLACK_WORKFLOW_URL
+              set +x
 
               # sleep to not to hit Slack ratelimiting (e.g.: when you try to send more than 10 msgs within 1 sec window)
               sleep 0.5
 
             done <<<$PRS_RAW
-
-            set +x
 
           done
