@@ -30,7 +30,9 @@ jobs:
         run: |
           #!/usr/bin/env bash
 
-          set -e # fail on any error
+          trap 'echo hi, exit code was $?; exit $?' ERR EXIT
+
+          set -ue # fail on any error or unset variable
 
           echo "GITHUB_REPOS: ${GITHUB_REPOS[@]}"
 
@@ -43,19 +45,21 @@ jobs:
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
             PRS_RAW=$(gh search prs  \
                         --state=open \
+                        --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')
 
-            echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW+=$(gh search prs  \
-                        --state=closed \
-                        --repo="${REPO_NAME}" \
-                        --match comments "because it does not recognize the last commit author" \
-                        --json "number,title,state,url" \
-                        | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
-                        | head -1 )
+            # echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
+            # PRS_RAW+=$(gh search prs  \
+            #             --state=closed \
+            #             --label=konflux-nudge \
+            #             --repo="${REPO_NAME}" \
+            #             --match comments "because it does not recognize the last commit author" \
+            #             --json "number,title,state,url" \
+            #             | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
+            #             | head -1 )
 
             echo -e "\n--- PRS_RAW --- \n$PRS_RAW \n/--- PRS_RAW ---"
 
