@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  GITHUB_REPOS: ['red-hat-data-services/rhods-operator', 'red-hat-data-services/rhods-operator']
+  GITHUB_REPOS: 'red-hat-data-services/rhods-operator red-hat-data-services/rhods-operator'
 
 permissions:
   contents: write
