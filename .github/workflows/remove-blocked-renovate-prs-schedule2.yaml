@@ -70,7 +70,8 @@ jobs:
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
-                        --json "number,title,state,url"
+                        --json "number,title,state,url" \
+                        | jq -r '.[] | [.number, .title, .state, .url] | @csv'
 
             gh search prs  \
                         --state=closed \
@@ -78,7 +79,8 @@ jobs:
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
-                        | jq -r '.[] | [.number, .title, .state, .url] | @csv'
+                        | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
+                        | head -1
 
             # PRS_RAW+="$(gh search prs  \
             #             --state=closed \
