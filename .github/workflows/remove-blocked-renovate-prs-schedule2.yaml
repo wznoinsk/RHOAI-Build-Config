@@ -39,7 +39,7 @@ jobs:
               $SLACK_WORKFLOW_URL
           }
 
-          trap 'EXITCODE=$?; SCRIPT_NAME=$0; if [ $EXITCODE -ne 0 ]; then send_error_report_to_slack $EXITCODE "$GITHUB_WORKFLOW"; fi; exit $EXITCODE' 1 2 3 6 14 15 EXIT
+          trap 'EXITCODE=$?; if [ $EXITCODE -ne 0 ]; then send_error_report_to_slack $EXITCODE "$GITHUB_WORKFLOW"; fi; exit $EXITCODE' 1 2 3 6 14 15 EXIT
           set -ueo pipefail # fail on any error or unset variable
 
           echo "GITHUB_REPOS: ${GITHUB_REPOS[@]}"
@@ -54,28 +54,28 @@ jobs:
             set -x
 
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW_=$(gh search prs  \
+            PRS_RAW_="$(gh search prs  \
                         --state=open \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
-                        --json "number,title,state,url")
+                        --json "number,title,state,url")"
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW_+=$(gh search prs  \
+            PRS_RAW_+="$(gh search prs  \
                         --state=closed \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
-                        | head -1 )
+                        | head -1 )"
 
             echo -e "\n--- PRS_RAW_ --- \n$PRS_RAW_ \n/--- PRS_RAW_ ---"
 
             if [ "$PRS_RAW_" != "" ] ; then
 
-              PRS_RAW=$(echo $PRS_RAW_ | jq -r '.[] | [.number, .title, .state, .url] | @csv')
+              PRS_RAW=$(echo ${PRS_RAW_[@]} | jq -r '.[] | [.number, .title, .state, .url] | @csv')
 
               while read -r line; do
                 echo "processing line/ $line /line"
