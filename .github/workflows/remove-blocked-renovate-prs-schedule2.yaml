@@ -34,7 +34,7 @@ jobs:
             echo "script failed, sending error report over Slack"
             curl -X POST \
               -H 'Content-type: application/json' \
-              -d '{"msg_pre": "GitHub Workflow \"'"$2"'\" exited with code $1. '"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/run/$GITHUB_RUN_ID"'}' \
+              -d '{"msg_pre": "GitHub Workflow "'"$2"'" exited with code $1. "'"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/run/$GITHUB_RUN_ID"'}' \
               $SLACK_WORKFLOW_URL
           }
 
