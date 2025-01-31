@@ -65,14 +65,29 @@ jobs:
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
 
-            PRS_RAW="${PRS_RAW}$(gh search prs  \
+            gh search prs  \
+                        --state=closed \
+                        --label=konflux-nudge \
+                        --repo="${REPO_NAME}" \
+                        --match comments "because it does not recognize the last commit author" \
+                        --json "number,title,state,url"
+
+            gh search prs  \
                         --state=closed \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
-                        | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
-                        | head -1 )"
+                        | jq -r '.[] | [.number, .title, .state, .url] | @csv'
+
+            # PRS_RAW+="$(gh search prs  \
+            #             --state=closed \
+            #             --label=konflux-nudge \
+            #             --repo="${REPO_NAME}" \
+            #             --match comments "because it does not recognize the last commit author" \
+            #             --json "number,title,state,url" \
+            #             | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
+            #             | head -1 )"
 
             echo -e "\n--- PRS_RAW --- \n$PRS_RAW \n/--- PRS_RAW ---"
 
