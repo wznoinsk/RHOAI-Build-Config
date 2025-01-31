@@ -31,11 +31,13 @@ jobs:
         run: |
           #!/usr/bin/env bash
 
+          RUN_DATETIME=$(date +%Y-%m-%d_%H:%M:%S)
+
           send_error_report_to_slack(){
             echo "script failed, sending error report over Slack"
             curl -X POST \
               -H 'Content-type: application/json' \
-              -d '{"msg_pre": "GitHub Workflow *'"${2}"'* exited with code '"${1}"'. '"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"'"}' \
+              -d '{"msg_pre": "'"$RUN_DATETIME"'", "msg_post": "GitHub Workflow *'"${2}"'* exited with code '"${1}"'. '"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"'"}' \
               $SLACK_WORKFLOW_URL
           }
 
@@ -47,8 +49,6 @@ jobs:
 
           for REPO_NAME in ${GITHUB_REPOS}; do
             echo -e "\n\n- PROCESSING REPO: $REPO_NAME"
-
-            RUN_DATETIME=$(date +%Y-%m-%d_%H:%M:%S)
 
             IFS="\n"
 
@@ -74,7 +74,7 @@ jobs:
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
             PRS_CLOSED="$(echo "$PRS_CLOSED" | head -1)"
 
-            PRS="$PRS_OPEN\n$PRS_CLOSED"
+            PRS="$(echo -e "$PRS_OPEN\n$PRS_CLOSED")"
 
             echo -e "\n--- PRS --- \n$PRS \n/--- PRS ---"
 
