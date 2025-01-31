@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  GITHUB_REPOS: 'red-hat-data-services/RHOAI-Build-Config red-hat-data-services/rhods-operator'
+  GITHUB_REPOS: 'red-hat-data-services/rhods-operator red-hat-data-services/RHOAI-Build-Config'
 
 permissions:
   contents: write
@@ -29,6 +29,8 @@ jobs:
           SLACK_WORKFLOW_URL: ${{ secrets.SLACK_WORKFLOW_URL }}
         run: |
           #!/usr/bin/env bash
+
+          set -e # fail on any error
 
           echo "GITHUB_REPOS: ${GITHUB_REPOS[@]}"
 
@@ -67,7 +69,7 @@ jobs:
             # fi
 
             while read -r line; do
-              echo "processing line: $line /line"
+              echo "processing line/ $line /line"
               IFS="," read -r -a PR <<<"$line"
 
               set -x
@@ -82,51 +84,3 @@ jobs:
             done <<<$PRS_RAW
 
           done
-
-      # - name: find and report (Slack) CLOSED blocked renovate Pull Requests
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      #     SLACK_WORKFLOW_URL: ${{ secrets.SLACK_WORKFLOW_URL }}
-      #   run: |
-      #     #!/usr/bin/env bash
-
-      #     export REPO_NAME="red-hat-data-services/rhods-operator"
-      #     RUN_DATETIME=$(date +%Y-%m-%d_%H:%M:%S)
-
-      #     IFS="\n"
-      #     PRS_RAW=$(gh search prs  \
-      #                 --state=closed \
-      #                 --repo=$REPO_NAME \
-      #                 --match comments "because it does not recognize the last commit author and assumes somebody else" \
-      #                 --json "number,title,state,url" \
-      #                 | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
-      #                 | head -2)
-
-      #     echo "--- RAW ---"
-      #     echo $PRS_RAW
-      #     echo "--- /RAW ---"
-
-      #     echo "PRS_RAW: $PRS_RAW"
-
-      #     # ### SEND MESSAGE HEADER TO SLACK
-      #     # if [ "$PRS_RAW" != "" ] ; then
-      #     #   echo "sending the message header to Slack"
-      #     #   set -x
-      #     #   curl -X POST \
-      #     #     -H 'Content-type: application/json' \
-      #     #     -d '{"msg_pre": "\n||||||||||||||| '$RUN_DATETIME' |||||||||||||||"}' \
-      #     #     $SLACK_WORKFLOW_URL
-      #     #     echo -e
-      #     # fi
-
-      #     while read -r line; do
-      #       echo "processing: $line"
-      #       IFS="," read -r -a PR <<<"$line"
-
-      #       set -x
-      #       curl -X POST \
-      #         -H 'Content-type: application/json' \
-      #         -d '{"msg_pre": "-->", "run_datetime": "'$RUN_DATETIME'", "repo_name": "'"$REPO_NAME"'", "pr_number":"'${PR[0]}'", "pr_title": '${PR[1]}', "pr_state": '${PR[2]}', "pr_url": '${PR[3]}', "msg_post": ""}' \
-      #         $SLACK_WORKFLOW_URL
-
-      #     done <<<$PRS_RAW
