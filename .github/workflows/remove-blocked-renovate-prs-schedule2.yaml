@@ -30,9 +30,19 @@ jobs:
         run: |
           #!/usr/bin/env bash
 
-          trap 'echo hi, exit code was $?; exit $?' ERR EXIT
+          send_error_report_to_slack(){
+            echo "script failed, sending error report over Slack"
+            curl -X POST \
+              -H 'Content-type: application/json' \
+              -d '{"msg_pre": "GitHub Workflow \"'"$2"'\" exited with code $1"}' \
+              $SLACK_WORKFLOW_URL
+          }
+
+          trap 'EXITCODE=$?; SCRIPT_NAME=$0; send_error_msg_to_slack $EXITCODE $SCRIPT_NAME; exit $EXITCODE' ERR
 
           set -ue # fail on any error or unset variable
+
+          env
 
           echo "GITHUB_REPOS: ${GITHUB_REPOS[@]}"
 
