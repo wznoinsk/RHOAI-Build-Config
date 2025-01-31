@@ -65,6 +65,8 @@ jobs:
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
 
+            echo -e "1\n2\n3" | head -1
+
             gh search prs  \
                         --state=closed \
                         --label=konflux-nudge \
@@ -81,7 +83,6 @@ jobs:
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv' | head -1
 
-            echo -e "1\n2\n3" | head -1 
 
             # PRS_RAW+="$(gh search prs  \
             #             --state=closed \
