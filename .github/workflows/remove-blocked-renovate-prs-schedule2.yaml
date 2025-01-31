@@ -5,6 +5,7 @@ on:
   # as per above: Scheduled workflows will only run on the default branch.
   schedule:
     - cron:  "*/5 * * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
