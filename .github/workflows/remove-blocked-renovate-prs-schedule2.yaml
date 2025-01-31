@@ -54,7 +54,7 @@ jobs:
             set -x
 
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW_="$(gh search prs  \
+            _PRS_RAW="$(gh search prs  \
                         --state=open \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
@@ -62,7 +62,7 @@ jobs:
                         --json "number,title,state,url")"
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW_+="$(gh search prs  \
+            _PRS_RAW+="$(gh search prs  \
                         --state=closed \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
@@ -71,9 +71,9 @@ jobs:
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
                         | head -1 )"
 
-            echo -e "\n--- PRS_RAW_ --- \n$PRS_RAW_ \n/--- PRS_RAW_ ---"
+            echo -e "\n--- _PRS_RAW --- \n$_PRS_RAW \n/--- _PRS_RAW ---"
 
-            if [ "$PRS_RAW_" != "" ] ; then
+            if [ "$_PRS_RAW" != "" ] ; then
 
               PRS_RAW=$(echo ${PRS_RAW_[@]} | jq -r '.[] | [.number, .title, .state, .url] | @csv')
 
