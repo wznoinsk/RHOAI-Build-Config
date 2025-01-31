@@ -51,16 +51,15 @@ jobs:
 
             IFS="\n"
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW=$(gh search prs  \
+            PRS_RAW_=$(gh search prs  \
                         --state=open \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
-                        --json "number,title,state,url" \
-                        | jq -r '.[] | [.number, .title, .state, .url] | @csv')
+                        --json "number,title,state,url")
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW+=$(gh search prs  \
+            PRS_RAW_+=$(gh search prs  \
                         --state=closed \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
@@ -69,9 +68,12 @@ jobs:
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
                         | head -1 )
 
-            echo -e "\n--- PRS_RAW --- \n$PRS_RAW \n/--- PRS_RAW ---"
+            echo -e "\n--- PRS_RAW_ --- \n$PRS_RAW_ \n/--- PRS_RAW_ ---"
 
-            if [ "$PRS_RAW" != "" ] ; then
+            if [ "$PRS_RAW_" != "" ] ; then
+
+              PRS_RAW=$(echo $PRS_RAW_ | jq -r '.[] | [.number, .title, .state, .url] | @csv')
+
               while read -r line; do
                 echo "processing line/ $line /line"
                 IFS="," read -r -a PR <<<"$line"
