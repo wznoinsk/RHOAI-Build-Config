@@ -56,12 +56,13 @@ jobs:
 
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
             PRS_OPEN="$(gh search prs \
-                        --state=closed \
+                        --state=open \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
-                        | jq -r '.[] | [.number, .title, .state, .url] | @csv' | head -1)"
+                        | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
+            PRS_OPEN="$(echo "$PRS_OPEN | head -1)"
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
             PRS_CLOSED="$(gh search prs  \
@@ -71,7 +72,6 @@ jobs:
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
-
             PRS_CLOSED="$(echo "$PRS_CLOSED" | head -1)"
 
             PRS="$PRS_OPEN\n$PRS_CLOSED"
