@@ -69,7 +69,7 @@ jobs:
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
             PRS_CLOSED="$(echo "$PRS_CLOSED" | head -1)"
-
+            b
             PRS="$(echo -e "$PRS_OPEN" "$PRS_CLOSED")"
 
             echo -e "\n--- PRS --- \n$PRS \n/--- PRS ---"
