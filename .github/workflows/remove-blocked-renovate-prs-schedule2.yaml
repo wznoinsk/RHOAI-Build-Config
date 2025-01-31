@@ -62,7 +62,7 @@ jobs:
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
-            PRS_OPEN="$(echo "$PRS_OPEN | head -1)"
+            PRS_OPEN="$(echo "$PRS_OPEN" | head -1)"
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
             PRS_CLOSED="$(gh search prs  \
