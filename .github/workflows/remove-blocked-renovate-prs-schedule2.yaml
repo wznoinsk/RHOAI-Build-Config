@@ -62,14 +62,14 @@ jobs:
                         --json "number,title,state,url")"
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
-            _PRS_RAW+="$(gh search prs  \
+            gh search prs  \
                         --state=closed \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
-                        | head -1 )"
+                        | head -1
 
             echo -e "\n--- _PRS_RAW --- \n$_PRS_RAW \n/--- _PRS_RAW ---"
 
