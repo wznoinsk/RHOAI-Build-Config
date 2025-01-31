@@ -41,14 +41,14 @@ jobs:
             PRS_RAW=$(gh search prs  \
                         --state=open \
                         --repo=$REPO_NAME \
-                        --match comments "because it does not recognize the last commit author and assumes somebody else" \
+                        --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')
 
             PRS_RAW+=$(gh search prs  \
                         --state=closed \
                         --repo=$REPO_NAME \
-                        --match comments "because it does not recognize the last commit author and assumes somebody else" \
+                        --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
                         | head -1 )
