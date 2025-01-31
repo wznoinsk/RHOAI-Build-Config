@@ -55,7 +55,7 @@ jobs:
 
 
             echo "--- RAW ---"
-            echo $PRS_RAW | od -bc
+            echo "PRS_RAW: $PRS_RAW /PRS_RAW"
             echo "--- /RAW ---"
 
             echo "PRS_RAW: $PRS_RAW"
@@ -80,6 +80,9 @@ jobs:
                 -H 'Content-type: application/json' \
                 -d '{"msg_pre": "-->", "run_datetime": "'$RUN_DATETIME'", "repo_name": "'"$REPO_NAME"'", "pr_number":"'${PR[0]}'", "pr_title": '${PR[1]}', "pr_state": '${PR[2]}', "pr_url": '${PR[3]}', "msg_post": ""}' \
                 $SLACK_WORKFLOW_URL
+
+              # sleep to not to hit Slack ratelimiting (e.g.: when you try to send more than 10 msgs within 1 sec window)
+              sleep 0.5
 
             done <<<$PRS_RAW
 
