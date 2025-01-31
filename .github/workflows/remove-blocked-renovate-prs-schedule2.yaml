@@ -22,7 +22,7 @@ jobs:
   remove-blocked-prs:
     runs-on: ubuntu-latest
     steps:
-      - name: find and report (Slack) OPEN blocked renovate Pull Requests
+      - name: find and report (Slack) OPEN or CLOSED blocked renovate Pull Requests
         id: find-blocked-renovate-pull-requests
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -35,7 +35,6 @@ jobs:
           for REPO_NAME in ${GITHUB_REPOS[@]}; do
             echo "PROCESSING REPO: $REPO_NAME"
 
-            export REPO_NAME="red-hat-data-services/rhods-operator"
             RUN_DATETIME=$(date +%Y-%m-%d_%H:%M:%S)
 
             IFS="\n"
@@ -45,6 +44,14 @@ jobs:
                         --match comments "because it does not recognize the last commit author and assumes somebody else" \
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')
+
+            PRS_RAW+=$(gh search prs  \
+                        --state=closed \
+                        --repo=$REPO_NAME \
+                        --match comments "because it does not recognize the last commit author and assumes somebody else" \
+                        --json "number,title,state,url" \
+                        | jq -r '.[] | [.number, .title, .state, .url] | @csv')
+
 
             echo "--- RAW ---"
             echo $PRS_RAW | od -bc
