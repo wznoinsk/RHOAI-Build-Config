@@ -64,7 +64,8 @@ jobs:
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
 
             echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
-            PRS_RAW+="$(gh search prs  \
+
+            PRS_RAW="${PRS_RAW}$(gh search prs  \
                         --state=closed \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
