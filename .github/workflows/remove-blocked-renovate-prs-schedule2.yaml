@@ -31,7 +31,7 @@ jobs:
         run: |
           #!/usr/bin/env bash
 
-          RUN_DATETIME=$(date +%Y-%m-%d %H:%M:%S)
+          RUN_DATETIME=$(date "+%Y-%m-%d %H:%M:%S")
 
           send_error_report_to_slack(){
             echo "script failed, sending error report over Slack"
