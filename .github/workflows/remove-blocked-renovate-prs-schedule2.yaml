@@ -83,7 +83,7 @@ jobs:
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
 
-            PRS="$(echo "$PRS | head -1)
+            PRS="$(echo "$PRS" | head -1)
 
 
             # PRS_RAW+="$(gh search prs  \
