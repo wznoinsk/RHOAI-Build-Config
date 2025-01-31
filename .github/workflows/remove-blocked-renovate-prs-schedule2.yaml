@@ -50,15 +50,10 @@ jobs:
                         --repo=$REPO_NAME \
                         --match comments "because it does not recognize the last commit author and assumes somebody else" \
                         --json "number,title,state,url" \
-                        | head -1 \
-                        | jq -r '.[] | [.number, .title, .state, .url] | @csv')
+                        | jq -r '.[] | [.number, .title, .state, .url] | @csv' \
+                        | head -1 )
 
-
-            echo "--- RAW ---"
-            echo "PRS_RAW: $PRS_RAW /PRS_RAW"
-            echo "--- /RAW ---"
-
-            echo "PRS_RAW: $PRS_RAW"
+            echo "PRS_RAW/ $PRS_RAW /PRS_RAW"
 
             # ### SEND MESSAGE HEADER TO SLACK
             # if [ "$PRS_RAW" != "" ] ; then
