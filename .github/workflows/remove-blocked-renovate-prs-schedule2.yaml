@@ -44,7 +44,7 @@ jobs:
 
           trap 'EXITCODE=$?; if [ $EXITCODE -ne 0 ]; then send_error_report_to_slack $EXITCODE "$GITHUB_WORKFLOW"; fi; exit $EXITCODE' 1 2 3 6 14 15 EXIT
 
-          set -ueo pipefail # fail on any error or unset variable
+          # set -ueo pipefail # fail on any error or unset variable
 
           echo "GITHUB_REPOS: ${GITHUB_REPOS[@]}"
 
@@ -71,7 +71,7 @@ jobs:
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
             PRS_CLOSED="$(echo "$PRS_CLOSED" | head -1)"
 
-            PRS="$(echo -e "$PRS_OPEN" "$PRS_CLOSED")"
+            PRS="$(echo -e "${PRS_OPEN:+$PRS_OPEN\n}$PRS_CLOSED")"
 
             echo -e "\n--- PRS --- \n$PRS \n/--- PRS ---"
 
