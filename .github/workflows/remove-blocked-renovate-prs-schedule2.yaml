@@ -44,7 +44,7 @@ jobs:
 
           trap 'EXITCODE=$?; if [ $EXITCODE -ne 0 ]; then send_error_report_to_slack $EXITCODE "$GITHUB_WORKFLOW"; fi; exit $EXITCODE' 1 2 3 6 14 15 EXIT
 
-          # set -ueo pipefail # fail on any error or unset variable
+          set -ueo pipefail # fail on any error or unset variable
 
           echo "GITHUB_REPOS: ${GITHUB_REPOS[@]}"
 
@@ -61,17 +61,18 @@ jobs:
                         --json "number,title,state,url" \
                         | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
 
-            echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
-            PRS_CLOSED="$(gh search prs  \
-                        --state=closed \
-                        --label=konflux-nudge \
-                        --repo="${REPO_NAME}" \
-                        --match comments "because it does not recognize the last commit author" \
-                        --json "number,title,state,url" \
-                        | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
-            PRS_CLOSED="$(echo "$PRS_CLOSED" | head -1)"
+            ### uncomment the below block to enable reporting on 'closed/merged' Pull Requests - you may want to do it for debugging, e.g.: to make sure this workflow works (and reports to Slack) properly
+            # echo "-- PROCESSING CLOSED PULL REQUESTS FOR $REPO_NAME"
+            # PRS_CLOSED="$(gh search prs  \
+            #             --state=closed \
+            #             --label=konflux-nudge \
+            #             --repo="${REPO_NAME}" \
+            #             --match comments "because it does not recognize the last commit author" \
+            #             --json "number,title,state,url" \
+            #             | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
+            # PRS_CLOSED="$(echo "$PRS_CLOSED" | head -1)"
 
-            PRS="$(echo -e "${PRS_OPEN:+$PRS_OPEN\n}$PRS_CLOSED")"
+            PRS="$(echo -e "${PRS_OPEN:+$PRS_OPEN\n}${PRS_CLOSED:-}")"
 
             echo -e "\n--- PRS --- \n$PRS \n/--- PRS ---"
 
