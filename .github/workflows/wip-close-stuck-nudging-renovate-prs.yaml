@@ -51,7 +51,6 @@ jobs:
           for REPO_NAME in ${GITHUB_REPOS}; do
             echo -e "\n\n- PROCESSING REPO: $REPO_NAME"
 
-            IFS="\n"
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
             PRS_OPEN="$(gh search prs \
                         --state=open \
