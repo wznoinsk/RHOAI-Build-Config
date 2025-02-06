@@ -31,6 +31,8 @@ jobs:
         run: |
           #!/usr/bin/env bash
 
+          set -x
+
           RUN_DATETIME=$(date "+%Y-%m-%d %H:%M:%S")
 
           send_error_report_to_slack(){
@@ -57,8 +59,7 @@ jobs:
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
-                        --json "number,title,state,url" \
-                        | jq -r '.[] | [.number, .title, .state, .url]')"
+                        --json "number,title,state,url")"
 
             echo "query each PR individually to check the Head Branch it was raised from"
             for pr in $(echo "${PRS_OPEN}" | jq '.[] | .number'); do
@@ -96,8 +97,7 @@ jobs:
             #             --limit 1 \
             #             --repo="${REPO_NAME}" \
             #             --match comments "because it does not recognize the last commit author" \
-            #             --json "number,title,state,url" \
-            #             | jq -r '.[] | [.number, .title, .state, .url]')"
+            #             --json "number,title,state,url")"
 
             exit 5
             PRS="$(echo -e "${PRS_OPEN:+$PRS_OPEN\n}${PRS_CLOSED:-}")"
