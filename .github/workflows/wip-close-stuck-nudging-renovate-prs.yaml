@@ -55,7 +55,7 @@ jobs:
 
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
             PRS_OPEN_STUCK="$(gh search prs \
-                        --state=closed \
+                        --state=open \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
