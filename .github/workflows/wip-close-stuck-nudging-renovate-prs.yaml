@@ -54,15 +54,15 @@ jobs:
             echo -e "\n\n- PROCESSING REPO: $REPO_NAME"
 
             echo "-- PROCESSING OPEN PULL REQUESTS FOR $REPO_NAME"
-            PRS_OPEN="$(gh search prs \
-                        --state=open \
+            PRS_OPEN_STUCK="$(gh search prs \
+                        --state=closed \
                         --label=konflux-nudge \
                         --repo="${REPO_NAME}" \
                         --match comments "because it does not recognize the last commit author" \
                         --json "number,title,state,url")"
 
-            echo "query each PR individually to check the Head Branch it was raised from"
-            for pr in $(echo "${PRS_OPEN}" | jq '.[] | .number'); do
+            echo "query each currently OPEN Pull Request per branch individually to check the Head Branch it was raised from"
+            for pr in $(echo "${PRS_OPEN_STUCK}" | jq '.[] | .number'); do
               echo -n "PR: $pr | "
 
               HEAD_REF_NAME=$(gh pr view --repo ${REPO_NAME} $pr --json headRefName --jq '.headRefName')
@@ -84,8 +84,12 @@ jobs:
                   echo -e "Can't delete branch '${HEAD_REF_NAME}' due to open Pull Requests exist from it: \n$PRS_SAME_HEAD"
                 else
                   echo -e "Deleting branch '${HEAD_REF_NAME}'"
-                  echo gh push origin --delete "${HEAD_REF_NAME}"
+                  set -x
+                  echo "NOTRUN: gh push origin --delete "${HEAD_REF_NAME}""
+                  set +x
                 fi
+              else
+                echo "branch '${HEAD_REF_NAME}' doesn't match 'konflux/component-updates' - skipping"
               fi
             done
 
