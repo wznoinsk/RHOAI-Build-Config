@@ -113,6 +113,7 @@ jobs:
             if [ "$PRS" != "" ] ; then
 
               ### uncomment the below code block to enable reporting every stuck Pull Request to Slack
+              ### it may be good to have it enabled to keep an easy to browse record of these stuck Pull Requests and when they appeared and/or were closed
 
               echo "Reporting Pull Requests to Slack's workflow"
 
