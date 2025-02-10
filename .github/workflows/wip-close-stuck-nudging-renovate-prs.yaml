@@ -106,7 +106,11 @@ jobs:
               fi
             done
 
-            PRS="$(echo -e "${PRS_OPEN_STUCK:+$PRS_OPEN_STUCK\n}${PRS_CLOSED:-}")"
+            PRS_OPEN_STUCK_CSV="$(echo "$PRS_OPEN_STUCK" | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
+            echo "PRS_OPEN_STUCK_CSV: $PRS_OPEN_STUCK_CSV"
+
+
+            PRS="$(echo -e "${PRS_OPEN_STUCK_CSV:+$PRS_OPEN_STUCK_CSV\n}")"
 
             echo -e "\n--- PRS --- \n$PRS \n/--- PRS ---"
 
@@ -115,7 +119,7 @@ jobs:
               ### uncomment the below code block to enable reporting every stuck Pull Request to Slack
               ### it may be good to have it enabled to keep an easy to browse record of these stuck Pull Requests and when they appeared and/or were closed
 
-              echo "Reporting Pull Requests to Slack's workflow"
+              echo "Reporting Pull Requests to Slack"
 
               while read -r line; do
                 echo "processing line/ $line /line"
