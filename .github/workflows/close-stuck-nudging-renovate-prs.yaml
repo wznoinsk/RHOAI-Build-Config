@@ -1,4 +1,4 @@
-name: (wip) Remove blocked renovate Pull Requests
+name: Remove blocked renovate Pull Requests
 
 on:
   # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
