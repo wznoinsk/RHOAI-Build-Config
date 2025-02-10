@@ -1,4 +1,4 @@
-name: Remove stuck Renovate Pull Requests
+name: Close stuck nudging Renovate Pull Requests
 
 on:
   # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
@@ -20,7 +20,7 @@ permissions:
   statuses: write
 
 jobs:
-  remove-stuck-renovate-prs:
+  close-stuck-nudging-renovate-prs:
     runs-on: ubuntu-latest
     steps:
       - name: find and report (Slack) OPEN or CLOSED blocked renovate Pull Requests
