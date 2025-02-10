@@ -106,11 +106,13 @@ jobs:
               fi
             done
 
-            PRS="$(echo -e "${PRS_OPEN:+$PRS_OPEN\n}${PRS_CLOSED:-}")"
+            PRS="$(echo -e "${PRS_OPEN_STUCK:+$PRS_OPEN_STUCK\n}${PRS_CLOSED:-}")"
 
             echo -e "\n--- PRS --- \n$PRS \n/--- PRS ---"
 
             if [ "$PRS" != "" ] ; then
+
+              ### uncomment the below code block to enable reporting every stuck Pull Request to Slack
 
               echo "Reporting Pull Requests to Slack's workflow"
 
