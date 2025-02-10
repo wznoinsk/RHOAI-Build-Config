@@ -109,7 +109,6 @@ jobs:
             PRS_OPEN_STUCK_CSV="$(echo "$PRS_OPEN_STUCK" | jq -r '.[] | [.number, .title, .state, .url] | @csv')"
             echo "PRS_OPEN_STUCK_CSV: $PRS_OPEN_STUCK_CSV"
 
-
             PRS="$(echo -e "${PRS_OPEN_STUCK_CSV:+$PRS_OPEN_STUCK_CSV\n}")"
 
             echo -e "\n--- PRS --- \n$PRS \n/--- PRS ---"
