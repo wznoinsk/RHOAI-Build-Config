@@ -21,4 +21,4 @@ jobs:
 
       - name: Check if Branch Matches `rhoai-*`
         if: startsWith(github.event.check_run.head_branch, 'rhoai-')
-        run: echo "✅ This check run belongs to a rhoai-* branch!"
+        run: echo "This check run belongs to a rhoai-* branch!"
