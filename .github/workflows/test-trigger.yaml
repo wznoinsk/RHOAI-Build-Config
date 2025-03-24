@@ -26,14 +26,14 @@ jobs:
         run: |
           # First, try to get the branch directly
           BRANCH_NAME="${{ github.event.check_run.head_branch }}"
-          
-          # If head_branch is empty, try fetching the branch using GitHub API
+
+          # If head_branch is empty, fetch using GitHub API
           if [[ -z "$BRANCH_NAME" ]]; then
             BRANCH_NAME=$(gh api repos/${{ github.repository }}/commits/${{ github.event.check_run.head_sha }}/branches-where-head --jq '.[0]')
           fi
 
           # If still empty, fetch all branches and find the one containing the commit
-          if [[ -z "$BRANCH_NAME" ]]; then
+          if [[ -z "$BRANCH_NAME" || "$BRANCH_NAME" == "null" ]]; then
             BRANCH_NAME=$(gh api repos/${{ github.repository }}/git/refs/heads --jq '[.[] | select(.object.sha == "${{ github.event.check_run.head_sha }}") | .ref] | map(sub("refs/heads/"; "")) | join(", ")')
           fi
 
