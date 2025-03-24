@@ -21,6 +21,8 @@ jobs:
           echo "Commit SHA: '${{ github.event.check_run.head_sha }}'"
 
       - name: Fetch Branch Name from Commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH_NAME=$(gh api repos/${{ github.repository }}/commits/${{ github.event.check_run.head_sha }} | jq -r '.commit.tree.url' | cut -d'/' -f8)
           echo "Branch from commit: '$BRANCH_NAME'"
