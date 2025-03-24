@@ -3,18 +3,6 @@ name: Debug Check Run
 on:
   check_run:
     types:
-      - completed
-  workflow_dispatch:
-
-jobs:
-  debug-konflux:
-    runs-on: ubuntu-latest
-
-    name: Debug Check Run
-
-on:
-  check_run:
-    types:
       - completed  # Listen for check completion
   workflow_dispatch:
 
@@ -55,4 +43,3 @@ jobs:
       - name: Check if Branch Matches `rhoai-*`
         if: startsWith(env.BRANCH_NAME, 'rhoai-')
         run: echo "This check run belongs to a rhoai-* branch!"
-
