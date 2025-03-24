@@ -19,15 +19,15 @@ jobs:
           echo "Check Run URL: '${{ github.event.check_run.html_url }}'"
           echo "Head Branch (if available): '${{ github.event.check_run.head_branch }}'"
           echo "Commit SHA: '${{ github.event.check_run.head_sha }}'"
-
+    
       - name: Fetch Branch Name from Commit
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BRANCH_NAME=$(gh api repos/${{ github.repository }}/commits/${{ github.event.check_run.head_sha }} | jq -r '.commit.tree.url' | cut -d'/' -f8)
+          BRANCH_NAME=$(gh api repos/${{ github.repository }}/commits/${{ github.event.check_run.head_sha }}/branches-where-head --jq '.[0]')
           echo "Branch from commit: '$BRANCH_NAME'"
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
-
+    
       - name: Check if Branch Matches `rhoai-*`
         if: startsWith(env.BRANCH_NAME, 'rhoai-')
         run: echo "This check run belongs to a rhoai-* branch!"
